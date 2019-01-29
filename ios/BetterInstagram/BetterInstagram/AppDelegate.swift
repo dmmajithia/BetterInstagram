@@ -14,22 +14,25 @@ import FacebookCore
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var currentUser: User?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.currentUser = User.init()
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        if let accessToken = AccessToken.current{
+        /*if let accessToken = AccessToken.current{
             //user is already logged in to facebook
             //segue to main storyboard
             NSLog("segue to main")
+            Api.checkIfUserExists(fbID: (AccessToken.current?.userId)!)
             self.window = UIWindow(frame: UIScreen.main.bounds)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "mainVC")
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
         }
-        else{
+        else{*/
             //segue to login storyboard
             NSLog("segue to login")
             self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -37,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "loginVC")
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
-        }
+       // }
         return true
     }
 

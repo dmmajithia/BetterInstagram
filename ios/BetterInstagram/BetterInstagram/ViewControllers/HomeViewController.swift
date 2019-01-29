@@ -10,9 +10,13 @@ import UIKit
 
 class HomeViewController: UIViewController{
     
+    //var user: User!
+    
+    @IBOutlet weak var userLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //userLabel.text = user.username
     }
     
 }

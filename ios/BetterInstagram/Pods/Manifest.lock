@@ -24,11 +24,13 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.40.0):
     - FBSDKCoreKit
+  - OHMySQL (2.1.3)
 
 DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - FacebookShare
+  - OHMySQL
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -39,6 +41,7 @@ SPEC REPOS:
     - FBSDKCoreKit
     - FBSDKLoginKit
     - FBSDKShareKit
+    - OHMySQL
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -48,7 +51,8 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: ae214474b25033399c131dc81d258e412582a2ba
   FBSDKLoginKit: 7a1e411d46acc8834588eca437daf34de42e1d52
   FBSDKShareKit: 0e45916f4150da485928ae2a17ca021950b194f5
+  OHMySQL: 8bc54d2b8b9e1acfa0e652b18856a9cdbb24c431
 
-PODFILE CHECKSUM: 90ea73a2ce9d77f7aa7a386589cca219dc9273b3
+PODFILE CHECKSUM: 243d333097920d3c736e39c5dbdbe5c82a2a96c8
 
 COCOAPODS: 1.5.3

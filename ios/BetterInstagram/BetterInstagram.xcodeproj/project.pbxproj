@@ -15,8 +15,11 @@
 		BA33170121FD019900774952 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3316FF21FD019900774952 /* LaunchScreen.storyboard */; };
 		BA38C8E921FD28BB00EF2186 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA38C8E821FD28BB00EF2186 /* Main.storyboard */; };
 		BA38C8EB21FD2E2000EF2186 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA38C8EA21FD2E2000EF2186 /* Signup.storyboard */; };
+		BA70046B21FFDB4B0078517A /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA70046A21FFDB4B0078517A /* Api.swift */; };
 		BA7A1B8421FE40A400D54016 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A1B8321FE40A400D54016 /* User.swift */; };
 		BA7A1B8921FE467A00D54016 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A1B8821FE467A00D54016 /* HomeViewController.swift */; };
+		BAC2110621FFEA4D00A32682 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC2110521FFEA4D00A32682 /* CurrentUser.swift */; };
+		BAC2110821FFEBD300A32682 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC2110721FFEBD300A32682 /* Signup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +35,11 @@
 		BA38C8E721FD141600EF2186 /* BetterInstagram.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BetterInstagram.entitlements; sourceTree = "<group>"; };
 		BA38C8E821FD28BB00EF2186 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BA38C8EA21FD2E2000EF2186 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
+		BA70046A21FFDB4B0078517A /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		BA7A1B8321FE40A400D54016 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BA7A1B8821FE467A00D54016 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BAC2110521FFEA4D00A32682 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		BAC2110721FFEBD300A32682 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		BDF2D0D1C40834841DEFBF53 /* Pods-BetterInstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterInstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-BetterInstagram/Pods-BetterInstagram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				BA7A1B8321FE40A400D54016 /* User.swift */,
+				BA70046A21FFDB4B0078517A /* Api.swift */,
+				BAC2110521FFEA4D00A32682 /* CurrentUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,6 +130,7 @@
 			children = (
 				BA3316F821FD019700774952 /* LoginViewController.swift */,
 				BA7A1B8821FE467A00D54016 /* HomeViewController.swift */,
+				BAC2110721FFEBD300A32682 /* Signup.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -218,6 +227,7 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/OHMySQL/OHMySQL.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -230,6 +240,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHMySQL.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -265,9 +276,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC2110821FFEBD300A32682 /* Signup.swift in Sources */,
 				BA3316F921FD019700774952 /* LoginViewController.swift in Sources */,
 				BA3316F721FD019700774952 /* AppDelegate.swift in Sources */,
 				BA7A1B8421FE40A400D54016 /* User.swift in Sources */,
+				BA70046B21FFDB4B0078517A /* Api.swift in Sources */,
+				BAC2110621FFEA4D00A32682 /* CurrentUser.swift in Sources */,
 				BA7A1B8921FE467A00D54016 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
