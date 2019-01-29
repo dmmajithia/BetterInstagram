@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.0.0.beta.1)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
     - Bolts/Tasks (= 1.9.0)
@@ -25,15 +26,19 @@ PODS:
   - FBSDKShareKit (4.40.0):
     - FBSDKCoreKit
   - OHMySQL (2.1.3)
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.0.0.beta.1)
   - FacebookCore
   - FacebookLogin
   - FacebookShare
   - OHMySQL
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - Bolts
     - FacebookCore
     - FacebookLogin
@@ -42,8 +47,10 @@ SPEC REPOS:
     - FBSDKLoginKit
     - FBSDKShareKit
     - OHMySQL
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 2ef6d6c984c5d21c366e9b41a9ae7dfee2b67a44
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   FacebookCore: 74288d0add931d361b1596beae787ab72c438249
   FacebookLogin: ebcf34714a1cb9f0759d9f071cfb01ed500996cf
@@ -52,7 +59,8 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 7a1e411d46acc8834588eca437daf34de42e1d52
   FBSDKShareKit: 0e45916f4150da485928ae2a17ca021950b194f5
   OHMySQL: 8bc54d2b8b9e1acfa0e652b18856a9cdbb24c431
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 243d333097920d3c736e39c5dbdbe5c82a2a96c8
+PODFILE CHECKSUM: 39d798098d1a4d33d1cfe8b3838389075d3814d9
 
 COCOAPODS: 1.5.3
