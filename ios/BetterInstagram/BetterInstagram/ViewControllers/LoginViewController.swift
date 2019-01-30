@@ -41,9 +41,6 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         super.viewDidLoad()
         self.loggedIn = false
         // Do any additional setup after loading the view, typically from a nib.
-        if(AccessToken.current != nil){
-            self.afterFBLogin()
-        }
         let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends ])
         loginButton.delegate = self
         loginButton.center = self.view.center
@@ -51,6 +48,9 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if(AccessToken.current != nil){
+            self.afterFBLogin()
+        }
         /*if (self.loggedIn){
             DispatchQueue.main.async(){
                 self.performSegue(withIdentifier: "signup", sender: nil)
