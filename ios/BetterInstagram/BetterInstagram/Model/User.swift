@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class User{
     var username: String
@@ -26,5 +27,11 @@ class User{
         facebookID = data["facebookID"]!
         accessToken = data["accessToken"]!
         userID = data["userID"]!
+    }
+    
+    func json(json: JSON){
+        self.facebookID = json["facebook_id"].string!
+        self.username = json["username"].string!
+        self.userID = String(json["user_id"].int!)
     }
 }

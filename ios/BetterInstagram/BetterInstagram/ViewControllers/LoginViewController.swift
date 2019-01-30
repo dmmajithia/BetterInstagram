@@ -14,18 +14,22 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     
     var loggedIn: Bool!
     
-    
-    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-        if((AccessToken.current) != nil){ //user logged in using facebook
-            CurrentUser.shared().user.facebookID = (AccessToken.current?.userId)!
-            if(Api.checkIfUserExists(fbID: CurrentUser.shared().user.facebookID)){
-                //go to main
+    func afterFBLogin(){
+        Api.checkIfUserExists(fbID: (AccessToken.current?.userId)!, completion: {(json) -> () in
+            if(json["status"].bool!){
+                //user exists
+                CurrentUser.shared.user?.json(json: json)
+                self.performSegue(withIdentifier: "segueToMain", sender: self)
             }
             else{
-                //go to sign up
-                self.loggedIn = true
+                //user does not exist
+                self.performSegue(withIdentifier: "signup", sender: self)
             }
-        }
+        })
+    }
+    
+    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        self.afterFBLogin()
     }
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
@@ -37,6 +41,9 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         super.viewDidLoad()
         self.loggedIn = false
         // Do any additional setup after loading the view, typically from a nib.
+        if(AccessToken.current != nil){
+            self.afterFBLogin()
+        }
         let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends ])
         loginButton.delegate = self
         loginButton.center = self.view.center
@@ -44,11 +51,16 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if (self.loggedIn){
+        /*if (self.loggedIn){
             DispatchQueue.main.async(){
                 self.performSegue(withIdentifier: "signup", sender: nil)
             }
-        }
+        }*/
+    }
+    
+    func segueToMain(){
+        //segue to login storyboard
+        
     }
     
    /* func loggedIn(){

@@ -9,18 +9,11 @@
 import Foundation
 
 class CurrentUser{
-    private static var sharedCurrentUser: CurrentUser{
-        let currentUser = CurrentUser(user: User.init())
-        return currentUser
-    }
     
-    private init(user: User) {
-        self.user = user
-    }
+    static let shared = CurrentUser()
+    var user: User?
     
-    let user: User
-    
-    class func shared() -> CurrentUser {
-        return sharedCurrentUser
+    private init(){
+        self.user = User.init()
     }
 }

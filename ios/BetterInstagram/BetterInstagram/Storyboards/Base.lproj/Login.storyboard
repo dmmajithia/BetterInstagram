@@ -22,10 +22,19 @@
                     </view>
                     <connections>
                         <segue destination="j5O-0R-csE" kind="show" identifier="signup" id="ef1-hl-EzU"/>
+                        <segue destination="FCC-rr-g0b" kind="show" identifier="segueToMain" id="Jg8-hN-gr8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Main-->
+        <scene sceneID="xhg-2V-Ggx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="FCC-rr-g0b" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Nf-YW-3Qg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1135" y="-245"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="rMU-vR-9eM">
@@ -60,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sy0-DA-Ci5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="890" y="10"/>
+            <point key="canvasLocation" x="1610" y="102"/>
         </scene>
     </scenes>
 </document>

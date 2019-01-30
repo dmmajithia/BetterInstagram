@@ -16,7 +16,9 @@ class HomeViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Api.checkIfUserExists(fbID: "")
         //userLabel.text = user.username
+        userLabel.text = CurrentUser.shared.user?.username
     }
     
 }

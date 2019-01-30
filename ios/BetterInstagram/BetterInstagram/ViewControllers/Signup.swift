@@ -19,14 +19,11 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        CurrentUser.shared().user.username = textField.text!
-        Api.addUserToDatabase(fbID: (AccessToken.current?.userId)!, username: textField.text!)
+        CurrentUser.shared.user!.username = textField.text!
+        Api.addUserToDatabase(fbID: (AccessToken.current?.userId)!, username: textField.text!, completion: {(json) -> () in
+            print(json)
+        })
     return true
-    }
-    
-    @IBAction func usernameEntered(_ sender: UITextField) {
-        CurrentUser.shared().user.username = sender.text!
-        Api.addUserToDatabase(fbID: CurrentUser.shared().user.facebookID, username: CurrentUser.shared().user.username)
     }
     
 }

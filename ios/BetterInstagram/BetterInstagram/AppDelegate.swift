@@ -21,27 +21,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.currentUser = User.init()
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        /*if let accessToken = AccessToken.current{
+        if AccessToken.current != nil{
             //user is already logged in to facebook
             //segue to main storyboard
             NSLog("segue to main")
-            Api.checkIfUserExists(fbID: (AccessToken.current?.userId)!)
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "mainVC")
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
+            Api.checkIfUserExists(fbID: (AccessToken.current?.userId)!, completion: {(json) -> () in
+                if(json["status"].bool!){
+                    //user exists
+                    CurrentUser.shared.user?.json(json: json)
+                    self.window = UIWindow(frame: UIScreen.main.bounds)
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "mainVC")
+                    self.window?.rootViewController = initialViewController
+                    self.window?.makeKeyAndVisible()
+                }
+                else{
+                    //user does not exist
+                    CurrentUser.shared.user?.facebookID = (AccessToken.current?.userId)!
+                    self.segueToLogin()
+                }
+            })
         }
-        else{*/
-            //segue to login storyboard
-            NSLog("segue to login")
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            let storyboard = UIStoryboard(name: "Login", bundle: nil)
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "loginVC")
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
-       // }
+        else{
+            self.segueToLogin()
+        }
         return true
+    }
+    
+    func segueToLogin(){
+        //segue to login storyboard
+        NSLog("segue to login")
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "loginVC")
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
