@@ -22,6 +22,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
         CurrentUser.shared.user!.username = textField.text!
         Api.addUserToDatabase(fbID: (AccessToken.current?.userId)!, username: textField.text!, completion: {(json) -> () in
             print(json)
+            CurrentUser.shared.user?.username = textField.text!
+            self.performSegue(withIdentifier: "segueToMain", sender: self)
         })
     return true
     }

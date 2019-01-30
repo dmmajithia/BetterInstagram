@@ -29,7 +29,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     }
     
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-        self.afterFBLogin()
+        //self.afterFBLogin()
     }
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {

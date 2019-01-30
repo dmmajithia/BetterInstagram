@@ -34,7 +34,7 @@
                 <viewControllerPlaceholder storyboardName="Main" id="FCC-rr-g0b" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Nf-YW-3Qg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1135" y="-245"/>
+            <point key="canvasLocation" x="2141" y="-271"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="rMU-vR-9eM">
@@ -65,6 +65,7 @@
                     </view>
                     <connections>
                         <outlet property="userTextField" destination="N9M-zY-ftN" id="PLH-w1-KjA"/>
+                        <segue destination="FCC-rr-g0b" kind="show" identifier="segueToMain" id="oCe-yG-lJC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sy0-DA-Ci5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -72,4 +73,7 @@
             <point key="canvasLocation" x="1610" y="102"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="oCe-yG-lJC"/>
+    </inferredMetricsTieBreakers>
 </document>
