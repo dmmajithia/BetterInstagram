@@ -18,7 +18,7 @@ The request you sent will be : "http://52.32.0.100/signup?appID=xxxxx&username=f
    * follow
    * unfollow
 
-3. The parameter I received now is still be the appID. But it will be better if you can send me user_id.
+3. The parameter I received now is 【appID】. But it will be better if you can send me 【user_id】.
 
 BY Jiahui
 
