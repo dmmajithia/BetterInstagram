@@ -28,6 +28,8 @@ public protocol SessionStateProvider: AnyObject {
     func request(for task: URLSessionTask) -> Request?
     func didCompleteTask(_ task: URLSessionTask)
     var serverTrustManager: ServerTrustManager? { get }
+    var redirectHandler: RedirectHandler? { get }
+    var cachedResponseHandler: CachedResponseHandler? { get }
     func credential(for task: URLSessionTask, protectionSpace: URLProtectionSpace) -> URLCredential?
 }
 
@@ -145,7 +147,11 @@ extension SessionDelegate: URLSessionTaskDelegate {
                          completionHandler: @escaping (URLRequest?) -> Void) {
         eventMonitor?.urlSession(session, task: task, willPerformHTTPRedirection: response, newRequest: request)
 
-        completionHandler(request)
+        if let redirectHandler = stateProvider?.request(for: task)?.redirectHandler ?? stateProvider?.redirectHandler {
+            redirectHandler.task(task, willBeRedirectedTo: request, for: response, completion: completionHandler)
+        } else {
+            completionHandler(request)
+        }
     }
 
     open func urlSession(_ session: URLSession, task: URLSessionTask, didFinishCollecting metrics: URLSessionTaskMetrics) {
@@ -185,7 +191,11 @@ extension SessionDelegate: URLSessionDataDelegate {
                          completionHandler: @escaping (CachedURLResponse?) -> Void) {
         eventMonitor?.urlSession(session, dataTask: dataTask, willCacheResponse: proposedResponse)
 
-        completionHandler(proposedResponse)
+        if let handler = stateProvider?.request(for: dataTask)?.cachedResponseHandler ?? stateProvider?.cachedResponseHandler {
+            handler.dataTask(dataTask, willCacheResponse: proposedResponse, completion: completionHandler)
+        } else {
+            completionHandler(proposedResponse)
+        }
     }
 }
 

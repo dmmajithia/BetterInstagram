@@ -7,15 +7,15 @@
 //
 
 import UIKit
-import FacebookLogin
-import FacebookCore
+//import FacebookLogin
+//import FacebookCore
 
-class LoginViewController: UIViewController, LoginButtonDelegate {
+class LoginViewController: UIViewController {
     
     var loggedIn: Bool!
     
     func afterFBLogin(){
-        Api.checkIfUserExists(fbID: (AccessToken.current?.userId)!, completion: {(json) -> () in
+        /*Api.checkIfUserExists(fbID: (AccessToken.current?.userId)!, completion: {(json) -> () in
             if(json["status"].bool!){
                 //user exists
                 CurrentUser.shared.user?.json(json: json)
@@ -25,32 +25,32 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
                 //user does not exist
                 self.performSegue(withIdentifier: "signup", sender: self)
             }
-        })
+        })*/
     }
     
-    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+    /*func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         //self.afterFBLogin()
     }
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
         
-    }
+    }*/
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loggedIn = false
         // Do any additional setup after loading the view, typically from a nib.
-        let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends ])
+        /*let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends ])
         loginButton.delegate = self
         loginButton.center = self.view.center
-        self.view.addSubview(loginButton)
+        self.view.addSubview(loginButton)*/
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if(AccessToken.current != nil){
+        /*if(AccessToken.current != nil){
             self.afterFBLogin()
-        }
+        }*/
         /*if (self.loggedIn){
             DispatchQueue.main.async(){
                 self.performSegue(withIdentifier: "signup", sender: nil)

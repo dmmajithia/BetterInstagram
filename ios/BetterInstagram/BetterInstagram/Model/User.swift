@@ -14,12 +14,18 @@ class User{
     var facebookID: String
     var accessToken: String
     var userID: String
+    var bio: String
+    var website: String
+    var location: String
     
     init(){ // for creating new empty user
         username = ""
         facebookID = ""
         accessToken = ""
         userID = ""
+        bio = ""
+        website = ""
+        location = ""
     }
     
     init(data: [String:String]){ //for data reading
@@ -27,11 +33,17 @@ class User{
         facebookID = data["facebookID"]!
         accessToken = data["accessToken"]!
         userID = data["userID"]!
+        bio = ""
+        website = ""
+        location = ""
     }
     
     func json(json: JSON){
-        self.facebookID = json["facebook_id"].string!
+        //self.facebookID = json["facebook_id"].string!
         self.username = json["username"].string!
         self.userID = String(json["user_id"].int!)
+        /*self.bio = json["bio"].string!
+        self.location = json["location"].string!
+        self.website = json["website"].string!*/
     }
 }

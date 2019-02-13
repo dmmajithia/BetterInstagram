@@ -6,10 +6,8 @@ target 'BetterInstagram' do
   use_frameworks!
 
   # Pods for BetterInstagram
-  pod 'FacebookCore'
-pod 'FacebookLogin'
-pod 'FacebookShare'
-pod 'OHMySQL'
+pod 'SwiftLocation', '~> 3.2.3'
+pod 'YPImagePicker'
 pod 'SwiftyJSON', '~> 4.0'
 pod 'Alamofire', '~> 5.0.0.beta.1'
 end

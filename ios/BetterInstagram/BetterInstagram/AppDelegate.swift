@@ -7,53 +7,47 @@
 //
 
 import UIKit
-import FacebookLogin
-import FacebookCore
+//import FacebookLogin
+//import FacebookCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var currentUser: User?
+    //var currentUser: User?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        self.currentUser = User.init()
-        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        if AccessToken.current != nil{
-            //user is already logged in to facebook
-            //segue to main storyboard
-            NSLog("segue to main")
-            Api.checkIfUserExists(fbID: (AccessToken.current?.userId)!, completion: {(json) -> () in
-                if(json["status"].bool!){
-                    //user exists
-                    CurrentUser.shared.user?.json(json: json)
-                    self.window = UIWindow(frame: UIScreen.main.bounds)
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "mainVC")
-                    self.window?.rootViewController = initialViewController
-                    self.window?.makeKeyAndVisible()
-                }
-                else{
-                    //user does not exist
-                    CurrentUser.shared.user?.facebookID = (AccessToken.current?.userId)!
-                    self.segueToLogin()
-                }
-            })
-        }
-        else{
-            self.segueToLogin()
-        }
+        //self.currentUser = User.init()
+        // first get appID from CloudKit
+        // for now, just use device ID
+        let appID = UIDevice.current.identifierForVendor!.uuidString
+        Api.makeRequest(endpoint: "login", data: ["appID" : appID], completion: {(json) -> () in
+            if(json["success"].bool!){
+                //user exists
+                CurrentUser.shared.user?.json(json: json)
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "mainVC")
+                self.window?.rootViewController = initialViewController
+                self.window?.makeKeyAndVisible()
+            }
+            else{
+                //user does not exist
+                //CurrentUser.shared.user?.facebookID = (AccessToken.current?.userId)!
+                self.segueToSignup()
+            }
+        })
         return true
     }
     
-    func segueToLogin(){
+    func segueToSignup(){
         //segue to login storyboard
-        NSLog("segue to login")
+        NSLog("segue to signup")
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "loginVC")
+        let storyboard = UIStoryboard(name: "Signup", bundle: nil)
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "signupVC")
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()
     }
@@ -80,11 +74,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    /*func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         let handled = SDKApplicationDelegate.shared.application(app, open: url, options: options)
         return handled
+    }*/
+
+
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
-
-
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 

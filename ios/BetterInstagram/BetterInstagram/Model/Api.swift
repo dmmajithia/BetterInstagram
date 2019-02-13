@@ -9,48 +9,34 @@
 import Foundation
 import SwiftyJSON
 import Alamofire
-import FacebookCore
+//import FacebookCore
 
 struct Api{
     
-    static func checkIfUserExists(fbID: String, completion: @escaping (JSON) -> ()){
-//        AF.request("http://52.32.0.100/?fbID="+("12345577nbfb")+"&function=check", method: .get).validate().responseJSON { response in
-//            switch response.result {
-//            case .success(let value):
-//                let json = JSON(value)
-//                print("JSON: \(json)")
-//                completion(json)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-        AF.request("http://52.32.0.100/?fbID="+(AccessToken.current?.userId)!+"&function=check", method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                completion(json)
-            case .failure(let error):
-                print(error)
-            }
-        }
-        //NSLog(response.debugDescription)
-        //return false
-    }
+    static let API_ENDPOINT = "http://52.32.0.100/"
+    static let appID = UIDevice.current.identifierForVendor!.uuidString
     
-    static func addUserToDatabase(fbID: String, username: String, completion: @escaping (JSON) -> ()){
-        AF.request("http://52.32.0.100/?fbID="+fbID+"&function=insert&username="+username, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                completion(json)
-            case .failure(let error):
-                print(error)
-                completion(JSON(response.result.value))
-            }
+    static func makeRequest(endpoint: String, data: [String:String], completion: @escaping (JSON) -> ()){
+        var URL = API_ENDPOINT + endpoint
+        var parameters = 0
+        for (key, value) in data{
+            URL += (parameters==0 ? "?" : "&") + key + "=" + value
+            parameters += 1
         }
+        AF.request(URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!,
+                   method: .get).validate().responseJSON { response in
+                    switch response.result {
+                    case .success(let value):
+                        let json = JSON(value)
+                        print(json)
+                        completion(json)
+                    case .failure(let error):
+                        print(error)
+                    }
+            }
     }
+
     
+ 
     
 }

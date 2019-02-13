@@ -21,7 +21,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="j5O-0R-csE" kind="show" identifier="signup" id="ef1-hl-EzU"/>
                         <segue destination="FCC-rr-g0b" kind="show" identifier="segueToMain" id="Jg8-hN-gr8"/>
                     </connections>
                 </viewController>
@@ -36,41 +35,5 @@
             </objects>
             <point key="canvasLocation" x="2141" y="-271"/>
         </scene>
-        <!--Signup View Controller-->
-        <scene sceneID="rMU-vR-9eM">
-            <objects>
-                <viewController id="j5O-0R-csE" customClass="SignupViewController" customModule="BetterInstagram" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0rO-2o-P2U">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N9M-zY-ftN">
-                                <rect key="frame" x="20" y="342" width="374" height="212"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="N9M-zY-ftN" firstAttribute="top" secondItem="QIV-xK-5Xd" secondAttribute="top" constant="298" id="3NV-Qk-jHa"/>
-                            <constraint firstItem="N9M-zY-ftN" firstAttribute="centerY" secondItem="0rO-2o-P2U" secondAttribute="centerY" id="bgK-55-odR"/>
-                            <constraint firstItem="N9M-zY-ftN" firstAttribute="trailing" secondItem="0rO-2o-P2U" secondAttribute="trailingMargin" id="tau-Mp-kQX"/>
-                            <constraint firstItem="N9M-zY-ftN" firstAttribute="leading" secondItem="0rO-2o-P2U" secondAttribute="leadingMargin" id="zF5-Kg-6eT"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="QIV-xK-5Xd"/>
-                    </view>
-                    <connections>
-                        <outlet property="userTextField" destination="N9M-zY-ftN" id="PLH-w1-KjA"/>
-                        <segue destination="FCC-rr-g0b" kind="show" identifier="segueToMain" id="oCe-yG-lJC"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sy0-DA-Ci5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1610" y="102"/>
-        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="oCe-yG-lJC"/>
-    </inferredMetricsTieBreakers>
 </document>
