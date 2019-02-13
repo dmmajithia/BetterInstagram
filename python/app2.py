@@ -3,9 +3,16 @@ from flask import request
 import pymysql
 import json
 import os
-import base64 
+import base64
 import datetime
+
+import os
+from flask import redirect, url_for
+from werkzeug.utils import secure_filename
 		
+UPLOAD_FOLDER = './pictures/'
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+
 app = Flask(__name__)
 	
 @app.route('/signup')
@@ -16,16 +23,18 @@ def signup():
 	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
 	cursor = db.cursor()
 	sql = "INSERT INTO user (appID, username) VALUES( %s, %s);" 
+	sql2 = "SELECT max(user_id) From user"
 	#sql = "INSERT INTO user (appID, username) VALUES( '" + appID + "', '" + username + "');"
 	try:
 		cursor.execute(sql, (appID, username))
+		cursor.execute(sql2)
+		result = cursor.fetchone()
 		db.commit()
-		success = True
+		dic = {"success": True, "user_id": result[0]}
 	except:
 		db.rollback()
-		success = False
+		dic = {"success": False}
 	db.close()
-	dic = {"success": success}
 	js = json.dumps(dic)
 	return js
 
@@ -150,6 +159,24 @@ def set_location():
 	js = json.dumps(dic)
 	return js
 
+@app.route('/search_username')
+def search_username():
+	username = request.args.get("username")
+	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+	cursor = db.cursor()
+	sql = "SELECT user_id FROM user WHERE username = %s"
+	try:
+		cursor.execute(sql, username)
+		result = cursor.fetchone()
+		db.commit()
+		dic = {"success": True, "user_id":result[0]}
+	except:
+		db.rollback()
+		dic = {"success": False}
+	db.close()
+	js = json.dumps(dic)
+	return js
+
 @app.route('/follow')
 def follow():
 	user_id = request.args.get("user_id")
@@ -198,23 +225,60 @@ def unfollow():
 	js = json.dumps(dic)
 	return js
 
-@app.route('/upload_picture')
-def upload_picture():
-	user_id = request.args.get("user_id")
-	picture = request.args.get("picture")
-	if not os.path.exists("./"+user_id):
-		os.mkdir("./"+user_id)
-	timestr = str(datetime.datetime.now()).replace(' ','_')
-	try:
-		file = open("./"+ user_id +"/" +  timestr + ".jpg", "wb")
-		#os.chown("./"+ user_id +"/" +  timestr + ".jpg", int(os.environ['SUDO_UID']),int(os.environ['SUDO_GID']))
-		file.write(base64.b64decode(picture))
-		file.close()
-		dic = {"success": True, "file_name": "./"+ user_id +"/" + timestr + ".jpg"}
-	except:
-		dic = {"success": False}
-	js = json.dumps(dic)
-	return js
+# @app.route('/upload_picture')
+# def upload_picture():
+# 	user_id = request.args.get("user_id")
+# 	picture = request.args.get("picture")
+# 	if not os.path.exists("./"+user_id):
+# 		os.mkdir("./"+user_id)
+# 	timestr = str(datetime.datetime.now()).replace(' ','_')
+# 	try:
+# 		file = open("./"+ user_id +"/" +  timestr + ".jpg", "wb")
+# 		#os.chown("./"+ user_id +"/" +  timestr + ".jpg", int(os.environ['SUDO_UID']),int(os.environ['SUDO_GID']))
+# 		file.write(base64.b64decode(picture))
+# 		file.close()
+# 		dic = {"success": True, "file_name": "./"+ user_id +"/" + timestr + ".jpg"}
+# 	except:
+# 		dic = {"success": False}
+# 	js = json.dumps(dic)
+# 	return js
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@app.route('/upload_picture', methods = ["GET", "POST"])
+def upload_file():
+    dic = {}
+    user_id = request.args.get("user_id")
+    if not os.path.exists("./pictures/" + user_id):
+        os.mkdir("./pictures/" + user_id)
+    timestr = str(datetime.datetime.now()).replace(' ', '_')
+
+    if request.method == 'POST':
+        # check if the post request has the file part
+        if 'file' not in request.files:
+            # flash('No file part')
+            return request.files
+            # return "file not in request.files"
+        file = request.files['file']
+        # if user does not select file, browser also
+        # submit a empty part without filename
+        if file.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            try:
+                filename = secure_filename(timestr + '_' + file.filename)
+                filepath = UPLOAD_FOLDER + user_id
+                # return(filepath)
+                file.save(os.path.join(filepath, filename))
+                dic = {"success": True, "file_name": os.path.join(filepath, filename)}
+                #return redirect(url_for('upload_file', filename=filename))
+            except:
+                dic = {"success": False}
+    js = json.dumps(dic)
+    return js
 
 
 @app.route('/set_profile_picture')
@@ -264,56 +328,12 @@ def get_profile_data():
 		else:
 			is_followed = True
 		dic = {"success": True, "username": result[0], "fbID": result[1], "bio": result[2], "website": result[3], "location": result[4], 
-		       "profile_picture_url":result[5], "num_of_post": result[6], "num_of_following": result[7], "num_of_follower": result[8], "is_follwed": is_followed}
+		       "profile_picture_url":result[5], "num_of_post": result[6], "num_of_following": result[7], "num_of_follower": result[8], "is_followed": is_followed}
 	db.close()
 	js = json.dumps(dic)
 	return js
 
-# @app.route('/add_post')
-# def add_post():
-# 	user_id = request.args.get("user_id")
-# 	file_name = request.args.get("file_name")
-# 	caption = request.args.get("caption")
-# 	mood = request.args.get("mood")
-# 	timestamp = request.args.get("timestamp")
-# 	location = request.args.get("location")
-# 	hashtags = request.args.get("hashtags")
-# 	tags = request.args.get("tags")
-# 	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
-# 	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
-# 	cursor = db.cursor()
-# 	sql1 = "INSERT INTO post (user_id, filename, caption, mood, post_time, location) VALUES( %s, %s, %s, %s, %s, %s)"
-# 	sql2 = "INSERT INTO hashtags (user_id, filename, caption, mood, post_time, location) VALUES( %s, %s, %s, %s, %s, %s)"
-# 	try:
-# 		cursor.execute(sql, (user_id, file_name, caption, mood, timestamp, location))
-# 		success = True
-# 		db.commit()
-# 	except:
-# 		db.rollback()
-# 		success = False
-# 	db.close()
-# 	dic = {"success": success}
-# 	js = json.dumps(dic)
-# 	return js
 
-# def get_post_data():
-# 	user_id = request.args.get("user_id")
-# 	db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
-# 	#db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
-# 	cursor = db.cursor()
-# 	sql = "INSERT INTO post (user_id, file_name, caption, mood, post_time, location, hashtags, tags) VALUES( %s, %s, %s, %s, %s, %s, %s, %s)"
-# 	try:
-# 		cursor.execute(sql, appID)
-# 		result = cursor.fetchone()
-# 		db.commit()
-# 		dic = {"success": True, "username": result[0], "fbID": result[1], "bio": result[2], "website": result[3], "location": result[4], 
-# 	       "profile_picture_url":result[5], "num_of_post": result[6], "num_of_following": result[7], "num_of_follower": result[8]}
-# 	except:
-# 		db.rollback()
-# 		dic = {"success": False}
-# 	db.close()
-# 	js = json.dumps(dic)
-# 	return js
 
 if __name__ == '__main__':
 	app.run(debug=True)
