@@ -14,6 +14,10 @@ UPLOAD_FOLDER = './pictures/'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return ("Hello, Better Instagram!")
 	
 @app.route('/signup')
 def signup():
@@ -35,6 +39,28 @@ def signup():
 		db.rollback()
 		dic = {"success": False}
 	db.close()
+	js = json.dumps(dic)
+	return js
+
+@app.route('/checkusername')
+def checkusername():
+	username = request.args.get("username")
+	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
+	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+	cursor = db.cursor()
+	sql = "SELECT username From user WHERE username = %s" 
+	#sql = "INSERT INTO user (appID, username) VALUES( '" + appID + "', '" + username + "');"
+	try:
+		cursor.execute(sql, username)
+		result = cursor.fetchone()
+		db.commit()
+	except:
+		db.rollback()
+	db.close()
+	if result == None:
+		dic = {"existed": False}
+	else:
+		dic = {"existed": True}
 	js = json.dumps(dic)
 	return js
 
@@ -273,7 +299,8 @@ def upload_file():
                 filepath = UPLOAD_FOLDER + user_id
                 # return(filepath)
                 file.save(os.path.join(filepath, filename))
-                dic = {"success": True, "file_name": os.path.join(filepath, filename)}
+                #dic = {"success": True, "file_name": os.path.join(filepath, filename)}
+                dic = {"success": True, "file_name": filename}
                 #return redirect(url_for('upload_file', filename=filename))
             except:
                 dic = {"success": False}
@@ -337,6 +364,7 @@ def get_profile_data():
 
 if __name__ == '__main__':
 	app.run(debug=True)
+
 
 
 
