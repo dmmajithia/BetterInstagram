@@ -205,6 +205,7 @@ def search_username():
 
 @app.route('/follow')
 def follow():
+	#user_id follow user_id2
 	user_id = request.args.get("user_id")
 	user_id2 = request.args.get("user_id2")
 	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
@@ -214,7 +215,7 @@ def follow():
 	sql2 = "UPDATE user SET num_of_following =  num_of_following + 1 WHERE user_id = %s"
 	sql3 = "UPDATE user SET num_of_follower =  num_of_follower + 1 WHERE user_id = %s" 
 	try:
-		cursor.execute(sql1, (user_id, user_id2))
+		cursor.execute(sql1, (user_id2, user_id))
 		cursor.execute(sql2, user_id)
 		cursor.execute(sql3, user_id2)
 		db.commit()
@@ -229,6 +230,7 @@ def follow():
 
 @app.route('/unfollow')
 def unfollow():
+	# user_id unfollow user_id2
 	user_id = request.args.get("user_id")
 	user_id2 = request.args.get("user_id2")
 	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
@@ -238,7 +240,7 @@ def unfollow():
 	sql2 = "UPDATE user SET num_of_following =  num_of_following - 1 WHERE user_id = %s"
 	sql3 = "UPDATE user SET num_of_follower =  num_of_follower - 1 WHERE user_id = %s"
 	try:
-		cursor.execute(sql1, (user_id, user_id2))
+		cursor.execute(sql1, (user_id2, user_id1))
 		cursor.execute(sql2, user_id)
 		cursor.execute(sql3, user_id2)
 		db.commit()
