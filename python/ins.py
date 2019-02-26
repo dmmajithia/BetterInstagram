@@ -450,5 +450,29 @@ def get_user_following():
 	js = json.dumps(dic)
 	return js
 
+@app.route('/feed/get_activity_feed')
+def get_activity_feed():
+	user_id = request.args.get("user_id")
+	last_post_id = request.args.get("last_post_id")
+	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+	cursor = db.cursor()
+	sql = "SELECT P.post_id FROM post P WHERE P.user_id in (SELECT R.user_id FROM relationship R WHERE R.follower_id = %s)\
+			                                  AND P.post_id > %s ORDER BY P.post_time DESC LIMIT 10"
+	try:
+		cursor.execute(sql, (user_id, last_post_id))
+		result = cursor.fetchall()
+		success = True
+		db.commit()
+	except:
+		db.rollback()
+		success = False
+	if success == False:
+		dic = {"success": False}
+	else:
+		dic = {"success": True, "post_id": [result[i][0] for i in range(len(result))]}
+	db.close()
+	js = json.dumps(dic)
+	return js
+
 if __name__ == '__main__':
 	app.run(debug=True)
