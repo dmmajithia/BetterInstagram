@@ -597,6 +597,10 @@ def add_post():
         success = False
     db.close()
 
+    dic = {"success": success}
+    js = json.dumps(dic)
+    return js
+    
 @app.route('/post/get_posts')
 def get_posts():
     user_id = request.args.get("user_id")
