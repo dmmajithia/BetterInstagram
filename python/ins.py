@@ -388,7 +388,7 @@ def get_user_followers():
     db = pymysql.connect(host="localhost", user="root", password="123456", db="dbbig")
     cursor = db.cursor()
     sql = "SELECT U.user_id, U.username, U.profile_picture FROM user U WHERE U.user_id \
-           IN (SELECT R.follower_id FROM relationship R WHERE R.user_id = %s);"
+           IN (SELECT R.follower_id FROM relationship R WHERE R.user_id = %s ORDER BY time DESC);"
     try:
         cursor.execute(sql, user_id)
         result = cursor.fetchall()
@@ -415,7 +415,7 @@ def get_user_followings():
     db = pymysql.connect(host="localhost", user="root", password="123456", db="dbbig")
     cursor = db.cursor()
     sql = "SELECT U.user_id, U.username, U.profile_picture FROM user U WHERE U.user_id \
-            IN (SELECT R.user_id FROM relationship R WHERE R.follower_id = %s);"
+            IN (SELECT R.user_id FROM relationship R WHERE R.follower_id = %s ORDER BY time DESC);"
     try:
         cursor.execute(sql, user_id)
         result = cursor.fetchall()
