@@ -562,9 +562,6 @@ def add_post():
     db = pymysql.connect(host="localhost", user="root", password="123456", db="dbbig")
     cursor = db.cursor()
 
-    db = pymysql.connect(host="127.0.0.1", port = tunnel.local_bind_port,user="root", password="123456", db="dbbig")
-    cursor = db.cursor()
-
     sql = "INSERT INTO post (user_id, file_url, caption, post_time, mood, location) VALUES (%s, %s, %s, %s, %s, %s);"
     sql2 = "SELECT LAST_INSERT_ID();"
     sql3 = "INSERT INTO hashtag (post_id, hashtag) VALUES (%s, %s)"
