@@ -360,7 +360,7 @@ def get_profile_data():
     try:
         cursor.execute(sql1, user_id2)
         result = cursor.fetchone()
-        cursor.execute(sql2, (user_id, user_id2))
+        cursor.execute(sql2, (user_id2, user_id))
         result2 = cursor.fetchone()
         db.commit()
     except:
