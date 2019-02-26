@@ -505,7 +505,7 @@ def get_comments():
 	post_id = request.args.get("post_id")
 	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
 	cursor = db.cursor()
-	sql = "SELECT A.activity_user_id, U.username, A.text, A.activity_time FROM activity A, user U WHERE A.post_id = %s \
+	sql = "SELECT A.activity_user_id, U.username, A.text, A.activity_time FROM activity A, user U WHERE A.post_id = %s\
 	       AND A.activity_user_id = U.user_id AND A.is_like = 0"
 	try:
 		cursor.execute(sql, post_id)
