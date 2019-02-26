@@ -574,7 +574,7 @@ def add_post():
     sql4 = "INSERT INTO peopletag (post_id, tag_user_id) VALUES (%s, %s)"
     for i in range(len(people_tag_list)-1):
         sql4 = sql4 + ", (%s, %s) "
-
+    sql5 = "UPDATE user SET num_of_post =  num_of_post + 1 WHERE user_id = %s"
     try:
         cursor.execute(sql, (user_id, file_url, caption, timestamp, mood, location))
         cursor.execute(sql2)
@@ -589,7 +589,7 @@ def add_post():
         for i in range(len(people_tag_list)):
             para_sql4 += (post_id, people_tag_list[i],)
         cursor.execute(sql4, para_sql4)
-
+        cursor.execute(sql5, user_id)
         db.commit()
         success = True
     except:
