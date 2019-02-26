@@ -413,36 +413,38 @@ def get_profile_data():
 @app.route('/relationship/get_user_followers')
 def get_user_followers():
 	user_id = request.args.get("user_id")
-	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
 	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
 	cursor = db.cursor()
-	sql = "SELECT user_id, username, profile_picture_url FROM user WHERE username \
-		in (SELECT user_id FROM relationship WHERE follower_id = %s)"
-	try:
-		cursor.execute(sql, user_id)
-		result = cursor.fetchall()
-		db.commit()
-		dic = {"success": True, "user_id":result[0], "username": result[1], "profile_picture_url": result[2]}
-	except:
-		db.rollback()
-		dic = {"success": False}
-	db.close()
-	js = json.dumps(dic)
-	return js
+    sql = "SELECT U.user_id, U.username, U.profile_picture FROM user U WHERE U.user_id \
+    		IN (SELECT R.user_id FROM relationship R WHERE R.follower_id = %s);"
+    try:
+        cursor.execute(sql, user_id)
+        result = cursor.fetchall()
+        db.commit()
+        dic = {"success": True}
+        for index, item in enumerate(result):
+            dic[index] = item
+    except:
+        db.rollback()
+        dic = {"success": False}
+    db.close()
+    js = json.dumps(dic)
+
+    return js
 
 @app.route('/relationship/get_user_following')
 def get_user_following():
 	user_id = request.args.get("user_id")
-	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
 	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
 	cursor = db.cursor()
-	sql = "SELECT user_id, username, profile_picture_url FROM user WHERE username \
-		in (SELECT follower_id FROM relationship WHERE user_id = %s)"
+	sql = "SELECT U.user_id, U.username, U.profile_picture FROM user U WHERE U.user_id \
+			IN (SELECT R.follower_id FROM relationship R WHERE R.user_id = %s);"
 	try:
 		cursor.execute(sql, user_id)
 		result = cursor.fetchall()
 		db.commit()
-		dic = {"success": True, "user_id":result[0], "username": result[1], "profile_picture_url": result[2]}
+        for index, item in enumerate(result):
+            dic[index] = item
 	except:
 		db.rollback()
 		dic = {"success": False}
@@ -522,48 +524,6 @@ def get_comments():
 		for i in range(len(result)):
 			comments_list.append({"user_id": result[i][0], "username": result[i][1], "text":result[i][2], "timestamp":result[i][3]})
 		dic = {"success": True, "comments": comments_list}
-	db.close()
-	js = json.dumps(dic)
-	return js
-
-@app.route('/relationship/get_user_followers')
-def get_user_followers():
-	user_id = request.args.get("user_id")
-	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
-	cursor = db.cursor()
-    sql = "SELECT U.user_id, U.username, U.profile_picture FROM user U WHERE U.user_id \
-    		IN (SELECT R.user_id FROM relationship R WHERE R.follower_id = %s);"
-    try:
-        cursor.execute(sql, user_id)
-        result = cursor.fetchall()
-        db.commit()
-        dic = {"success": True}
-        for index, item in enumerate(result):
-            dic[index] = item
-    except:
-        db.rollback()
-        dic = {"success": False}
-    db.close()
-    js = json.dumps(dic)
-
-    return js
-
-@app.route('/relationship/get_user_following')
-def get_user_following():
-	user_id = request.args.get("user_id")
-	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
-	cursor = db.cursor()
-	sql = "SELECT U.user_id, U.username, U.profile_picture FROM user U WHERE U.user_id \
-			IN (SELECT R.follower_id FROM relationship R WHERE R.user_id = %s);"
-	try:
-		cursor.execute(sql, user_id)
-		result = cursor.fetchall()
-		db.commit()
-        for index, item in enumerate(result):
-            dic[index] = item
-	except:
-		db.rollback()
-		dic = {"success": False}
 	db.close()
 	js = json.dumps(dic)
 	return js
