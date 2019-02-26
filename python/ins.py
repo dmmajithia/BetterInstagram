@@ -633,8 +633,10 @@ def add_like():
     db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
     cursor = db.cursor()
     sql = "INSERT INTO activity (post_id, activity_user_id, is_like, activity_time) VALUES( %s, %s, %s, %s)"
+    sql2 = "UPDATE post SET num_of_like =  num_of_like + 1 WHERE post_id = %s"
     try:
         cursor.execute(sql, (post_id, activity_user_id, 1, timestamp))
+        cursor.execute(sql2, post_id)
         dic = {"success": True}
         db.commit()
     except:
@@ -653,8 +655,10 @@ def add_comment():
     db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
     cursor = db.cursor()
     sql = "INSERT INTO activity (post_id, activity_user_id, is_like, text,activity_time) VALUES( %s, %s,%s, %s, %s)"
+    sql2 = "UPDATE post SET num_of_comment =  num_of_comment + 1 WHERE post_id = %s"
     try:
         cursor.execute(sql, (post_id, activity_user_id, 0,text, timestamp))
+        cursor.execute(sql2, post_id)
         dic = {"success": True}
         db.commit()
     except:
