@@ -597,5 +597,68 @@ def add_post():
         success = False
     db.close()
 
+@app.route('/post/get_posts')
+def get_posts():
+    user_id = request.args.get("user_id")
+    last_post_id = request.args.get("last_post_id")
+    db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+    cursor = db.cursor()
+    sql = "SELECT post_id FROM post  WHERE user_id = %s\
+           AND post_id > %s ORDER BY post_time DESC LIMIT 10"
+    try:
+        cursor.execute(sql, (user_id, last_post_id))
+        result = cursor.fetchall()
+        success = True
+        db.commit()
+    except:
+        db.rollback()
+        success = False
+    if success == False:
+        dic = {"success": False}
+    else:
+        dic = {"success": True, "post_id": [result[i][0] for i in range(len(result))]}
+    db.close()
+    js = json.dumps(dic)
+    return js
+
+@app.route('/post/add_like')
+def add_like():
+    post_id = request.args.get("post_id")
+    activity_user_id = request.args.get("user_id")
+    timestamp = request.args.get("timestamp")
+    db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+    cursor = db.cursor()
+    sql = "INSERT INTO activity (post_id, activity_user_id, is_like, activity_time) VALUES( %s, %s, %s, %s)"
+    try:
+        cursor.execute(sql, (post_id, activity_user_id, 1, timestamp))
+        dic = {"success": True}
+        db.commit()
+    except:
+        db.rollback()
+        dic = {"success": False}
+    db.close()
+    js = json.dumps(dic)
+    return js
+
+@app.route('/post/add_comment')
+def add_comment():
+    post_id = request.args.get("post_id")
+    activity_user_id = request.args.get("user_id")
+    timestamp = request.args.get("timestamp")
+    text = request.args.get("text")
+    db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+    cursor = db.cursor()
+    sql = "INSERT INTO activity (post_id, activity_user_id, is_like, text,activity_time) VALUES( %s, %s,%s, %s, %s)"
+    try:
+        cursor.execute(sql, (post_id, activity_user_id, 0,text, timestamp))
+        dic = {"success": True}
+        db.commit()
+    except:
+        db.rollback()
+        dic = {"success": False}
+    db.close()
+    js = json.dumps(dic)
+    return js
+
 if __name__ == '__main__':
     app.run(debug=True)
