@@ -538,5 +538,35 @@ def get_comments():
 	js = json.dumps(dic)
 	return js
 
+@app.route('/post/get_post_data')
+def get_user_following():
+	post_id = request.args.get("post_id")
+	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+	cursor = db.cursor()
+	sql = "SELECT user_id, file_url, caption, post_time, mood, location, num_of_like, num_of_comment FROM post WHERE post_id = %s"
+	sql2 = "SELECT hashtag FROM hashtag WHERE post_id = %s"
+	sql3 = "SELECT tag_user_id FROM peopletag WHERE post_id = %s"
+	try:
+		cursor.execute(sql, post_id)
+		result = cursor.fetchone()
+		cursor.execute(sql2, post_id)
+		result2 = cursor.fetchall()
+		cursor.execute(sql3, post_id)
+		result3 = cursor.fetchall()
+		success = True
+		db.commit()
+	except:
+		db.rollback()
+		success = False
+	if success == False:
+		dic = {"success": False}
+	else:
+		dic = {"success": True, "user_id":result[0], "file_name":result[1], "caption":result[2], "mood":result[4],
+		       "timestamp":result[3], "location":result[5], "hashtags":[result2[i][0] for i in range(len(result2))],
+		       "tags":[result3[i][0] for i in range(len(result3))], "num_of_comments":result[7], "num_of_likes":result[6]}
+	db.close()
+	js = json.dumps(dic)
+	return js
+
 if __name__ == '__main__':
 	app.run(debug=True)
