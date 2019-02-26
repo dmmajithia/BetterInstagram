@@ -19,7 +19,7 @@ app = Flask(__name__)
 def index():
     return ("Hello, Better Instagram!")
 	
-@app.route('/signup')
+@app.route('/login/signup')
 def signup():
 	appID = request.args.get("appID")
 	username = request.args.get("username")
@@ -42,8 +42,8 @@ def signup():
 	js = json.dumps(dic)
 	return js
 
-@app.route('/checkusername')
-def checkusername():
+@app.route('/login/check_username')
+def check_username():
 	username = request.args.get("username")
 	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
 	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
@@ -64,7 +64,7 @@ def checkusername():
 	js = json.dumps(dic)
 	return js
 
-@app.route('/connect_facebook')
+@app.route('/profile/connect_facebook')
 def connect_facebook():
 	user_id = request.args.get("user_id")
 	fbID = request.args.get("fbID")
@@ -85,7 +85,7 @@ def connect_facebook():
 	js = json.dumps(dic)
 	return js
 
-@app.route('/login')
+@app.route('/login/login')
 def login():
 	appID = request.args.get("appID")
 	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
@@ -106,8 +106,8 @@ def login():
 	js = json.dumps(dic)
 	return js
 
-@app.route('/deleteuser')
-def deleteuser():
+@app.route('/other/delete_user')
+def delete_user():
 	user_id = request.args.get("user_id")
 	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
 	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
@@ -125,157 +125,11 @@ def deleteuser():
 	js = json.dumps(dic)
 	return js
 
-@app.route('/set_bio')
-def set_bio():
-	user_id = request.args.get("user_id")
-	bio = request.args.get("bio")
-	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
-	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
-	cursor = db.cursor()
-	sql = "UPDATE user SET bio = %s WHERE user_id = %s" 
-	try:
-		cursor.execute(sql, (bio, user_id))
-		db.commit()
-		success = True
-	except:
-		db.rollback()
-		success = False
-	db.close()
-	dic = {"success": success}
-	js = json.dumps(dic)
-	return js
-
-@app.route('/set_website')
-def set_website():
-	user_id = request.args.get("user_id")
-	website = request.args.get("website")
-	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
-	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
-	cursor = db.cursor()
-	sql = "UPDATE user SET website = %s WHERE user_id = %s" 
-	try:
-		cursor.execute(sql, (website, user_id))
-		db.commit()
-		success = True
-	except:
-		db.rollback()
-		success = False
-	db.close()
-	dic = {"success": success}
-	js = json.dumps(dic)
-	return js
-
-@app.route('/set_location')
-def set_location():
-	user_id = request.args.get("user_id")
-	location = request.args.get("location")
-	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
-	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
-	cursor = db.cursor()
-	sql = "UPDATE user SET location = %s WHERE user_id = %s" 
-	try:
-		cursor.execute(sql, (location, user_id))
-		db.commit()
-		success = True
-	except:
-		db.rollback()
-		success = False
-	db.close()
-	dic = {"success": success}
-	js = json.dumps(dic)
-	return js
-
-@app.route('/search_username')
-def search_username():
-	username = request.args.get("username")
-	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
-	cursor = db.cursor()
-	sql = "SELECT user_id FROM user WHERE username = %s"
-	try:
-		cursor.execute(sql, username)
-		result = cursor.fetchone()
-		db.commit()
-		dic = {"success": True, "user_id":result[0]}
-	except:
-		db.rollback()
-		dic = {"success": False}
-	db.close()
-	js = json.dumps(dic)
-	return js
-
-@app.route('/follow')
-def follow():
-	#user_id follow user_id2
-	user_id = request.args.get("user_id")
-	user_id2 = request.args.get("user_id2")
-	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
-	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
-	cursor = db.cursor()
-	sql1 = "INSERT INTO relationship (user_id, follower_id) VALUES( %s, %s)"
-	sql2 = "UPDATE user SET num_of_following =  num_of_following + 1 WHERE user_id = %s"
-	sql3 = "UPDATE user SET num_of_follower =  num_of_follower + 1 WHERE user_id = %s" 
-	try:
-		cursor.execute(sql1, (user_id2, user_id))
-		cursor.execute(sql2, user_id)
-		cursor.execute(sql3, user_id2)
-		db.commit()
-		success = True
-	except:
-		db.rollback()
-		success = False
-	db.close()
-	dic = {"success": success}
-	js = json.dumps(dic)
-	return js
-
-@app.route('/unfollow')
-def unfollow():
-	# user_id unfollow user_id2
-	user_id = request.args.get("user_id")
-	user_id2 = request.args.get("user_id2")
-	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
-	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
-	cursor = db.cursor()
-	sql1 = "DELETE FROM relationship WHERE (user_id= %s AND follower_id= %s)"
-	sql2 = "UPDATE user SET num_of_following =  num_of_following - 1 WHERE user_id = %s"
-	sql3 = "UPDATE user SET num_of_follower =  num_of_follower - 1 WHERE user_id = %s"
-	try:
-		cursor.execute(sql1, (user_id2, user_id1))
-		cursor.execute(sql2, user_id)
-		cursor.execute(sql3, user_id2)
-		db.commit()
-		success = True
-	except:
-		db.rollback()
-		success = False
-	db.close()
-	dic = {"success": success}
-	js = json.dumps(dic)
-	return js
-
-# @app.route('/upload_picture')
-# def upload_picture():
-# 	user_id = request.args.get("user_id")
-# 	picture = request.args.get("picture")
-# 	if not os.path.exists("./"+user_id):
-# 		os.mkdir("./"+user_id)
-# 	timestr = str(datetime.datetime.now()).replace(' ','_')
-# 	try:
-# 		file = open("./"+ user_id +"/" +  timestr + ".jpg", "wb")
-# 		#os.chown("./"+ user_id +"/" +  timestr + ".jpg", int(os.environ['SUDO_UID']),int(os.environ['SUDO_GID']))
-# 		file.write(base64.b64decode(picture))
-# 		file.close()
-# 		dic = {"success": True, "file_name": "./"+ user_id +"/" + timestr + ".jpg"}
-# 	except:
-# 		dic = {"success": False}
-# 	js = json.dumps(dic)
-# 	return js
-
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/upload_picture', methods = ["GET", "POST"])
+@app.route('/profile/upload_picture', methods = ["GET", "POST"])
 def upload_file():
     dic = {}
     user_id = request.args.get("user_id")
@@ -309,8 +163,7 @@ def upload_file():
     js = json.dumps(dic)
     return js
 
-
-@app.route('/set_profile_picture')
+@app.route('/profile/set_profile_picture')
 def set_profile_picture():
 	user_id = request.args.get("user_id")
 	file_name = request.args.get("file_name")
@@ -330,7 +183,202 @@ def set_profile_picture():
 	js = json.dumps(dic)
 	return js
 
-@app.route('/get_profile_data')
+@app.route('/profile/set_bio')
+def set_bio():
+	user_id = request.args.get("user_id")
+	bio = request.args.get("bio")
+	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
+	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+	cursor = db.cursor()
+	sql = "UPDATE user SET bio = %s WHERE user_id = %s" 
+	try:
+		cursor.execute(sql, (bio, user_id))
+		db.commit()
+		success = True
+	except:
+		db.rollback()
+		success = False
+	db.close()
+	dic = {"success": success}
+	js = json.dumps(dic)
+	return js
+
+@app.route('/profile/set_website')
+def set_website():
+	user_id = request.args.get("user_id")
+	website = request.args.get("website")
+	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
+	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+	cursor = db.cursor()
+	sql = "UPDATE user SET website = %s WHERE user_id = %s" 
+	try:
+		cursor.execute(sql, (website, user_id))
+		db.commit()
+		success = True
+	except:
+		db.rollback()
+		success = False
+	db.close()
+	dic = {"success": success}
+	js = json.dumps(dic)
+	return js
+
+@app.route('/profile/set_location')
+def set_location():
+	user_id = request.args.get("user_id")
+	location = request.args.get("location")
+	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
+	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+	cursor = db.cursor()
+	sql = "UPDATE user SET location = %s WHERE user_id = %s" 
+	try:
+		cursor.execute(sql, (location, user_id))
+		db.commit()
+		success = True
+	except:
+		db.rollback()
+		success = False
+	db.close()
+	dic = {"success": success}
+	js = json.dumps(dic)
+	return js
+
+@app.route('/search/search_username')
+def search_username():
+	username = request.args.get("username")
+	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+	cursor = db.cursor()
+	sql = "SELECT user_id FROM user WHERE username = %s"
+	try:
+		cursor.execute(sql, username)
+		result = cursor.fetchone()
+		db.commit()
+		dic = {"success": True, "user_id":result[0]}
+	except:
+		db.rollback()
+		dic = {"success": False}
+	db.close()
+	js = json.dumps(dic)
+	return js
+#----------follow------------#
+# @app.route('/relationship/follow')
+# def follow():
+# 	user_id = request.args.get("user_id")
+# 	user_id2 = request.args.get("user_id2")
+# 	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
+# 	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+# 	cursor = db.cursor()
+# 	sql1 = "INSERT INTO relationship (user_id, follower_id) VALUES( %s, %s)"
+# 	sql2 = "UPDATE user SET num_of_following =  num_of_following + 1 WHERE user_id = %s"
+# 	sql3 = "UPDATE user SET num_of_follower =  num_of_follower + 1 WHERE user_id = %s" 
+# 	try:
+# 		cursor.execute(sql1, (user_id, user_id2))
+# 		cursor.execute(sql2, user_id)
+# 		cursor.execute(sql3, user_id2)
+# 		db.commit()
+# 		success = True
+# 	except:
+# 		db.rollback()
+# 		success = False
+# 	db.close()
+# 	dic = {"success": success}
+# 	js = json.dumps(dic)
+# 	return js
+
+# @app.route('/relationship/unfollow')
+# def unfollow():
+# 	user_id = request.args.get("user_id")
+# 	user_id2 = request.args.get("user_id2")
+# 	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
+# 	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+# 	cursor = db.cursor()
+# 	sql1 = "DELETE FROM relationship WHERE (user_id= %s AND follower_id= %s)"
+# 	sql2 = "UPDATE user SET num_of_following =  num_of_following - 1 WHERE user_id = %s"
+# 	sql3 = "UPDATE user SET num_of_follower =  num_of_follower - 1 WHERE user_id = %s"
+# 	try:
+# 		cursor.execute(sql1, (user_id, user_id2))
+# 		cursor.execute(sql2, user_id)
+# 		cursor.execute(sql3, user_id2)
+# 		db.commit()
+# 		success = True
+# 	except:
+# 		db.rollback()
+# 		success = False
+# 	db.close()
+# 	dic = {"success": success}
+# 	js = json.dumps(dic)
+# 	return js
+
+
+@app.route('/relationship/follow')
+def follow():
+	#user_id follow user_id2
+	user_id = request.args.get("user_id")
+	user_id2 = request.args.get("user_id2")
+	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
+	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+	cursor = db.cursor()
+	sql1 = "INSERT INTO relationship (user_id, follower_id) VALUES( %s, %s)"
+	sql2 = "UPDATE user SET num_of_following =  num_of_following + 1 WHERE user_id = %s"
+	sql3 = "UPDATE user SET num_of_follower =  num_of_follower + 1 WHERE user_id = %s" 
+	try:
+		cursor.execute(sql1, (user_id2, user_id))
+		cursor.execute(sql2, user_id)
+		cursor.execute(sql3, user_id2)
+		db.commit()
+		success = True
+	except:
+		db.rollback()
+		success = False
+	db.close()
+	dic = {"success": success}
+	js = json.dumps(dic)
+	return js
+
+@app.route('/relationship/unfollow')
+def unfollow():
+	# user_id unfollow user_id2
+	user_id = request.args.get("user_id")
+	user_id2 = request.args.get("user_id2")
+	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
+	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+	cursor = db.cursor()
+	sql1 = "DELETE FROM relationship WHERE (user_id= %s AND follower_id= %s)"
+	sql2 = "UPDATE user SET num_of_following =  num_of_following - 1 WHERE user_id = %s"
+	sql3 = "UPDATE user SET num_of_follower =  num_of_follower - 1 WHERE user_id = %s"
+	try:
+		cursor.execute(sql1, (user_id2, user_id1))
+		cursor.execute(sql2, user_id)
+		cursor.execute(sql3, user_id2)
+		db.commit()
+		success = True
+	except:
+		db.rollback()
+		success = False
+	db.close()
+	dic = {"success": success}
+	js = json.dumps(dic)
+	return js
+#----------------------
+# @app.route('/upload_picture')
+# def upload_picture():
+# 	user_id = request.args.get("user_id")
+# 	picture = request.args.get("picture")
+# 	if not os.path.exists("./"+user_id):
+# 		os.mkdir("./"+user_id)
+# 	timestr = str(datetime.datetime.now()).replace(' ','_')
+# 	try:
+# 		file = open("./"+ user_id +"/" +  timestr + ".jpg", "wb")
+# 		#os.chown("./"+ user_id +"/" +  timestr + ".jpg", int(os.environ['SUDO_UID']),int(os.environ['SUDO_GID']))
+# 		file.write(base64.b64decode(picture))
+# 		file.close()
+# 		dic = {"success": True, "file_name": "./"+ user_id +"/" + timestr + ".jpg"}
+# 	except:
+# 		dic = {"success": False}
+# 	js = json.dumps(dic)
+# 	return js
+
+@app.route('/profile/get_profile_data')
 def get_profile_data():
 	user_id = request.args.get("user_id")
 	user_id2 = request.args.get("user_id2")
@@ -362,12 +410,45 @@ def get_profile_data():
 	js = json.dumps(dic)
 	return js
 
+@app.route('/relationship/get_user_followers')
+def get_user_followers():
+	user_id = request.args.get("user_id")
+	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
+	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+	cursor = db.cursor()
+	sql = "SELECT user_id, username, profile_picture_url FROM user WHERE username \
+		in (SELECT user_id FROM relationship WHERE follower_id = %s)"
+	try:
+		cursor.execute(sql, user_id)
+		result = cursor.fetchall()
+		db.commit()
+		dic = {"success": True, "user_id":result[0], "username": result[1], "profile_picture_url": result[2]}
+	except:
+		db.rollback()
+		dic = {"success": False}
+	db.close()
+	js = json.dumps(dic)
+	return js
 
+@app.route('/relationship/get_user_following')
+def get_user_following():
+	user_id = request.args.get("user_id")
+	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
+	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+	cursor = db.cursor()
+	sql = "SELECT user_id, username, profile_picture_url FROM user WHERE username \
+		in (SELECT follower_id FROM relationship WHERE user_id = %s)"
+	try:
+		cursor.execute(sql, user_id)
+		result = cursor.fetchall()
+		db.commit()
+		dic = {"success": True, "user_id":result[0], "username": result[1], "profile_picture_url": result[2]}
+	except:
+		db.rollback()
+		dic = {"success": False}
+	db.close()
+	js = json.dumps(dic)
+	return js
 
 if __name__ == '__main__':
 	app.run(debug=True)
-
-
-
-
-
