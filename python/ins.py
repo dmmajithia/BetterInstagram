@@ -314,7 +314,7 @@ def unfollow():
     sql2 = "UPDATE user SET num_of_following =  num_of_following - 1 WHERE user_id = %s"
     sql3 = "UPDATE user SET num_of_follower =  num_of_follower - 1 WHERE user_id = %s"
     try:
-        cursor.execute(sql1, (user_id2, user_id1))
+        cursor.execute(sql1, (user_id2, user_id))
         cursor.execute(sql2, user_id)
         cursor.execute(sql3, user_id2)
         db.commit()
