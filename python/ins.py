@@ -500,5 +500,31 @@ def get_likes():
 	js = json.dumps(dic)
 	return js
 
+@app.route('/post/get_comments')
+def get_comments():
+	post_id = request.args.get("post_id")
+	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+	cursor = db.cursor()
+	sql = "SELECT A.activity_user_id, U.username, A.text, A.activity_time FROM activity A, user U WHERE A.post_id = %s \
+	       AND A.activity_user_id = U.user_id AND A.is_like = 0"
+	try:
+		cursor.execute(sql, post_id)
+		result = cursor.fetchall()
+		success = True
+		db.commit()
+	except:
+		db.rollback()
+		success = False
+	if success == False:
+		dic = {"success": False}
+	else:
+		comments_list = []
+		for i in range(len(result)):
+			comments_list.append({"user_id": result[i][0], "username": result[i][1], "text":result[i][2], "timestamp":result[i][3]})
+		dic = {"success": True, "comments": comments_list}
+	db.close()
+	js = json.dumps(dic)
+	return js
+
 if __name__ == '__main__':
 	app.run(debug=True)
