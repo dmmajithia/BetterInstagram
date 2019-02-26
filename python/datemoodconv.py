@@ -1,8 +1,5 @@
-# converts unix time to a matching mood, depending on the hour of day
+# converts unix time to a matching RGB color string, depending on the hour of day
 import time
-import datetime
-
-
 
 def getMoodfromTime(ntime=int(time.time())):
 	nhour = time.strftime("%H", time.localtime(ntime))
