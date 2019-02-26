@@ -539,7 +539,7 @@ def get_comments():
 	return js
 
 @app.route('/post/get_post_data')
-def get_user_following():
+def get_post_data():
 	post_id = request.args.get("post_id")
 	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
 	cursor = db.cursor()
