@@ -480,7 +480,7 @@ def get_likes():
 	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
 	cursor = db.cursor()
 	sql = "SELECT A.activity_user_id, U.username, A.activity_time FROM activity A, user U WHERE A.post_id = %s \
-	                                                                                      AND A.activity_user_id = U.user_id"
+	       AND A.activity_user_id = U.user_id AND A.is_like = 1"
 	try:
 		cursor.execute(sql, post_id)
 		result = cursor.fetchall()
