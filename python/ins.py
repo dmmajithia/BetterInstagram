@@ -5,6 +5,7 @@ import json
 import os
 import base64
 import datetime
+import time
 
 import os
 from flask import redirect, url_for
@@ -555,7 +556,7 @@ def add_post():
     location = request.args.get("location")
     hashtags = request.args.get('hashtags')
     tags = request.args.get('tags')
-	
+
     ntime = int(timestamp.split(".")[0])
     nhour = time.strftime("%H", time.localtime(ntime))
     i = int(nhour)
