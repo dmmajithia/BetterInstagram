@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import YPImagePicker
 
 class UserProfileVC: UIViewController{
     
@@ -27,11 +28,15 @@ class UserProfileVC: UIViewController{
     
     override func viewDidLoad() {
         self.is_followed = false
-        self.updateUser()
+        self.addEditActions()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        self.updateUser()
+        //self.is_editing = false
+        if(self.is_editing){
+            self.toggleEdit()
+        }
     }
     
     func updateUser(){
@@ -69,18 +74,72 @@ class UserProfileVC: UIViewController{
         if(self.is_followed){
             //unfollow
             Api.makeRequest(endpoint: "relationship/unfollow", data: ["user_id2": self.show_user_id,
-                                                         "user_id": (CurrentUser.shared.user?.userID)!], completion: {_ in })
+                                                         "user_id": (CurrentUser.shared.user?.userID)!], completion: {_ in
+                                                            self.updateUser()
+            })
         }
         else if (self.show_user_id != CurrentUser.shared.user?.userID){
             //follow
             Api.makeRequest(endpoint: "relationship/follow", data: ["user_id2": self.show_user_id,
-                                                       "user_id": (CurrentUser.shared.user?.userID)!], completion: {_ in })
+                                                       "user_id": (CurrentUser.shared.user?.userID)!], completion: {_ in
+                                                        self.updateUser()
+            })
         }
         else{
             //edit
-            
+            self.toggleEdit()
         }
-        self.updateUser()
+        //self.updateUser()
+    }
+    
+    func toggleEdit(){
+        self.is_editing = !self.is_editing
+        if(self.is_editing){
+            self.ImageProfile.layer.borderWidth = 2.0
+            self.ImageProfile.layer.borderColor = UIColor.blue.cgColor
+            self.LabelLocation.textColor = UIColor.blue
+            self.LabelBio.textColor = UIColor.blue
+            self.LabelWebsite.textColor = UIColor.blue
+        }
+        else{
+            self.ImageProfile.layer.borderWidth = 0
+            self.ImageProfile.layer.borderColor = UIColor.blue.cgColor
+            self.LabelLocation.textColor = UIColor.white
+            self.LabelBio.textColor = UIColor.white
+            self.LabelWebsite.textColor = UIColor.white
+        }
+    }
+    
+    func addEditActions(){
+        self.ImageProfile.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.changeProfilePicture(_:))))
+        self.LabelWebsite.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.changeText(_:))))
+        self.LabelBio.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.changeText(_:))))
+        self.LabelLocation.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.changeText(_:))))
+    }
+    
+    @objc func changeText(_ sender: Any){
+        if(self.is_editing){
+            self.performSegue(withIdentifier: "changeProfileData", sender: self)
+        }
+    }
+    
+    @objc func changeProfilePicture(_ sender: Any){
+        if(!self.is_editing){
+            return
+        }
+        let picker = YPImagePicker()
+        picker.didFinishPicking { [unowned picker] items, cancelled in
+            if cancelled{
+                print("image picker cancelled")
+            }
+            if let photo = items.singlePhoto {
+                CurrentUser.setProfilePicture(image: photo.image, completion: {
+                    self.updateUser()
+                })
+            }
+            picker.dismiss(animated: true, completion: nil)
+        }
+        present(picker, animated: true, completion: nil)
     }
     
     func dismissMe(){
@@ -90,5 +149,12 @@ class UserProfileVC: UIViewController{
     @IBAction func TappedCancel(_ sender: Any) {
         CurrentUser.shared.isPersonalFeed = false
         self.dismissMe()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "changeProfileData"){
+            let destVC = segue.destination as! SetProfileVC
+            destVC.updating = true
+        }
     }
 }
