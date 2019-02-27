@@ -555,11 +555,16 @@ def add_post():
     location = request.args.get("location")
     hashtags = request.args.get('hashtags')
     tags = request.args.get('tags')
+	
+    ntime = int(timestamp.split(".")[0])
+    nhour = time.strftime("%H", time.localtime(ntime))
+    i = int(nhour)
+    mood = str(255-10*i)+",70,70"
 
     db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
     cursor = db.cursor()
 
-    sql = "INSERT INTO post (user_id, file_url, caption, post_time, location) VALUES (%s, %s, %s, %s, %s);"
+    sql = "INSERT INTO post (user_id, file_url, caption, post_time, location, mood) VALUES (%s, %s, %s, %s, %s, %s);"
     sql2 = "SELECT LAST_INSERT_ID();"
 
     if hashtags is not None:
@@ -576,7 +581,7 @@ def add_post():
 
     sql5 = "UPDATE user SET num_of_post =  num_of_post + 1 WHERE user_id = %s"
     try:
-        cursor.execute(sql, (user_id, file_url, caption, timestamp, location))
+        cursor.execute(sql, (user_id, file_url, caption, timestamp, location, mood))
         cursor.execute(sql2)
         post_id = cursor.fetchone()[0]
 
