@@ -672,5 +672,30 @@ def add_comment():
     js = json.dumps(dic)
     return js
 
+@app.route('/search/search_name')
+def search_name():
+    username = request.args.get("username")
+    db = pymysql.connect(host="localhost", user="root", password="123456", db="dbbig")
+    cursor = db.cursor()
+    sql = "SELECT user_id, username, profile_picture FROM user WHERE username LIKE %s"
+    try:
+        cursor.execute(sql, username + "%")
+        result = cursor.fetchall()
+        success = True
+        db.commit()
+    except:
+        db.rollback()
+        success = False
+    if success == False:
+        dic = {"success": False}
+    else:
+        users_list = []
+        for i in range(len(result)):
+            users_list.append({"user_id": result[i][0], "username": result[i][1], "profile_picture": result[i][2]})
+        dic = {"success": True, "users": users_list}
+    db.close()
+    js = json.dumps(dic)
+    return js
+
 if __name__ == '__main__':
     app.run(debug=True)
