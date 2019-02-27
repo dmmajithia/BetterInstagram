@@ -551,7 +551,6 @@ def add_post():
     file_url = request.args.get("file_url")
     caption = request.args.get("caption")
     timestamp = request.args.get("timestamp")
-    mood = request.args.get("mood")
     location = request.args.get("location")
     hashtags = request.args.get('hashtags')
     tags = request.args.get('tags')
@@ -562,7 +561,10 @@ def add_post():
     db = pymysql.connect(host="localhost", user="root", password="123456", db="dbbig")
     cursor = db.cursor()
 
-    sql = "INSERT INTO post (user_id, file_url, caption, post_time, mood, location) VALUES (%s, %s, %s, %s, %s, %s);"
+    db = pymysql.connect(host="127.0.0.1", port = tunnel.local_bind_port,user="root", password="123456", db="dbbig")
+    cursor = db.cursor()
+
+    sql = "INSERT INTO post (user_id, file_url, caption, post_time, location) VALUES (%s, %s, %s, %s, %s);"
     sql2 = "SELECT LAST_INSERT_ID();"
     sql3 = "INSERT INTO hashtag (post_id, hashtag) VALUES (%s, %s)"
     for i in range(len(hash_tag_list)-1):
@@ -573,19 +575,21 @@ def add_post():
         sql4 = sql4 + ", (%s, %s) "
     sql5 = "UPDATE user SET num_of_post =  num_of_post + 1 WHERE user_id = %s"
     try:
-        cursor.execute(sql, (user_id, file_url, caption, timestamp, mood, location))
+        cursor.execute(sql, (user_id, file_url, caption, timestamp, location))
         cursor.execute(sql2)
         post_id = cursor.fetchone()[0]
         # sql3
         para_sql3 = tuple()
         for i in range(len(hash_tag_list)):
             para_sql3 += (post_id, hash_tag_list[i],)
-        cursor.execute(sql3, para_sql3)
+        if hashtags != "":
+            cursor.execute(sql3, para_sql3)
         # sql4
         para_sql4 = tuple()
         for i in range(len(people_tag_list)):
             para_sql4 += (post_id, people_tag_list[i],)
-        cursor.execute(sql4, para_sql4)
+        if tags != "":
+            cursor.execute(sql4, para_sql4)
         cursor.execute(sql5, user_id)
         db.commit()
         success = True
