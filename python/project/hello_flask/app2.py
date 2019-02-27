@@ -38,6 +38,28 @@ def signup():
 	js = json.dumps(dic)
 	return js
 
+@app.route('/checkusername')
+def checkusername():
+	username = request.args.get("username")
+	#db = pymysql.connect("ls-4c577f8ce2558da6e77b799294f2a69c0d455270.cyxr3j60i1wl.us-west-2.rds.amazonaws.com", "dbmasteruser", "12345678", "dbmast")
+	db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
+	cursor = db.cursor()
+	sql = "SELECT username From user WHERE username = %s" 
+	#sql = "INSERT INTO user (appID, username) VALUES( '" + appID + "', '" + username + "');"
+	try:
+		cursor.execute(sql, username)
+		result = cursor.fetchone()
+		db.commit()
+	except:
+		db.rollback()
+	db.close()
+	if result == None:
+		dic = {"existed": False}
+	else:
+		dic = {"existed": True}
+	js = json.dumps(dic)
+	return js
+
 @app.route('/connect_facebook')
 def connect_facebook():
 	user_id = request.args.get("user_id")
