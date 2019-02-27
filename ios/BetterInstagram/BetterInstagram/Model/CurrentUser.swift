@@ -6,7 +6,7 @@
 //  Copyright © 2019 Dhawal Majithia. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class CurrentUser{
     
@@ -15,5 +15,18 @@ class CurrentUser{
     
     private init(){
         self.user = User.init()
+    }
+    
+    static func setProfilePicture(image: UIImage, completion: @escaping () -> ()){
+        Api.uploadImage(image: image, completion: {json in
+            //self.performSegue(withIdentifier: "set_profile", sender: self)
+            if(json["success"].bool!){
+                let url = json["file_name"].string!
+                Api.setProfilePictureUrl(url: url, completion: {
+                    self.shared.user?.profilePictureUrl = url
+                    completion()
+                })
+            }
+        })
     }
 }

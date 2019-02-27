@@ -33,11 +33,11 @@ class SetProfileVC: UIViewController, UITextFieldDelegate{
         
         if !(bio.isEmpty || website.isEmpty || location.isEmpty){
             //print(CurrentUser.shared.user?.userID!)
-            Api.makeRequest(endpoint: "set_bio", data: ["user_id" : (CurrentUser.shared.user?.userID)!,
+            Api.makeRequest(endpoint: "profile/set_bio", data: ["user_id" : (CurrentUser.shared.user?.userID)!,
                                                         "bio" : bio], completion: {_ in })
-            Api.makeRequest(endpoint: "set_website", data: ["user_id" : (CurrentUser.shared.user?.userID)!,
+            Api.makeRequest(endpoint: "profile/set_website", data: ["user_id" : (CurrentUser.shared.user?.userID)!,
                                                             "website" : website], completion: {_ in })
-            Api.makeRequest(endpoint: "set_location", data: ["user_id" : (CurrentUser.shared.user?.userID)!,
+            Api.makeRequest(endpoint: "profile/set_location", data: ["user_id" : (CurrentUser.shared.user?.userID)!,
                                                              "location" : location], completion: {_ in })
             self.performSegue(withIdentifier: "main", sender: self)
         }

@@ -7,8 +7,7 @@
 //
 
 import UIKit
-//import FacebookLogin
-//import FacebookCore
+import CloudKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,23 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        //self.currentUser = User.init()
         // first get appID from CloudKit
-        // for now, just use device ID
-        let appID = UIDevice.current.identifierForVendor!.uuidString
-        Api.makeRequest(endpoint: "login", data: ["appID" : appID], completion: {(json) -> () in
+        Api.login(completion: {(json) -> () in
             if(json["success"].bool!){
-                //user exists
                 CurrentUser.shared.user?.json(json: json)
-                self.window = UIWindow(frame: UIScreen.main.bounds)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "mainVC")
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainVC")
                 self.window?.rootViewController = initialViewController
                 self.window?.makeKeyAndVisible()
             }
             else{
-                //user does not exist
-                //CurrentUser.shared.user?.facebookID = (AccessToken.current?.userId)!
                 self.segueToSignup()
             }
         })
@@ -47,9 +39,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSLog("segue to signup")
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Signup", bundle: nil)
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "signupVC")
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "signupNVC")
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()
+    }
+    
+    /// async gets iCloud record ID object of logged-in iCloud user
+    func iCloudUserIDAsync(complete: @escaping (_ instance: CKRecord.ID?, _ error: NSError?) -> ()) {
+        let container = CKContainer.default()
+        container.fetchUserRecordID() {
+            recordID, error in
+            if error != nil {
+                print(error!.localizedDescription)
+                complete(nil, error! as NSError)
+            } else {
+                print("fetched ID \(String(describing: recordID?.recordName))")
+                complete(recordID, nil)
+            }
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -91,6 +98,14 @@ extension UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+extension UIImageView {
+    func setCornerRadius(radius: CGFloat) {
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = false
+        self.clipsToBounds = true
     }
 }
 

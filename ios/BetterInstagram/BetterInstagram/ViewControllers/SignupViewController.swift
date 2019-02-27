@@ -7,26 +7,60 @@
 //
 
 import UIKit
+import LTMorphingLabel
+import AwesomeTextFieldSwift
 //import FacebookCore
 
 class SignupViewController: UIViewController, UITextFieldDelegate{
     
-    @IBOutlet weak var userTextField: UITextField!
+    @IBOutlet weak var GreetDetailLabel: LTMorphingLabel!
+    @IBOutlet weak var GreetLabel: LTMorphingLabel!
+    //@IBOutlet weak var userTextField: UITextField!
+    @IBOutlet weak var userTextField: AwesomeTextField!
+    @IBOutlet weak var ErrorLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         userTextField.delegate = self
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.GreetDetailLabel.text = ""
+        self.GreetDetailLabel.text = "Let's create a username for you"
+        self.updateError(error: " ")
+    }
+    
+    func updateError(error: String){
+        self.ErrorLabel.text = error
+    }
+    
+    func hideTextFieldPlaceholder(hide: Bool){
+        //self.userTextField.placeholder = hide ? "" : "enter a username"
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.hideTextFieldPlaceholder(hide: !(textField.text?.isEmpty)!)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let text = textField.text
+        self.hideTextFieldPlaceholder(hide: !(textField.text?.isEmpty)!)
         view.endEditing(true)
-        CurrentUser.shared.user!.username = textField.text!
-        Api.makeRequest(endpoint: "signup", data: ["appID" : Api.appID, "username" : textField.text!], completion: {(json) -> () in
-            print(json)
-            CurrentUser.shared.user?.userID = String(json["user_id"].int!)
-            CurrentUser.shared.user?.username = textField.text!
-            //segue to profile picture set
-            self.performSegue(withIdentifier: "set_profile_picture", sender: self)
+        Api.checkUsername(username: text!, completion: {(json) -> () in
+            if (json["existed"].bool!){
+                //username already exists!
+                self.updateError(error: "This username already exists!")
+            }
+            else{
+                //sign up user
+                self.updateError(error: " ")
+                Api.signup(username: text!, completion: {(result) -> () in
+                    CurrentUser.shared.user!.username = text!
+                    CurrentUser.shared.user?.userID = String(result["user_id"].int!)
+                    //segue to profile picture set
+                    self.performSegue(withIdentifier: "set_profile_picture", sender: self)
+                })
+            }
         })
     return true
     }

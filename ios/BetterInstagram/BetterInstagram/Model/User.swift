@@ -17,6 +17,9 @@ class User{
     var bio: String
     var website: String
     var location: String
+    var profilePictureUrl: String
+    var isFollowed: Bool
+    var tempImage: UIImage!
     
     init(){ // for creating new empty user
         username = ""
@@ -26,6 +29,8 @@ class User{
         bio = ""
         website = ""
         location = ""
+        profilePictureUrl = ""
+        isFollowed = false
     }
     
     init(data: [String:String]){ //for data reading
@@ -33,9 +38,11 @@ class User{
         facebookID = data["facebookID"]!
         accessToken = data["accessToken"]!
         userID = data["userID"]!
+        isFollowed = false
         bio = ""
         website = ""
         location = ""
+        profilePictureUrl = ""
     }
     
     func json(json: JSON){
@@ -44,6 +51,7 @@ class User{
         self.userID = String(json["user_id"].int!)
         /*self.bio = json["bio"].string!
         self.location = json["location"].string!
-        self.website = json["website"].string!*/
+        self.website = json["website"].string!
+        self.profilePictureUrl = json["profile_picture_url"].string!*/
     }
 }

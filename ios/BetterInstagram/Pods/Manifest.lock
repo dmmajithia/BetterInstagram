@@ -1,37 +1,53 @@
 PODS:
   - Alamofire (5.0.0-beta.2)
+  - AwesomeTextFieldSwift (0.2.5)
+  - LTMorphingLabel (0.6.0)
+  - pop (1.0.12)
   - PryntTrimmerView (3.0.0)
   - SteviaLayout (4.4.3)
   - SwiftLocation (3.2.3):
     - SwiftyJSON (~> 4.0.0-alpha.1)
   - SwiftyJSON (4.0.0)
+  - VBFPopFlatButton (0.0.7):
+    - pop
   - YPImagePicker (3.5.3):
     - PryntTrimmerView (~> 3.0.0)
     - SteviaLayout (~> 4.4.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0.beta.1)
+  - AwesomeTextFieldSwift
+  - LTMorphingLabel
   - SwiftLocation (~> 3.2.3)
   - SwiftyJSON (~> 4.0)
+  - VBFPopFlatButton
   - YPImagePicker
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AwesomeTextFieldSwift
+    - LTMorphingLabel
+    - pop
     - PryntTrimmerView
     - SteviaLayout
     - SwiftLocation
     - SwiftyJSON
+    - VBFPopFlatButton
     - YPImagePicker
 
 SPEC CHECKSUMS:
   Alamofire: d1e5493588babe3e7b56ae29e8032942f4de09fe
+  AwesomeTextFieldSwift: 5dbe899fa593144bb6547748b52f916cf4f21756
+  LTMorphingLabel: c73ebfef9009c0a098546c29f566024442d1a91e
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PryntTrimmerView: 53ac64053c7ce63cb3e27f54090f52da0734891d
   SteviaLayout: ae5ee66101e03607a93c9b3773b84ab7ba7b3d17
   SwiftLocation: a3c3bc2023118171ef3572188a31def94aa0892c
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  VBFPopFlatButton: 39e48ab56277f3d056734a9b5ec5d0cc60d69778
   YPImagePicker: 5dd3814b47b1208e9c8cc8f6ef77fe90db3723b6
 
-PODFILE CHECKSUM: 09c32bbacacc44848abcd552fa34c7e4795a5c0b
+PODFILE CHECKSUM: 756f387c276b833e20052bb1a142202c61504491
 
 COCOAPODS: 1.5.3

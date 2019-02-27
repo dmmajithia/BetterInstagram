@@ -57,9 +57,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSCameraUsageDescription</key>
-    <string>BECAUSE</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>BECAUSE</string>
+	<key>NSCameraUsageDescription</key>
+	<string>BECAUSE</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>BECAUSE</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>No tracking without your permission</string>
 </dict>
 </plist>
