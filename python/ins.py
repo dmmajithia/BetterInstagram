@@ -677,7 +677,7 @@ def search_name():
     username = request.args.get("username")
     db = pymysql.connect(host="localhost", user="root", password="123456", db="dbbig")
     cursor = db.cursor()
-    sql = "SELECT user_id, username, profile_picture FROM user WHERE username LIKE %s"
+    sql = "SELECT user_id, username, profile_picture FROM user WHERE username LIKE %s LIMIT 5"
     try:
         cursor.execute(sql, username + "%")
         result = cursor.fetchall()
