@@ -443,7 +443,7 @@ def get_activity_feed():
     db = pymysql.connect(host="localhost", user="root", password="123456", db="dbbig")
     cursor = db.cursor()
     sql = "SELECT P.post_id FROM post P WHERE P.user_id in (SELECT R.user_id FROM relationship R WHERE R.follower_id = %s)\
-                                              AND P.post_id > %s ORDER BY P.post_time DESC LIMIT 10"
+                                              AND P.post_id < %s ORDER BY P.post_id DESC LIMIT 10"
     try:
         cursor.execute(sql, (user_id, last_post_id))
         result = cursor.fetchall()
@@ -612,7 +612,7 @@ def get_posts():
     db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
     cursor = db.cursor()
     sql = "SELECT post_id FROM post  WHERE user_id = %s\
-           AND post_id > %s ORDER BY post_id DESC LIMIT 10"
+           AND post_id < %s ORDER BY post_id DESC LIMIT 10"
     try:
         cursor.execute(sql, (user_id, last_post_id))
         result = cursor.fetchall()
