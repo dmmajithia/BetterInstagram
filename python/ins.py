@@ -605,7 +605,7 @@ def get_posts():
     db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
     cursor = db.cursor()
     sql = "SELECT post_id FROM post  WHERE user_id = %s\
-           AND post_id > %s ORDER BY post_time DESC LIMIT 10"
+           AND post_id > %s ORDER BY post_id DESC LIMIT 10"
     try:
         cursor.execute(sql, (user_id, last_post_id))
         result = cursor.fetchall()
