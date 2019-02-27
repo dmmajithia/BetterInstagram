@@ -551,44 +551,46 @@ def add_post():
     file_url = request.args.get("file_url")
     caption = request.args.get("caption")
     timestamp = request.args.get("timestamp")
+    #mood = request.args.get("mood")
     location = request.args.get("location")
     hashtags = request.args.get('hashtags')
     tags = request.args.get('tags')
 
-    hash_tag_list = hashtags.split(',')
-    people_tag_list = tags.split(',')
-
-    db = pymysql.connect(host="localhost", user="root", password="123456", db="dbbig")
-    cursor = db.cursor()
-
-    db = pymysql.connect(host="127.0.0.1", port = tunnel.local_bind_port,user="root", password="123456", db="dbbig")
+    db = pymysql.connect(host="127.0.0.1", port = tunnel.local_bind_port, user="root", password="123456", db="dbbig")
     cursor = db.cursor()
 
     sql = "INSERT INTO post (user_id, file_url, caption, post_time, location) VALUES (%s, %s, %s, %s, %s);"
     sql2 = "SELECT LAST_INSERT_ID();"
-    sql3 = "INSERT INTO hashtag (post_id, hashtag) VALUES (%s, %s)"
-    for i in range(len(hash_tag_list)-1):
-        sql3 = sql3 + ", (%s, %s) "
 
-    sql4 = "INSERT INTO peopletag (post_id, tag_user_id) VALUES (%s, %s)"
-    for i in range(len(people_tag_list)-1):
-        sql4 = sql4 + ", (%s, %s) "
+    if hashtags is not None:
+        hash_tag_list = hashtags.split(',')
+        sql3 = "INSERT INTO hashtag (post_id, hashtag) VALUES (%s, %s)"
+        for i in range(len(hash_tag_list)-1):
+            sql3 = sql3 + ", (%s, %s) "
+
+    if tags is not None:
+        people_tag_list = tags.split(',')
+        sql4 = "INSERT INTO peopletag (post_id, tag_user_id) VALUES (%s, %s)"
+        for i in range(len(people_tag_list)-1):
+            sql4 = sql4 + ", (%s, %s) "
+
     sql5 = "UPDATE user SET num_of_post =  num_of_post + 1 WHERE user_id = %s"
     try:
         cursor.execute(sql, (user_id, file_url, caption, timestamp, location))
         cursor.execute(sql2)
         post_id = cursor.fetchone()[0]
-        # sql3
-        para_sql3 = tuple()
-        for i in range(len(hash_tag_list)):
-            para_sql3 += (post_id, hash_tag_list[i],)
-        if hashtags != "":
+
+        if hashtags is not None:
+            # sql3
+            para_sql3 = tuple()
+            for i in range(len(hash_tag_list)):
+                para_sql3 += (post_id, hash_tag_list[i],)
             cursor.execute(sql3, para_sql3)
-        # sql4
-        para_sql4 = tuple()
-        for i in range(len(people_tag_list)):
-            para_sql4 += (post_id, people_tag_list[i],)
-        if tags != "":
+        if tags is not None:
+            # sql4
+            para_sql4 = tuple()
+            for i in range(len(people_tag_list)):
+                para_sql4 += (post_id, people_tag_list[i],)
             cursor.execute(sql4, para_sql4)
         cursor.execute(sql5, user_id)
         db.commit()
@@ -596,7 +598,9 @@ def add_post():
     except:
         db.rollback()
         success = False
+
     db.close()
+    tunnel.stop()
 
     dic = {"success": success}
     js = json.dumps(dic)
