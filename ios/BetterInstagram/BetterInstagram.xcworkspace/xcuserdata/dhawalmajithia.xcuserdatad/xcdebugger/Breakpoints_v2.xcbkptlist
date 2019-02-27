@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "572940687.647125"
+            timestampString = "572944648.248257"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "572940687.647191"
+            timestampString = "572944648.24833"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "572940687.647242"
+            timestampString = "572944648.248384"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "572940687.647289"
+            timestampString = "572944648.248435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -166,11 +166,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "572940687.647334"
+            timestampString = "572944648.248484"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "572940687.64738"
+            timestampString = "572944648.248533"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -298,7 +298,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "572940687.647505"
+            timestampString = "572944648.248716"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -314,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "572940687.6475509"
+            timestampString = "572944648.248771"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
@@ -330,7 +330,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/ViewControllers/AddPostVC.swift"
-            timestampString = "572940687.647598"
+            timestampString = "572944648.248821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -362,7 +362,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "572940687.647719"
+            timestampString = "572944648.248903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
@@ -410,7 +410,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "572940687.647771"
+            timestampString = "572944648.248956"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -426,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/ViewControllers/MainVC.swift"
-            timestampString = "572931504.470229"
+            timestampString = "572944648.249005"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "tappedLabelUsername(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -442,7 +442,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "572940687.647845"
+            timestampString = "572944648.249047"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -458,7 +458,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "572940687.647894"
+            timestampString = "572944648.249097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
@@ -474,12 +474,156 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "572940687.647941"
+            timestampString = "572944648.249146"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
             endingLineNumber = "38"
             landmarkName = "makeRequest(endpoint:data:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterInstagram/ViewControllers/UserProfileVC.swift"
+            timestampString = "572944648.249197"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "TappedFollow(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterInstagram/ViewControllers/ActivityFeedVC.swift"
+            timestampString = "572944648.2492419"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BetterInstagram.ActivityFeedVC.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "BetterInstagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhawalmajithia/Desktop/school/winter2019/ECS165/BetterInstagram/ios/BetterInstagram/BetterInstagram/ViewControllers/ActivityFeedVC.swift"
+                  timestampString = "572943344.464471"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Swift.Int&gt;) -&gt; () in BetterInstagram.ActivityFeedVC.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "BetterInstagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhawalmajithia/Desktop/school/winter2019/ECS165/BetterInstagram/ios/BetterInstagram/BetterInstagram/ViewControllers/ActivityFeedVC.swift"
+                  timestampString = "572943344.466256"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterInstagram/ViewControllers/ActivityFeedVC.swift"
+            timestampString = "572944648.249285"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterInstagram/ViewControllers/ActivityFeedVC.swift"
+            timestampString = "572944648.249326"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BetterInstagram.ActivityFeedVC.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "BetterInstagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhawalmajithia/Desktop/school/winter2019/ECS165/BetterInstagram/ios/BetterInstagram/BetterInstagram/ViewControllers/ActivityFeedVC.swift"
+                  timestampString = "572943344.58246"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "412">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Array&lt;Swift.Int&gt;) -&gt; () in BetterInstagram.ActivityFeedVC.viewDidAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "BetterInstagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhawalmajithia/Desktop/school/winter2019/ECS165/BetterInstagram/ios/BetterInstagram/BetterInstagram/ViewControllers/ActivityFeedVC.swift"
+                  timestampString = "572943344.585778"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterInstagram/ViewControllers/UserProfileVC.swift"
+            timestampString = "572944648.249368"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "TappedFollow(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -112,7 +112,16 @@ struct Api{
     }
     
     static func getPosts(userID: String, completion: @escaping ([Int]) -> ()){
-        Api.makeRequest(endpoint: "post/get_posts", data: ["user_id":userID, "last_post_id": "0"], completion: {(json) -> () in
+        Api.makeRequest(endpoint: "post/get_posts", data: ["user_id":userID, "last_post_id": "9999999"], completion: {(json) -> () in
+            if(json["success"].bool!){
+                let postIDs = json["post_id"].arrayObject as! [Int]
+                completion(postIDs)
+            }
+        })
+    }
+    
+    static func getActivityFeed(userID: String, completion: @escaping ([Int]) -> ()){
+        Api.makeRequest(endpoint: "feed/get_activity_feed", data: ["user_id":userID, "last_post_id": "9999999"], completion: {(json) -> () in
             if(json["success"].bool!){
                 let postIDs = json["post_id"].arrayObject as! [Int]
                 completion(postIDs)
@@ -140,6 +149,8 @@ struct Api{
     }
     
     static func getAppID(completion: @escaping (String, Error?) -> ()){
+        completion("123456", nil)
+        return
         let container = CKContainer.default()
         container.fetchUserRecordID() {
             recordID, error in

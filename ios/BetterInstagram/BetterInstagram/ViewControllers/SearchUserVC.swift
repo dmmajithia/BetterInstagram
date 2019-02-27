@@ -65,6 +65,8 @@ class SearchUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        CurrentUser.shared.isPersonalFeed = true
+        CurrentUser.shared.show_user_id = self.show_user_id
         let destVC = segue.destination as! UserProfileVC
         destVC.show_user_id = self.show_user_id
     }
@@ -74,6 +76,6 @@ class SearchUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     }
     
     @IBAction func tappedCancel(_ sender: Any) {
-        
+        self.dismissMe()
     }
 }

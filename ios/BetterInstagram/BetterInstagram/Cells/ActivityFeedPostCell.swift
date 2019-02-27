@@ -12,6 +12,10 @@ class ActivityFeedPostCell: UICollectionViewCell{
     
     @IBOutlet weak var ImageProfile: UIImageView!
     @IBOutlet weak var ImagePost: UIImageView!
+    @IBOutlet weak var LabelLocation: UILabel!
+    @IBOutlet weak var LabelCaption: UILabel!
+    @IBOutlet weak var ViewText: UIView!
+    
     var post: Post!
     
     override func awakeFromNib() {
@@ -25,12 +29,21 @@ class ActivityFeedPostCell: UICollectionViewCell{
                 self.ImagePost.image = image
                 self.ImagePost.setCornerRadius(radius: 5.0)
             })
-            Api.getImage(url: self.post.userJson["profile_picture_url"].string!, userID: self.post.user_id, completion: {(image) -> () in
-                self.ImageProfile.image = image
-                self.ImageProfile.setCornerRadius(radius: self.ImageProfile.frame.width/2)
-                self.ImageProfile.layer.borderWidth = 2.0
-                self.ImageProfile.layer.borderColor = UIColor.white.cgColor
-            })
+            if(!CurrentUser.shared.isPersonalFeed){
+                Api.getImage(url: self.post.userJson["profile_picture_url"].string!, userID: self.post.user_id, completion: {(image) -> () in
+                    self.ImageProfile.image = image
+                    self.ImageProfile.setCornerRadius(radius: self.ImageProfile.frame.width/2)
+                    self.ImageProfile.layer.borderWidth = 2.0
+                    self.ImageProfile.layer.borderColor = UIColor.white.cgColor
+                })
+            }
+            self.ViewText.isHidden = true
+            self.LabelCaption.text = self.post.caption
+            self.LabelLocation.text = self.post.location
         })
+    }
+    
+    func toggleViewText(){
+        self.ViewText.isHidden = !self.ViewText.isHidden
     }
 }

@@ -15,13 +15,22 @@ class ActivityFeedVC: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func viewDidLoad() {
         self.collectionView.register(UINib.init(nibName: "ActivityFeedPostCell", bundle: nil), forCellWithReuseIdentifier: "ActivityFeedPostCell")
         self.postIDs = []
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        Api.getPosts(userID: (CurrentUser.shared.user?.userID)!, completion: {(ids) -> () in
-            self.postIDs = ids
-            self.collectionView.reloadData()
-        })
+        if(CurrentUser.shared.isPersonalFeed){
+            Api.getPosts(userID: (CurrentUser.shared.show_user_id), completion: {(ids) -> () in
+                self.postIDs = ids
+                self.collectionView.reloadData()
+            })
+        }
+        else{
+            Api.getActivityFeed(userID: (CurrentUser.shared.user?.userID)!, completion: {(ids) -> () in
+                self.postIDs = ids
+                self.collectionView.reloadData()
+            })
+        }
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -45,5 +54,10 @@ class ActivityFeedVC: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width / 2.2, height: collectionView.frame.height / 2.2)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: false)
+        (collectionView.cellForItem(at: indexPath) as! ActivityFeedPostCell).toggleViewText()
     }
 }

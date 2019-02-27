@@ -69,6 +69,7 @@ class AddPostVC: UIViewController, UITextViewDelegate{
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             if(!(alert?.textFields![0].text!.isEmpty)!){
                 self.locationName = (alert?.textFields![0].text)!
+                self.addLocationButton.text(self.locationName)
             }
         }))
         
@@ -86,10 +87,10 @@ class AddPostVC: UIViewController, UITextViewDelegate{
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        textView.text = String(textView.text.prefix(200))
+        /*textView.text = String(textView.text.prefix(200))
         if(textView.text.isEmpty){
             textView.text = "Write a caption..."
-        }
+        }*/
     }
     
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {

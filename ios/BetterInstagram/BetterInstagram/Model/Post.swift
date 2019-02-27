@@ -28,12 +28,17 @@ class Post{
             self.location = json["location"].string!
             self.url = json["file_name"].string!
             //self.numLikes = json["num_of_likes"]
-            Api.makeRequest(endpoint: "profile/get_profile_data", data: ["user_id2": self.user_id,"user_id": (CurrentUser.shared.user?.userID)!], completion: {(json) -> () in
-                if(json["success"].bool!){
-                    self.userJson = json
-                    completion()
-                }
-            })
+            if(!CurrentUser.shared.isPersonalFeed){
+                Api.makeRequest(endpoint: "profile/get_profile_data", data: ["user_id2": self.user_id,"user_id": (CurrentUser.shared.user?.userID)!], completion: {(json) -> () in
+                    if(json["success"].bool!){
+                        self.userJson = json
+                        completion()
+                    }
+                })
+            }
+            else{
+                completion()
+            }
         })
     }
     

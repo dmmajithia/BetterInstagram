@@ -14,6 +14,7 @@ class UserProfileVC: UIViewController{
     var json: JSON!
     var show_user_id: String!
     var is_followed: Bool!
+    var is_editing = false
     
     @IBOutlet weak var LabelUsername: UILabel!
     @IBOutlet weak var LabelBio: UILabel!
@@ -67,16 +68,17 @@ class UserProfileVC: UIViewController{
     @IBAction func TappedFollow(_ sender: Any) {
         if(self.is_followed){
             //unfollow
-            Api.makeRequest(endpoint: "unfollow", data: ["user_id2": self.show_user_id,
+            Api.makeRequest(endpoint: "relationship/unfollow", data: ["user_id2": self.show_user_id,
                                                          "user_id": (CurrentUser.shared.user?.userID)!], completion: {_ in })
         }
         else if (self.show_user_id != CurrentUser.shared.user?.userID){
             //follow
-            Api.makeRequest(endpoint: "follow", data: ["user_id2": self.show_user_id,
+            Api.makeRequest(endpoint: "relationship/follow", data: ["user_id2": self.show_user_id,
                                                        "user_id": (CurrentUser.shared.user?.userID)!], completion: {_ in })
         }
         else{
             //edit
+            
         }
         self.updateUser()
     }
@@ -86,6 +88,7 @@ class UserProfileVC: UIViewController{
     }
     
     @IBAction func TappedCancel(_ sender: Any) {
+        CurrentUser.shared.isPersonalFeed = false
         self.dismissMe()
     }
 }
