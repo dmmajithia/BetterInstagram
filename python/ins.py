@@ -555,8 +555,8 @@ def add_post():
     location = request.args.get("location")
     hashtags = request.args.get('hashtags')
     tags = request.args.get('tags')
-
-    db = pymysql.connect(host="127.0.0.1", port = tunnel.local_bind_port, user="root", password="123456", db="dbbig")
+    
+    db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
     cursor = db.cursor()
 
     sql = "INSERT INTO post (user_id, file_url, caption, post_time, location) VALUES (%s, %s, %s, %s, %s);"
