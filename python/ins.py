@@ -555,7 +555,7 @@ def add_post():
     location = request.args.get("location")
     hashtags = request.args.get('hashtags')
     tags = request.args.get('tags')
-    
+
     db = pymysql.connect(host = "localhost", user = "root", password = "123456", db = "dbbig")
     cursor = db.cursor()
 
@@ -600,7 +600,6 @@ def add_post():
         success = False
 
     db.close()
-    tunnel.stop()
 
     dic = {"success": success}
     js = json.dumps(dic)
