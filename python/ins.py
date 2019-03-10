@@ -703,5 +703,88 @@ def search_name():
     js = json.dumps(dic)
     return js
 
+@app.route('/search/search_hashtag')
+def search_hashtag():
+    hashtag = request.args.get("hashtag")
+    last_post_id = request.args.get("last_post_id")
+    db = pymysql.connect(host="localhost", user="root", password="123456", db="dbbig")
+    cursor = db.cursor()
+    sql = "SELECT H.post_id FROM hashtag H, post P WHERE H.hashtag = %s ORDER BY P.num_of_like DESC LIMIT 4"
+    sql2 = "SELECT post_id FROM hashtag WHERE hashtag = %s ORDER BY post_id DESC LIMIT 20"
+    sql3 = "SELECT post_id FROM hashtag WHERE hashtag = %s AND post_id < %s ORDER BY post_id DESC LIMIT 24"
+    try:
+        if last_post_id == "0":
+            cursor.execute(sql, hashtag)
+            result = cursor.fetchall()
+            cursor.execute(sql2, hashtag)
+            result2 = cursor.fetchall()
+            post_list = [result[i][0] for i in range(len(result))]
+            post_list = post_list + [result2[i][0] for i in range(len(result2))]
+        else:
+            cursor.execute(sql3, (hashtag, last_post_id))
+            result = cursor.fetchall()
+            post_list = [result[i][0] for i in range(len(result))]
+        success = True
+        db.commit()
+    except:
+        db.rollback()
+        success = False
+    if success == False:
+        dic = {"success": False}
+    else:
+        dic = {"success": True, "post_id": post_list}
+    db.close()
+    js = json.dumps(dic)
+    return js
+
+@app.route('/search/search_location')
+def search_location():
+    location = request.args.get("location")
+    last_post_id = request.args.get("last_post_id")
+    db = pymysql.connect(host="localhost", user="root", password="123456", db="dbbig")
+    cursor = db.cursor()
+    sql = "SELECT post_id FROM post WHERE location = %s ORDER BY post_id DESC LIMIT 24"
+    sql2 = "SELECT post_id FROM post WHERE location = %s AND post_id < %s ORDER BY post_id DESC LIMIT 24"
+    try:
+        if last_post_id == "0":
+            cursor.execute(sql, location)
+            result = cursor.fetchall()
+        else:
+        	cursor.execute(sql2, (location, last_post_id))
+        	result = cursor.fetchall()    	
+        success = True
+        db.commit()
+    except:
+        db.rollback()
+        success = False
+    if success == False:
+        dic = {"success": False}
+    else:
+        dic = {"success": True, "post_id":  [result[i][0] for i in range(len(result))]}
+    db.close()
+    js = json.dumps(dic)
+    return js
+
+@app.route('/search/search_tophashtag')
+def search_tophashtag():
+    db = pymysql.connect(host="localhost", user="root", password="123456", db="dbbig")
+    cursor = db.cursor()
+    sql = "SELECT hashtag FROM hashtag GROUP BY hashtag ORDER BY COUNT(hashtag) DESC LIMIT 5"
+    try:
+        cursor.execute(sql)
+        result = cursor.fetchall() 	
+        success = True
+        db.commit()
+    except:
+        db.rollback()
+        success = False
+    if success == False:
+        dic = {"success": False}
+    else:
+        dic = {"success": True, "hashtags":  [result[i][0] for i in range(len(result))]}
+    db.close()
+    js = json.dumps(dic)
+    return js
+
 if __name__ == '__main__':
     app.run(debug=True)
