@@ -15,3 +15,16 @@ def testMood():
 
 if __name__ == '__main__':
 	testMood()
+
+#  HOUR 07 - HOUR 19 - LIGHT
+# 	7: 255
+# 	8: 245
+# 	9: 235
+# 	10: 225
+#
+# # HOUR 20 - HOUR 06 - DARK
+# 	1: max
+# 	2: max-10
+# 	3: max-20
+# 	4: max-30
+#

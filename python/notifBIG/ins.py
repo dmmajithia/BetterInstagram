@@ -291,16 +291,16 @@ def follow():
     sql3 = "UPDATE user SET num_of_follower =  num_of_follower + 1 WHERE user_id = %s"
 
     # push notification to user_id2
-    sql4 = "SELECT appID from user WHERE user_id = %s"
+    sql4 = "SELECT appID, username FROM user WHERE user_id = %s"
     try:
         cursor.execute(sql1, (user_id2, user_id))
         cursor.execute(sql2, user_id)
         cursor.execute(sql3, user_id2)
-        cursor.execute(sql4, user_id)
-        result = cursor.fetchone()
+        cursor.execute(sql4, user_id2)
+        result = cursor.fetchall()
         db.commit()
         success = True
-        BIGnotif.PushToUser(result, "You just got a new follower!")
+        BIGnotif.PushToUser(result[0][0], result[0][1], " started following you!")
     except:
         db.rollback()
         success = False
@@ -323,16 +323,16 @@ def unfollow():
     sql3 = "UPDATE user SET num_of_follower =  num_of_follower - 1 WHERE user_id = %s"
 
     # push notification to user_id2
-    sql4 = "SELECT appID from user WHERE user_id = %s"
+    sql4 = "SELECT appID, username from user WHERE user_id = %s"
     try:
         cursor.execute(sql1, (user_id2, user_id))
         cursor.execute(sql2, user_id)
         cursor.execute(sql3, user_id2)
         cursor.execute(sql4, user_id2)
-        result = cursor.fetchone()
+        result = cursor.fetchall()
         db.commit()
         success = True
-        BIGnotif.PushToUser(result, "You just lost a follower :(")
+        BIGnotif.PushToUser(result[0][0], result[0][1], " just unfollowed you :(")
     except:
         db.rollback()
         success = False
@@ -657,6 +657,7 @@ def add_like():
     cursor = db.cursor()
     sql = "INSERT INTO activity (post_id, activity_user_id, is_like, activity_time) VALUES( %s, %s, %s, %s)"
     sql2 = "UPDATE post SET num_of_like =  num_of_like + 1 WHERE post_id = %s"
+    #sql_nf = "SELECT U.username FROM user U WHERE U.user_id IN (SELECT P.user_id FROM post P WHERE (SELECT A.activity_user_id FROM activity A WHERE "
     try:
         cursor.execute(sql, (post_id, activity_user_id, 1, timestamp))
         cursor.execute(sql2, post_id)

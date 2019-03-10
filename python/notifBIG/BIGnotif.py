@@ -12,9 +12,9 @@ def PushToAll(message):
     )
     client.send(nf_to_all)
 
-def PushToUser(appID, message):
+def PushToUser(appID, username, message):
     nf_to_some = DeviceNotification(
-        contents={"en": message},
+        contents={"en": username + message},
         include_ios_tokens=appID
     )
     client.send(nf_to_some)
