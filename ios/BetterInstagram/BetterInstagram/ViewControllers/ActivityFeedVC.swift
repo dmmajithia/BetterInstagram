@@ -11,15 +11,19 @@ import UIKit
 class ActivityFeedVC: UICollectionViewController, UICollectionViewDelegateFlowLayout{
     
     var postIDs: [Int]!
+    var isPersonalFeed = false
     
     override func viewDidLoad() {
         self.collectionView.register(UINib.init(nibName: "ActivityFeedPostCell", bundle: nil), forCellWithReuseIdentifier: "ActivityFeedPostCell")
         self.postIDs = []
-        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if(CurrentUser.shared.isPersonalFeed){
+    func shouldPersonalize(should: Bool){
+        self.isPersonalFeed = should
+    }
+    
+    func updateViews(){
+        if(self.isPersonalFeed){
             Api.getPosts(userID: (CurrentUser.shared.show_user_id), completion: {(ids) -> () in
                 self.postIDs = ids
                 self.collectionView.reloadData()
@@ -31,6 +35,10 @@ class ActivityFeedVC: UICollectionViewController, UICollectionViewDelegateFlowLa
                 self.collectionView.reloadData()
             })
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.updateViews()
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -46,14 +54,22 @@ class ActivityFeedVC: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActivityFeedPostCell", for: indexPath) as! ActivityFeedPostCell
-        cell.initialize(postID: (self.postIDs?[indexPath.item])!)
+        cell.initialize(postID: (self.postIDs?[indexPath.item])!, personalize: self.isPersonalFeed)
         cell.needsUpdateConstraints()
         cell.updateConstraints()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width / 2.2, height: collectionView.frame.height / 2.2)
+        return CGSize(width: collectionView.frame.width / 2, height: collectionView.frame.height / 2)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -18,6 +18,8 @@ class Post{
     var numLikes: Int!
     var numComments: Int!
     var url: String!
+    var mood: String!
+    var user: User!
     var userJson: JSON!
     
     func getPost(postID: String, completion: @escaping () -> ()){
@@ -27,18 +29,25 @@ class Post{
             self.user_id = String(json["user_id"].int!)
             self.location = json["location"].string!
             self.url = json["file_name"].string!
+            if let _mood = json["mood"].string{
+                self.mood = _mood
+            }
+            User.getUserProfile(userID: self.user_id, completion: {(_user) -> () in
+                self.user = _user
+                completion()
+            })
             //self.numLikes = json["num_of_likes"]
-            if(!CurrentUser.shared.isPersonalFeed){
-                Api.makeRequest(endpoint: "profile/get_profile_data", data: ["user_id2": self.user_id,"user_id": (CurrentUser.shared.user?.userID)!], completion: {(json) -> () in
+            //if(!CurrentUser.shared.isPersonalFeed){
+                /*Api.makeRequest(endpoint: "profile/get_profile_data", data: ["user_id2": self.user_id,"user_id": (CurrentUser.shared.user?.userID)!], completion: {(json) -> () in
                     if(json["success"].bool!){
                         self.userJson = json
                         completion()
                     }
-                })
-            }
-            else{
+                })*/
+            //}
+            /*else{
                 completion()
-            }
+            }*/
         })
     }
     

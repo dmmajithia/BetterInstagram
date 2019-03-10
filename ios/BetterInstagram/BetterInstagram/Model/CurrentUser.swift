@@ -12,7 +12,6 @@ class CurrentUser{
     
     static let shared = CurrentUser()
     var user: User?
-    var isPersonalFeed = false
     var show_user_id = ""
     
     private init(){

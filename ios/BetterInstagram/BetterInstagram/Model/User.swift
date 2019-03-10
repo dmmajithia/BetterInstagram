@@ -54,4 +54,17 @@ class User{
         self.website = json["website"].string!
         self.profilePictureUrl = json["profile_picture_url"].string!*/
     }
+    
+    static func getUserProfile(userID: String, completion: @escaping (User) -> ()) {
+        Api.getUserProfileJson(userID: userID, completion: {(json) -> () in
+            let user = User()
+            user.userID = userID
+            user.username = json["username"].string!
+            user.isFollowed = json["is_followed"].bool!
+            user.bio = json["bio"].string!
+            user.website = json["website"].string!
+            user.location = json["location"].string!
+            user.profilePictureUrl = json["profile_picture_url"].string!
+        })
+    }
 }

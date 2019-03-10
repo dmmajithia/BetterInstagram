@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PostImageCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UQw-5K-kQQ" customClass="PostImageCell" customModule="BetterInstagram" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UQw-5K-kQQ" id="XQg-cW-rXZ">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="374.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3t5-Uc-WEm">
+                        <rect key="frame" x="0.0" y="-1" width="375" height="376.5"/>
+                    </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="DFW-3o-3E4">
+                        <rect key="frame" x="169" y="169" width="37" height="37"/>
+                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </activityIndicatorView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="3t5-Uc-WEm" firstAttribute="leading" secondItem="XQg-cW-rXZ" secondAttribute="leading" id="8iV-NC-mm4"/>
+                    <constraint firstItem="3t5-Uc-WEm" firstAttribute="centerY" secondItem="DFW-3o-3E4" secondAttribute="centerY" id="P1b-vd-lO5"/>
+                    <constraint firstItem="3t5-Uc-WEm" firstAttribute="centerY" secondItem="XQg-cW-rXZ" secondAttribute="centerY" id="RSk-yG-tOs"/>
+                    <constraint firstItem="3t5-Uc-WEm" firstAttribute="centerX" secondItem="DFW-3o-3E4" secondAttribute="centerX" id="Vv9-FM-AKu"/>
+                    <constraint firstAttribute="trailing" secondItem="3t5-Uc-WEm" secondAttribute="trailing" id="cbf-de-eY1"/>
+                    <constraint firstItem="3t5-Uc-WEm" firstAttribute="top" secondItem="XQg-cW-rXZ" secondAttribute="topMargin" constant="-12" id="zro-IC-OfZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="activityInd" destination="DFW-3o-3E4" id="7vh-Sc-Tsd"/>
+                <outlet property="image" destination="3t5-Uc-WEm" id="SEn-w1-VUg"/>
+            </connections>
+            <point key="canvasLocation" x="594" y="182"/>
+        </tableViewCell>
+    </objects>
+</document>

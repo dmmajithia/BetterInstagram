@@ -15,17 +15,13 @@ class MainVC: UIViewController{
     @IBOutlet weak var LabelUsername: UILabel!
     
     override func viewDidLoad() {
+        (self.children.last as! ActivityFeedVC).shouldPersonalize(should: false)
         LabelUsername.text = CurrentUser.shared.user?.username
         LabelUsername.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tappedLabelUsername(_:))))
         NotificationCenter.default.addObserver(self, selector: #selector(dismiss(noti:)), name: Notification.Name(rawValue: "dismiss"), object: nil)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        CurrentUser.shared.isPersonalFeed = false
-    }
-    
     @objc func dismiss(noti: NSNotification){
-        CurrentUser.shared.isPersonalFeed = false
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -60,7 +56,6 @@ class MainVC: UIViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "user_profile":
-            CurrentUser.shared.isPersonalFeed = true
             CurrentUser.shared.show_user_id = (CurrentUser.shared.user?.userID)!
             let destVC = segue.destination as! UserProfileVC
             destVC.show_user_id = CurrentUser.shared.user?.userID

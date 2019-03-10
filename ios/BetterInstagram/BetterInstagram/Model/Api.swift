@@ -71,6 +71,10 @@ struct Api{
         })
     }
     
+    static func getUserProfileJson(userID: String, completion: @escaping (JSON) -> ()){
+        Api.makeRequest(endpoint: "profile/get_profile_data", data: ["user_id2": userID, "user_id": (CurrentUser.shared.user?.userID)!], completion: completion)
+    }
+    
     static func addPost(image: UIImage, caption: String, location: String, completion: @escaping (JSON)->()){
         Api.uploadImage(image: image, completion: {(json) -> () in
             if(json["success"].bool!){
@@ -149,8 +153,8 @@ struct Api{
     }
     
     static func getAppID(completion: @escaping (String, Error?) -> ()){
-        completion("123456", nil)
-        return
+        //completion("123456", nil)
+        //return
         let container = CKContainer.default()
         container.fetchUserRecordID() {
             recordID, error in

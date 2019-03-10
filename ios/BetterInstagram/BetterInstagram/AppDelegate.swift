@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if(json["success"].bool!){
                 CurrentUser.shared.user?.json(json: json)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainVC")
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainTab")
                 self.window?.rootViewController = initialViewController
                 self.window?.makeKeyAndVisible()
             }

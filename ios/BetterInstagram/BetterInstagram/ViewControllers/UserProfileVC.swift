@@ -29,6 +29,11 @@ class UserProfileVC: UIViewController{
     override func viewDidLoad() {
         self.is_followed = false
         self.addEditActions()
+        if(self.show_user_id == nil){
+            self.show_user_id = CurrentUser.shared.user?.userID
+            CurrentUser.shared.show_user_id = self.show_user_id
+        }
+        (self.children.last as! ActivityFeedVC).shouldPersonalize(should: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -147,14 +152,21 @@ class UserProfileVC: UIViewController{
     }
     
     @IBAction func TappedCancel(_ sender: Any) {
-        CurrentUser.shared.isPersonalFeed = false
-        self.dismissMe()
+        if(self.tabBarController != nil){
+            self.tabBarController?.selectedIndex = 0
+        }
+        else{
+            self.dismissMe()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "changeProfileData"){
             let destVC = segue.destination as! SetProfileVC
             destVC.updating = true
+        }
+        else if(segue.identifier == "showWeb"){
+            
         }
     }
 }

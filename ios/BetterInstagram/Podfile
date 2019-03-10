@@ -6,6 +6,7 @@ target 'BetterInstagram' do
   use_frameworks!
 
   # Pods for BetterInstagram
+pod 'MaterialComponents/BottomNavigation'
 pod 'VBFPopFlatButton'
 pod 'SwiftLocation', '~> 3.2.3'
 pod 'YPImagePicker'
