@@ -1,9 +1,8 @@
 #Notification API Wrapper for Python
 
 from onesignal import OneSignal, SegmentNotification, FilterNotification
-import keyconfig
 
-client = OneSignal(keyconfig.app_id, keyconfig.restAPI_id)
+client = OneSignal("b93dcd48-6999-4353-8c4d-4a81b063f8c4", "RESTAPI KEY HERE")
 
 def PushToAll(message):
     nf_to_all = SegmentNotification(
