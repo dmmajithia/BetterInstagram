@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View PostVC-->
         <scene sceneID="2Ok-VB-el7">
             <objects>
-                <viewController id="Uqk-6W-mt1" sceneMemberID="viewController">
+                <viewController id="Uqk-6W-mt1" customClass="ViewPostVC" customModule="BetterInstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IUQ-bs-YPH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,12 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="34" id="r63-J1-7k0"/>
                                 </constraints>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="TappedBack:" destination="Uqk-6W-mt1" eventType="touchUpInside" id="eZS-Qv-e7U"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eU-rK-6Xf">
                                 <rect key="frame" x="313" y="23" width="46" height="30"/>
@@ -50,10 +55,10 @@
                                 <rect key="frame" x="0.0" y="646" width="375" height="2.5"/>
                                 <color key="progressTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Eub-fk-tPD">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Eub-fk-tPD">
                                 <rect key="frame" x="0.0" y="64" width="387" height="535"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="1" green="0.50320053100585938" blue="0.47354787588119507" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="0.583537054" blue="0.58175770270000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50387663370000002" blue="0.4731799592" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -79,10 +84,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sqL-rL-WDO"/>
                     </view>
+                    <connections>
+                        <outlet property="commentTextField" destination="heC-zF-ZQH" id="HZl-oz-89a"/>
+                        <outlet property="postTableView" destination="Eub-fk-tPD" id="MF4-oV-cIi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWE-Yy-MSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="104.8" y="93.103448275862078"/>
+            <point key="canvasLocation" x="154" y="93"/>
         </scene>
     </scenes>
 </document>

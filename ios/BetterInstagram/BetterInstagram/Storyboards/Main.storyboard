@@ -23,7 +23,7 @@
                                 <color key="backgroundColor" red="1" green="0.50387663370000002" blue="0.4731799592" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="gRA-Gd-7ww">
                                 <rect key="frame" x="16" y="58" width="343" height="2"/>
@@ -53,7 +53,7 @@
                     <connections>
                         <outlet property="TableViewResults" destination="DPK-5f-v9j" id="O5o-oR-Tbb"/>
                         <outlet property="TextFieldSearch" destination="Oxh-iz-9Oq" id="hfI-Da-AWd"/>
-                        <segue destination="Miy-Tp-mQH" kind="presentation" identifier="user_profile" id="Usk-Fr-8Eq"/>
+                        <segue destination="Miy-Tp-mQH" kind="presentation" identifier="user_profile" customClass="UIStoryboardSegueDismissMe" customModule="BetterInstagram" customModuleProvider="target" id="Usk-Fr-8Eq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Quj-am-w1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,13 +201,13 @@
                     <tabBarItem key="tabBarItem" title="Item" id="NmL-XQ-V9n"/>
                     <connections>
                         <outlet property="LabelUsername" destination="5nV-Jr-A2z" id="fOB-HR-qhQ"/>
-                        <segue destination="gGk-PF-3q4" kind="showDetail" identifier="add_post" id="nMc-EY-9Av"/>
-                        <segue destination="Miy-Tp-mQH" kind="presentation" identifier="user_profile" id="jY9-mC-d1M"/>
+                        <segue destination="gGk-PF-3q4" kind="showDetail" identifier="add_post" customClass="UIStoryboardSegueDismissMe" customModule="BetterInstagram" customModuleProvider="target" id="nMc-EY-9Av"/>
+                        <segue destination="Miy-Tp-mQH" kind="presentation" identifier="user_profile" customClass="UIStoryboardSegueDismissMe" customModule="BetterInstagram" customModuleProvider="target" id="jY9-mC-d1M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ut6-sN-lOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-311" y="583"/>
+            <point key="canvasLocation" x="-844" y="611"/>
         </scene>
         <!--AddPost-->
         <scene sceneID="ncT-mV-vLL">
@@ -220,7 +220,7 @@
         <!--Item-->
         <scene sceneID="f6C-mb-M5F">
             <objects>
-                <viewController id="Miy-Tp-mQH" customClass="UserProfileVC" customModule="BetterInstagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserProfileVC" id="Miy-Tp-mQH" customClass="UserProfileVC" customModule="BetterInstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fe4-gJ-trG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -236,7 +236,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tgc-Qb-sOy">
                                 <rect key="frame" x="17" y="23" width="45.5" height="30"/>
-                                <state key="normal" title="cancel">
+                                <state key="normal" title="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -332,13 +332,13 @@
                         <outlet property="LabelLocation" destination="WVO-8y-F9g" id="HYF-hE-TCh"/>
                         <outlet property="LabelUsername" destination="WtD-hP-NR4" id="Kui-rd-s0U"/>
                         <outlet property="LabelWebsite" destination="NuL-og-bDp" id="Zu0-tT-DOr"/>
-                        <segue destination="rKW-6e-oE4" kind="presentation" identifier="changeProfileData" id="OKk-00-zxv"/>
-                        <segue destination="XqZ-4k-HPD" kind="presentation" identifier="showWeb" id="r9P-ZD-M8t"/>
+                        <segue destination="rKW-6e-oE4" kind="presentation" identifier="changeProfileData" customClass="UIStoryboardSegueDismissMe" customModule="BetterInstagram" customModuleProvider="target" id="OKk-00-zxv"/>
+                        <segue destination="XqZ-4k-HPD" kind="presentation" identifier="showWeb" customClass="UIStoryboardSegueDismissMe" customModule="BetterInstagram" customModuleProvider="target" id="r9P-ZD-M8t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Amp-Wi-lCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="878" y="542"/>
+            <point key="canvasLocation" x="778" y="542"/>
         </scene>
         <!--Show Web-->
         <scene sceneID="nit-Ft-GnM">
@@ -377,6 +377,14 @@
             </objects>
             <point key="canvasLocation" x="1958" y="1222"/>
         </scene>
+        <!--Posts-->
+        <scene sceneID="y9v-jz-XhQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Posts" id="tsA-tR-EZh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l1P-Go-Fvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931" y="20"/>
+        </scene>
         <!--set_profile-->
         <scene sceneID="8mb-F3-mMe">
             <objects>
@@ -405,14 +413,17 @@
                             <outlet property="delegate" destination="dk8-WM-wqe" id="66c-gk-haT"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <segue destination="tsA-tR-EZh" kind="show" identifier="showPost" customClass="UIStoryboardSegueDismissMe" customModule="BetterInstagram" customModuleProvider="target" id="WyC-BW-kQi"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOh-d1-WHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1958" y="531"/>
+            <point key="canvasLocation" x="2151" y="539"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="dW3-AS-5b6"/>
-        <segue reference="jY9-mC-d1M"/>
+        <segue reference="Usk-Fr-8Eq"/>
     </inferredMetricsTieBreakers>
 </document>

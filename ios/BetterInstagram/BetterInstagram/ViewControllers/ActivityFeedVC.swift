@@ -74,6 +74,14 @@ class ActivityFeedVC: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
-        (collectionView.cellForItem(at: indexPath) as! ActivityFeedPostCell).toggleViewText()
+        //(collectionView.cellForItem(at: indexPath) as! ActivityFeedPostCell).toggleViewText()
+        let post = (collectionView.cellForItem(at: indexPath) as! ActivityFeedPostCell).post
+        self.performSegue(withIdentifier: "showPost", sender: post)
+        //self.parent?.displayPost(post: post!)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC = segue.destination as! ViewPostVC
+        destVC.post = sender as! Post
     }
 }

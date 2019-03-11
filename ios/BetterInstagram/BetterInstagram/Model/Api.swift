@@ -16,6 +16,7 @@ struct Api{
     
     static let API_ENDPOINT = "http://52.32.0.100/"
     static let appID = UIDevice.current.identifierForVendor!.uuidString
+    static let imageCache = NSCache<AnyObject, AnyObject>()
     
     //// Base function for building and sending a request
     static func makeRequest(endpoint: String, data: [String:String], completion: @escaping (JSON) -> ()){
@@ -95,9 +96,15 @@ struct Api{
     }
     
     static func getImage(url: String, userID: String, completion: @escaping (UIImage) -> ()){
-        AF.download(API_ENDPOINT + "static/" + userID + "/" + url).responseData { response in
+        let imageUrl = API_ENDPOINT + "static/" + userID + "/" + url
+        if let image = imageCache.object(forKey: imageUrl as AnyObject) as? UIImage{
+            completion(image)
+            return
+        }
+        AF.download(imageUrl).responseData { response in
             if let data = response.result.value {
                 let image = UIImage(data: data)
+                imageCache.setObject(image!, forKey: imageUrl as AnyObject)
                 completion(image!)
             }
         }

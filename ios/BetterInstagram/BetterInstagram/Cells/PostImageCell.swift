@@ -17,8 +17,8 @@ class PostImageCell: UITableViewCell{
         super.awakeFromNib()
     }
     
-    func initialize(imageUrl: String, userID: String){
-        Api.getImage(url: imageUrl, userID: userID, completion: {(image) -> () in
+    func initialize(post: Post){
+        Api.getImage(url: post.url, userID: post.user_id, completion: {(image) -> () in
             self.postImage.image = image
             self.activityInd.stopAnimating()
         })

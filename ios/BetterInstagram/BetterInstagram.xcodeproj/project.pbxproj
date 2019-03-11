@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		35C030610625D3B341B811BC /* Pods_BetterInstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F1C8516179A6A56837FB74 /* Pods_BetterInstagram.framework */; };
 		BA3316F721FD019700774952 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3316F621FD019700774952 /* AppDelegate.swift */; };
-		BA3316F921FD019700774952 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3316F821FD019700774952 /* LoginViewController.swift */; };
 		BA3316FC21FD019700774952 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3316FA21FD019700774952 /* Login.storyboard */; };
 		BA3316FE21FD019900774952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3316FD21FD019900774952 /* Assets.xcassets */; };
 		BA33170121FD019900774952 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3316FF21FD019900774952 /* LaunchScreen.storyboard */; };
@@ -26,10 +25,8 @@
 		BA4AA8EF2213E22A00CDC216 /* SetProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AA8EE2213E22A00CDC216 /* SetProfileVC.swift */; };
 		BA4AA8F12213F2FE00CDC216 /* ShowProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AA8F02213F2FE00CDC216 /* ShowProfileVC.swift */; };
 		BA5D0253221A285E00BB2BD3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5D0252221A285E00BB2BD3 /* CloudKit.framework */; };
-		BA5D0255221A298D00BB2BD3 /* UIViewController+HidesKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5D0254221A298D00BB2BD3 /* UIViewController+HidesKeyboard.swift */; };
 		BA70046B21FFDB4B0078517A /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA70046A21FFDB4B0078517A /* Api.swift */; };
 		BA7A1B8421FE40A400D54016 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A1B8321FE40A400D54016 /* User.swift */; };
-		BA7A1B8921FE467A00D54016 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A1B8821FE467A00D54016 /* HomeViewController.swift */; };
 		BA9249F622262B8100C49D09 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9249F522262B8100C49D09 /* UserProfileVC.swift */; };
 		BA9249F92226363800C49D09 /* SearchUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA9249F82226363800C49D09 /* SearchUserCell.xib */; };
 		BA9249FB222636E000C49D09 /* SearchUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9249FA222636E000C49D09 /* SearchUserCell.swift */; };
@@ -39,7 +36,9 @@
 		BA9F33DD222652B200B57659 /* ActivityFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9F33DC222652B200B57659 /* ActivityFeedVC.swift */; };
 		BA9F33DF2226558A00B57659 /* ActivityFeedPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9F33DE2226558A00B57659 /* ActivityFeedPostCell.swift */; };
 		BAA86CE72213D047006F907B /* SetProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA86CE62213D047006F907B /* SetProfilePicture.swift */; };
+		BAABD7552235EC1800C0CBF6 /* ViewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAABD7542235EC1800C0CBF6 /* ViewPostVC.swift */; };
 		BAAFD8D6223225D400A08248 /* SHowWeb.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAFD8D5223225D400A08248 /* SHowWeb.swift */; };
+		BABF29A5223716F40082368F /* UIStoryboardSegue+DismissMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF29A4223716F40082368F /* UIStoryboardSegue+DismissMe.swift */; };
 		BAC2110621FFEA4D00A32682 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC2110521FFEA4D00A32682 /* CurrentUser.swift */; };
 		BAC2110821FFEBD300A32682 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC2110721FFEBD300A32682 /* SignupViewController.swift */; };
 		BAD745DE222D071F00EB218C /* Posts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD745DD222D071F00EB218C /* Posts.storyboard */; };
@@ -54,7 +53,6 @@
 		5484639A7183E3E349111121 /* Pods-BetterInstagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterInstagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BetterInstagram/Pods-BetterInstagram.debug.xcconfig"; sourceTree = "<group>"; };
 		BA3316F321FD019700774952 /* BetterInstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterInstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3316F621FD019700774952 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BA3316F821FD019700774952 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BA3316FB21FD019700774952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		BA3316FD21FD019900774952 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA33170021FD019900774952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,10 +71,8 @@
 		BA4AA8EE2213E22A00CDC216 /* SetProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfileVC.swift; sourceTree = "<group>"; };
 		BA4AA8F02213F2FE00CDC216 /* ShowProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfileVC.swift; sourceTree = "<group>"; };
 		BA5D0252221A285E00BB2BD3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		BA5D0254221A298D00BB2BD3 /* UIViewController+HidesKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HidesKeyboard.swift"; sourceTree = "<group>"; };
 		BA70046A21FFDB4B0078517A /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		BA7A1B8321FE40A400D54016 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		BA7A1B8821FE467A00D54016 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BA9249F522262B8100C49D09 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		BA9249F82226363800C49D09 /* SearchUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchUserCell.xib; sourceTree = "<group>"; };
 		BA9249FA222636E000C49D09 /* SearchUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserCell.swift; sourceTree = "<group>"; };
@@ -86,7 +82,9 @@
 		BA9F33DC222652B200B57659 /* ActivityFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFeedVC.swift; sourceTree = "<group>"; };
 		BA9F33DE2226558A00B57659 /* ActivityFeedPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFeedPostCell.swift; sourceTree = "<group>"; };
 		BAA86CE62213D047006F907B /* SetProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfilePicture.swift; sourceTree = "<group>"; };
+		BAABD7542235EC1800C0CBF6 /* ViewPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPostVC.swift; sourceTree = "<group>"; };
 		BAAFD8D5223225D400A08248 /* SHowWeb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHowWeb.swift; sourceTree = "<group>"; };
+		BABF29A4223716F40082368F /* UIStoryboardSegue+DismissMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboardSegue+DismissMe.swift"; sourceTree = "<group>"; };
 		BAC2110521FFEA4D00A32682 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		BAC2110721FFEBD300A32682 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		BAD745DD222D071F00EB218C /* Posts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Posts.storyboard; sourceTree = "<group>"; };
@@ -181,6 +179,7 @@
 				BA70046A21FFDB4B0078517A /* Api.swift */,
 				BAC2110521FFEA4D00A32682 /* CurrentUser.swift */,
 				BA9F33DA222646C900B57659 /* Post.swift */,
+				BABF29A4223716F40082368F /* UIStoryboardSegue+DismissMe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,13 +187,10 @@
 		BA7A1B8721FE40E400D54016 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				BA3316F821FD019700774952 /* LoginViewController.swift */,
-				BA7A1B8821FE467A00D54016 /* HomeViewController.swift */,
 				BAC2110721FFEBD300A32682 /* SignupViewController.swift */,
 				BAA86CE62213D047006F907B /* SetProfilePicture.swift */,
 				BA4AA8EE2213E22A00CDC216 /* SetProfileVC.swift */,
 				BA4AA8F02213F2FE00CDC216 /* ShowProfileVC.swift */,
-				BA5D0254221A298D00BB2BD3 /* UIViewController+HidesKeyboard.swift */,
 				BAEBADB2222609C1006F3F70 /* AddPostVC.swift */,
 				BAEBADB422260C7D006F3F70 /* MainVC.swift */,
 				BA9249F522262B8100C49D09 /* UserProfileVC.swift */,
@@ -202,6 +198,7 @@
 				BA9F33DC222652B200B57659 /* ActivityFeedVC.swift */,
 				BAD745DF222D0A4200EB218C /* MainTabBarController.swift */,
 				BAAFD8D5223225D400A08248 /* SHowWeb.swift */,
+				BAABD7542235EC1800C0CBF6 /* ViewPostVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -389,20 +386,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAC2110821FFEBD300A32682 /* SignupViewController.swift in Sources */,
-				BA3316F921FD019700774952 /* LoginViewController.swift in Sources */,
 				BAD745E0222D0A4200EB218C /* MainTabBarController.swift in Sources */,
 				BA333C4D2235A5D400F27B36 /* PostActionCell.swift in Sources */,
 				BA3316F721FD019700774952 /* AppDelegate.swift in Sources */,
 				BA4AA8EF2213E22A00CDC216 /* SetProfileVC.swift in Sources */,
 				BA9F33DB222646C900B57659 /* Post.swift in Sources */,
 				BA9F33DF2226558A00B57659 /* ActivityFeedPostCell.swift in Sources */,
+				BABF29A5223716F40082368F /* UIStoryboardSegue+DismissMe.swift in Sources */,
 				BAA86CE72213D047006F907B /* SetProfilePicture.swift in Sources */,
 				BA9249FB222636E000C49D09 /* SearchUserCell.swift in Sources */,
 				BAAFD8D6223225D400A08248 /* SHowWeb.swift in Sources */,
 				BA7A1B8421FE40A400D54016 /* User.swift in Sources */,
 				BA70046B21FFDB4B0078517A /* Api.swift in Sources */,
 				BA333C472235A21400F27B36 /* PostPosterCell.swift in Sources */,
-				BA5D0255221A298D00BB2BD3 /* UIViewController+HidesKeyboard.swift in Sources */,
 				BAC2110621FFEA4D00A32682 /* CurrentUser.swift in Sources */,
 				BA9249F622262B8100C49D09 /* UserProfileVC.swift in Sources */,
 				BA9249FD222637F700C49D09 /* SearchUserVC.swift in Sources */,
@@ -411,8 +407,8 @@
 				BA4AA8F12213F2FE00CDC216 /* ShowProfileVC.swift in Sources */,
 				BAEBADB3222609C1006F3F70 /* AddPostVC.swift in Sources */,
 				BA498E7922347C6800E3992A /* PostImageCell.swift in Sources */,
-				BA7A1B8921FE467A00D54016 /* HomeViewController.swift in Sources */,
 				BAEBADB522260C7D006F3F70 /* MainVC.swift in Sources */,
+				BAABD7552235EC1800C0CBF6 /* ViewPostVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,7 +571,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dhmm.BetterInstagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -600,7 +596,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dhmm.BetterInstagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -18,7 +18,7 @@ class PostCommentCell: UITableViewCell{
     
     func initialize(post: Post){
         let attributedString = NSMutableAttributedString(string: post.user.username + " " + post.caption, attributes: [:])
-        attributedString.addAttribute(.foregroundColor, value: UIColor.darkGray, range: NSRange(location: post.user.username.count, length: attributedString.length-post.user.username.count-1))
+        attributedString.addAttribute(.foregroundColor, value: UIColor.darkGray, range: NSRange(location: post.user.username.count, length: attributedString.length-post.user.username.count))
         self.LabelComment.attributedText = attributedString
     }
 }

@@ -13,6 +13,11 @@ class PostActionCell: UITableViewCell{
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    func initialize(post: Post){
+        
+    }
+    
     @IBAction func TappedLike(_ sender: Any) {
         
     }

@@ -56,8 +56,8 @@ class SetProfileVC: UIViewController, UITextFieldDelegate{
         }
     }
     
-    func dismissMe(){
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "dismiss"), object: nil)
-    }
+//    func dismissMe(){
+//        NotificationCenter.default.post(name: Notification.Name(rawValue: "dismiss"), object: nil)
+//    }
     
 }

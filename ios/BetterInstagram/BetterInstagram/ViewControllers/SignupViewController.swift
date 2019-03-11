@@ -21,7 +21,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         userTextField.delegate = self
-        
+        //self.view.layer.backgroundColor = UIColor.black
     }
     
     override func viewDidAppear(_ animated: Bool) {

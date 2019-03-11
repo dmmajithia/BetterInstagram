@@ -147,9 +147,9 @@ class UserProfileVC: UIViewController{
         present(picker, animated: true, completion: nil)
     }
     
-    func dismissMe(){
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "dismiss"), object: nil)
-    }
+//    func dismissMe(){
+//        NotificationCenter.default.post(name: Notification.Name(rawValue: "dismiss"), object: nil)
+//    }
     
     @IBAction func TappedCancel(_ sender: Any) {
         if(self.tabBarController != nil){

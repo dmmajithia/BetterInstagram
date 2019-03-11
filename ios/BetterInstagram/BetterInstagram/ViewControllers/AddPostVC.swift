@@ -100,8 +100,8 @@ class AddPostVC: UIViewController, UITextViewDelegate{
         return true
     }
     
-    func dismissMe(){
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "dismiss"), object: nil)
-    }
+//    func dismissMe(){
+//        NotificationCenter.default.post(name: Notification.Name(rawValue: "dismiss"), object: nil)
+//    }
     
 }

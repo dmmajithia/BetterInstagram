@@ -65,6 +65,7 @@ class User{
             user.website = json["website"].string!
             user.location = json["location"].string!
             user.profilePictureUrl = json["profile_picture_url"].string!
+            completion(user)
         })
     }
 }

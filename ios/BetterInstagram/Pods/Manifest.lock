@@ -1,28 +1,29 @@
 PODS:
-  - Alamofire (5.0.0-beta.2)
+  - Alamofire (5.0.0-beta.3)
   - AwesomeTextFieldSwift (0.2.5)
   - LTMorphingLabel (0.6.0)
-  - MaterialComponents/BottomNavigation (78.0.1):
+  - MaterialComponents/BottomNavigation (79.0.1):
     - MaterialComponents/Ink
     - MaterialComponents/private/Math
     - MaterialComponents/ShadowElevations
     - MaterialComponents/ShadowLayer
     - MaterialComponents/Typography
     - MDFInternationalization
-  - MaterialComponents/Ink (78.0.1):
+  - MaterialComponents/Ink (79.0.1):
     - MaterialComponents/private/Math
-  - MaterialComponents/private/Application (78.0.1)
-  - MaterialComponents/private/Math (78.0.1)
-  - MaterialComponents/ShadowElevations (78.0.1)
-  - MaterialComponents/ShadowLayer (78.0.1):
+  - MaterialComponents/private/Application (79.0.1)
+  - MaterialComponents/private/Math (79.0.1)
+  - MaterialComponents/ShadowElevations (79.0.1)
+  - MaterialComponents/ShadowLayer (79.0.1):
     - MaterialComponents/ShadowElevations
-  - MaterialComponents/Typography (78.0.1):
+  - MaterialComponents/Typography (79.0.1):
     - MaterialComponents/private/Application
     - MaterialComponents/private/Math
   - MDFInternationalization (2.0.0)
+  - OneSignal (2.9.5)
   - pop (1.0.12)
   - PryntTrimmerView (3.0.0)
-  - SteviaLayout (4.4.3)
+  - SteviaLayout (4.4.4)
   - SwiftLocation (3.2.3):
     - SwiftyJSON (~> 4.0.0-alpha.1)
   - SwiftyJSON (4.0.0)
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - AwesomeTextFieldSwift
   - LTMorphingLabel
   - MaterialComponents/BottomNavigation
+  - OneSignal (< 3.0, >= 2.6.2)
   - SwiftLocation (~> 3.2.3)
   - SwiftyJSON (~> 4.0)
   - VBFPopFlatButton
@@ -49,6 +51,7 @@ SPEC REPOS:
     - LTMorphingLabel
     - MaterialComponents
     - MDFInternationalization
+    - OneSignal
     - pop
     - PryntTrimmerView
     - SteviaLayout
@@ -58,19 +61,20 @@ SPEC REPOS:
     - YPImagePicker
 
 SPEC CHECKSUMS:
-  Alamofire: d1e5493588babe3e7b56ae29e8032942f4de09fe
+  Alamofire: 50d6fa7e8cbe7f84559e86ab641ffd029db655f8
   AwesomeTextFieldSwift: 5dbe899fa593144bb6547748b52f916cf4f21756
   LTMorphingLabel: c73ebfef9009c0a098546c29f566024442d1a91e
-  MaterialComponents: 1e1d1a8356bbf2b80f6a0aa32018cda8ac8065a5
+  MaterialComponents: 79d641efdaa3993390aa04117228653f3652434c
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
+  OneSignal: ccdeb961882f8668305e5b694e2cb7cb325fc907
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PryntTrimmerView: 53ac64053c7ce63cb3e27f54090f52da0734891d
-  SteviaLayout: ae5ee66101e03607a93c9b3773b84ab7ba7b3d17
+  SteviaLayout: 523469269059f2c6da02820bb2ff28a5fe0780aa
   SwiftLocation: a3c3bc2023118171ef3572188a31def94aa0892c
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   VBFPopFlatButton: 39e48ab56277f3d056734a9b5ec5d0cc60d69778
   YPImagePicker: 5dd3814b47b1208e9c8cc8f6ef77fe90db3723b6
 
-PODFILE CHECKSUM: a359740d11130d78a95b78faca43238696484394
+PODFILE CHECKSUM: 7a6e5147fd06a2b0e224c4e0c66a89d1bcb0d460
 
 COCOAPODS: 1.5.3

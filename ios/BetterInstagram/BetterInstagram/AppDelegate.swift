@@ -13,11 +13,15 @@ import CloudKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var currentParent: UIViewController!
     //var currentUser: User?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.setParent(noti:)), name: Notification.Name(rawValue: "SetParent"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.dismissCurrentVC(noti:)), name: Notification.Name(rawValue: "DismissCurrentVC"), object: nil)
+        
         // first get appID from CloudKit
         Api.login(completion: {(json) -> () in
             if(json["success"].bool!){
@@ -57,6 +61,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 complete(recordID, nil)
             }
         }
+    }
+    
+    @objc func setParent(noti: Notification){
+        self.currentParent = (noti.object as! UIViewController)
+    }
+    
+    @objc func dismissCurrentVC(noti: Notification){
+        self.currentParent.dismiss(animated: true, completion: nil)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -98,6 +110,10 @@ extension UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func dismissMe(){
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "DismissCurrentVC"), object: nil)
     }
 }
 

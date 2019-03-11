@@ -30,6 +30,10 @@ class SearchUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         return true
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.updateSearch(text: textField.text!)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.usersArr.count
     }
@@ -71,12 +75,13 @@ class SearchUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         destVC.show_user_id = self.show_user_id
     }
     
-    func dismissMe(){
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "dismiss"), object: nil)
-        self.tabBarController?.selectedIndex = 0
-    }
+//    func dismissMe(){
+//        NotificationCenter.default.post(name: Notification.Name(rawValue: "dismiss"), object: nil)
+//        self.tabBarController?.selectedIndex = 0
+//    }
     
     @IBAction func tappedCancel(_ sender: Any) {
         self.dismissMe()
+        self.tabBarController?.selectedIndex = 0
     }
 }
