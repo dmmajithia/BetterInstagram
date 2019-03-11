@@ -6,6 +6,7 @@ import os
 import base64
 import datetime
 import time
+import BIGnotif
 
 import os
 from flask import redirect, url_for
@@ -288,12 +289,18 @@ def follow():
     sql1 = "INSERT INTO relationship (user_id, follower_id) VALUES( %s, %s)"
     sql2 = "UPDATE user SET num_of_following =  num_of_following + 1 WHERE user_id = %s"
     sql3 = "UPDATE user SET num_of_follower =  num_of_follower + 1 WHERE user_id = %s"
+
+    # push notification to user_id2
+    sql4 = "SELECT appID, username FROM user WHERE user_id = %s"
     try:
         cursor.execute(sql1, (user_id2, user_id))
         cursor.execute(sql2, user_id)
         cursor.execute(sql3, user_id2)
+        cursor.execute(sql4, user_id2)
+        result = cursor.fetchall()
         db.commit()
         success = True
+        BIGnotif.PushToUser(result[0][0], result[0][1], " started following you!")
     except:
         db.rollback()
         success = False
@@ -314,12 +321,18 @@ def unfollow():
     sql1 = "DELETE FROM relationship WHERE (user_id= %s AND follower_id= %s)"
     sql2 = "UPDATE user SET num_of_following =  num_of_following - 1 WHERE user_id = %s"
     sql3 = "UPDATE user SET num_of_follower =  num_of_follower - 1 WHERE user_id = %s"
+
+    # push notification to user_id2
+    sql4 = "SELECT appID, username from user WHERE user_id = %s"
     try:
         cursor.execute(sql1, (user_id2, user_id))
         cursor.execute(sql2, user_id)
         cursor.execute(sql3, user_id2)
+        cursor.execute(sql4, user_id2)
+        result = cursor.fetchall()
         db.commit()
         success = True
+        BIGnotif.PushToUser(result[0][0], result[0][1], " just unfollowed you :(")
     except:
         db.rollback()
         success = False
@@ -644,9 +657,17 @@ def add_like():
     cursor = db.cursor()
     sql = "INSERT INTO activity (post_id, activity_user_id, is_like, activity_time) VALUES( %s, %s, %s, %s)"
     sql2 = "UPDATE post SET num_of_like =  num_of_like + 1 WHERE post_id = %s"
+    sqlnf_tosend = "SELECT U.appID FROM user U WHERE U.user_id IN (SELECT P.user_id FROM post P WHERE P.post_id = %s)"
+    sqlnf_bywho = "SELECT username FROM user WHERE user_id = %s"
     try:
         cursor.execute(sql, (post_id, activity_user_id, 1, timestamp))
         cursor.execute(sql2, post_id)
+
+        #for notificatons
+        cursor.execute(sqlnf_tosend, post_id)
+        appID = cursor.fetchone()
+        cursor.execute(sqlnf_bywho, activity_user_id)
+        usernam =
         dic = {"success": True}
         db.commit()
     except:
