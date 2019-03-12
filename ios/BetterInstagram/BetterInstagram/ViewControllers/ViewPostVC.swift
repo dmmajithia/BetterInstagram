@@ -17,18 +17,25 @@ class ViewPostVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     
     override func viewDidLoad() {
-        self.postTableView.delegate = self
-        self.postTableView.dataSource = self
-        self.postTableView.register(UINib.init(nibName: "PostCommentCell", bundle: nil), forCellReuseIdentifier: "PostCommentCell")
-        self.postTableView.register(UINib.init(nibName: "PostActionCell", bundle: nil), forCellReuseIdentifier: "PostActionCell")
-        self.postTableView.register(UINib.init(nibName: "PostPosterCell", bundle: nil), forCellReuseIdentifier: "PostPosterCell")
-        self.postTableView.register(UINib.init(nibName: "PostImageCell", bundle: nil), forCellReuseIdentifier: "PostImageCell")
-        NotificationCenter.default.addObserver(self, selector: #selector(self.showUser(noti:)), name: Notification.Name(rawValue: "ShowUser"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.showLocationForPost(noti:)), name: Notification.Name(rawValue: "ShowLocationForPost"), object: nil)
+        self.post.getLikes {
+            self.post.getComments {
+                self.postTableView.delegate = self
+                self.postTableView.dataSource = self
+                self.postTableView.register(UINib.init(nibName: "PostCommentCell", bundle: nil), forCellReuseIdentifier: "PostCommentCell")
+                self.postTableView.register(UINib.init(nibName: "PostActionCell", bundle: nil), forCellReuseIdentifier: "PostActionCell")
+                self.postTableView.register(UINib.init(nibName: "PostPosterCell", bundle: nil), forCellReuseIdentifier: "PostPosterCell")
+                self.postTableView.register(UINib.init(nibName: "PostImageCell", bundle: nil), forCellReuseIdentifier: "PostImageCell")
+                
+                NotificationCenter.default.addObserver(self, selector: #selector(self.showUser(noti:)), name: Notification.Name(rawValue: "ShowUser"), object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(self.showLocationForPost(noti:)), name: Notification.Name(rawValue: "ShowLocationForPost"), object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return (4 + self.post.comments.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,7 +54,7 @@ class ViewPostVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCommentCell") as! PostCommentCell
-            cell.initialize(post: self.post)
+            cell.initialize(post: self.post, index: indexPath.item-4)
             return cell
         }
     }
@@ -83,6 +90,20 @@ class ViewPostVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @objc func showLocationForPost(noti: Notification){
         
+    }
+    
+    @objc func keyboardWillShow(noti: Notification){
+        if let keyboardSize = (noti.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(noti: Notification){
+        if self.view.frame.origin.y != 0{
+            self.view.frame.origin.y = 0
+        }
     }
     
 }

@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var currentParent: UIViewController!
+    var vcStack: [UIViewController]!
     //var currentUser: User?
 
 
@@ -64,11 +65,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     @objc func setParent(noti: Notification){
-        self.currentParent = (noti.object as! UIViewController)
+        //self.currentParent = (noti.object as! UIViewController)
+        if self.vcStack == nil{
+            self.vcStack = []
+        }
+        self.vcStack.append(noti.object as! UIViewController)
     }
     
     @objc func dismissCurrentVC(noti: Notification){
-        self.currentParent.dismiss(animated: true, completion: nil)
+        //self.currentParent.dismiss(animated: true, completion: nil)
+        self.vcStack.popLast()?.dismiss(animated: true, completion: nil)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

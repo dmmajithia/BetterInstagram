@@ -40,7 +40,7 @@ class ActivityFeedPostCell: UICollectionViewCell{
             self.ViewText.isHidden = true
             self.LabelCaption.text = self.post.caption
             self.LabelLocation.text = self.post.location
-            self.updateBackgroundFromMood()
+            //self.updateBackgroundFromMood()
         })
     }
     

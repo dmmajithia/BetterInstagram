@@ -19,8 +19,11 @@ class Post{
     var numComments: Int!
     var url: String!
     var mood: String!
+    var timestamp: Double!
     var user: User!
     var userJson: JSON!
+    var likes: [JSON]!
+    var comments: [JSON]!
     
     func getPost(postID: String, completion: @escaping () -> ()){
         self.postID = postID
@@ -29,6 +32,7 @@ class Post{
             self.user_id = String(json["user_id"].int!)
             self.location = json["location"].string!
             self.url = json["file_name"].string!
+            self.timestamp = Double(json["timestamp"].string!)
             if let _mood = json["mood"].string{
                 self.mood = _mood
             }
@@ -48,6 +52,48 @@ class Post{
             /*else{
                 completion()
             }*/
+        })
+    }
+    
+    func getLikes(completion: @escaping () -> ()){
+        Api.makeRequest(endpoint: "post/get_likes", data: ["post_id": self.postID], completion: {(json) -> () in
+            self.likes = json["likes"].array
+            completion()
+        })
+    }
+    
+    func getComments(completion: @escaping () -> ()){
+        Api.makeRequest(endpoint: "post/get_comments", data: ["post_id": self.postID], completion: {(json) -> () in
+            self.comments = json["comments"].array
+            completion()
+        })
+    }
+    
+    func toggleLike(completion: @escaping ()->()){
+        if self.isLiked(){
+            //unlike the post
+            //Api.makeRequest(endpoint: "post/unlike", data: <#T##[String : String]#>, completion: <#T##(JSON) -> ()#>)
+        }
+        else{
+            //like the post
+            Api.makeRequest(endpoint: "post/add_like", data: ["user_id": (CurrentUser.shared.user?.userID)!, "post_id": self.postID], completion: {(json) -> () in
+                self.getLikes(completion: completion)
+            })
+        }
+    }
+    
+    func isLiked() -> Bool{
+        for like in self.likes{
+            if String(like["user_id"].int!) == CurrentUser.shared.user?.userID{
+                return true
+            }
+        }
+        return false
+    }
+    
+    func addComment(comment: String, completion: @escaping ()->()){
+        Api.makeRequest(endpoint: "post/add_comment", data: ["user_id": (CurrentUser.shared.user?.userID)!, "post_id": self.postID, "text": comment, "timestamp": String(Date().timeIntervalSince1970)], completion: {(json) -> () in
+            self.getComments(completion: completion)
         })
     }
     

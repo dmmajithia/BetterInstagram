@@ -1,25 +1,8 @@
 PODS:
   - Alamofire (5.0.0-beta.3)
   - AwesomeTextFieldSwift (0.2.5)
+  - DateToolsSwift (4.0.0)
   - LTMorphingLabel (0.6.0)
-  - MaterialComponents/BottomNavigation (79.0.1):
-    - MaterialComponents/Ink
-    - MaterialComponents/private/Math
-    - MaterialComponents/ShadowElevations
-    - MaterialComponents/ShadowLayer
-    - MaterialComponents/Typography
-    - MDFInternationalization
-  - MaterialComponents/Ink (79.0.1):
-    - MaterialComponents/private/Math
-  - MaterialComponents/private/Application (79.0.1)
-  - MaterialComponents/private/Math (79.0.1)
-  - MaterialComponents/ShadowElevations (79.0.1)
-  - MaterialComponents/ShadowLayer (79.0.1):
-    - MaterialComponents/ShadowElevations
-  - MaterialComponents/Typography (79.0.1):
-    - MaterialComponents/private/Application
-    - MaterialComponents/private/Math
-  - MDFInternationalization (2.0.0)
   - OneSignal (2.9.5)
   - pop (1.0.12)
   - PryntTrimmerView (3.0.0)
@@ -36,8 +19,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.0.0.beta.1)
   - AwesomeTextFieldSwift
+  - DateToolsSwift
   - LTMorphingLabel
-  - MaterialComponents/BottomNavigation
   - OneSignal (< 3.0, >= 2.6.2)
   - SwiftLocation (~> 3.2.3)
   - SwiftyJSON (~> 4.0)
@@ -48,9 +31,8 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AwesomeTextFieldSwift
+    - DateToolsSwift
     - LTMorphingLabel
-    - MaterialComponents
-    - MDFInternationalization
     - OneSignal
     - pop
     - PryntTrimmerView
@@ -63,9 +45,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 50d6fa7e8cbe7f84559e86ab641ffd029db655f8
   AwesomeTextFieldSwift: 5dbe899fa593144bb6547748b52f916cf4f21756
+  DateToolsSwift: 875d97ff9e3a5d54abdd67a269b3f51c757b71ab
   LTMorphingLabel: c73ebfef9009c0a098546c29f566024442d1a91e
-  MaterialComponents: 79d641efdaa3993390aa04117228653f3652434c
-  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   OneSignal: ccdeb961882f8668305e5b694e2cb7cb325fc907
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PryntTrimmerView: 53ac64053c7ce63cb3e27f54090f52da0734891d
@@ -75,6 +56,6 @@ SPEC CHECKSUMS:
   VBFPopFlatButton: 39e48ab56277f3d056734a9b5ec5d0cc60d69778
   YPImagePicker: 5dd3814b47b1208e9c8cc8f6ef77fe90db3723b6
 
-PODFILE CHECKSUM: 7a6e5147fd06a2b0e224c4e0c66a89d1bcb0d460
+PODFILE CHECKSUM: 62860a67f66c5fcb7d607fec1bdadbb15a5b4523
 
 COCOAPODS: 1.5.3

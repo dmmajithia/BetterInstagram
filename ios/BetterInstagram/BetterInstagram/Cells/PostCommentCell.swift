@@ -7,18 +7,24 @@
 //
 
 import UIKit
+import DateToolsSwift
 
 class PostCommentCell: UITableViewCell{
     
     @IBOutlet weak var LabelComment: UILabel!
+    @IBOutlet weak var LabelTime: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func initialize(post: Post){
-        let attributedString = NSMutableAttributedString(string: post.user.username + " " + post.caption, attributes: [:])
-        attributedString.addAttribute(.foregroundColor, value: UIColor.darkGray, range: NSRange(location: post.user.username.count, length: attributedString.length-post.user.username.count))
+    func initialize(post: Post, index: Int){
+        let username = index == -1 ? post.user.username : post.comments[index]["username"].string!
+        let text = index == -1 ? post.caption : post.comments[index]["text"].string!
+        let attributedString = NSMutableAttributedString(string: username + " " + text!, attributes: [:])
+        attributedString.addAttribute(.foregroundColor, value: UIColor.darkGray, range: NSRange(location: username.count, length: attributedString.length-username.count))
         self.LabelComment.attributedText = attributedString
+        let timeAgoDate = Date(timeIntervalSinceNow: -post.timestamp/10000)
+        self.LabelTime.text = timeAgoDate.timeAgoSinceNow
     }
 }

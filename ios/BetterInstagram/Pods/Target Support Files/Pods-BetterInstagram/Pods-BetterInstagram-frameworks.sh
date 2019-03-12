@@ -145,9 +145,8 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AwesomeTextFieldSwift/AwesomeTextFieldSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework"
@@ -159,9 +158,8 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AwesomeTextFieldSwift/AwesomeTextFieldSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework"
