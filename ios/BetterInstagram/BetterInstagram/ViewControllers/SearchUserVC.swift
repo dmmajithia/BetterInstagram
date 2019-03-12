@@ -23,6 +23,7 @@ class SearchUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         self.TableViewResults.delegate = self
         self.TableViewResults.dataSource = self
         self.TextFieldSearch.delegate = self
+        self.TextFieldSearch.addTarget(self, action: #selector(self.textFieldDidChane(_:)), for: .editingChanged)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -30,7 +31,11 @@ class SearchUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        self.updateSearch(text: textField.text!)
+//    }
+    
+    @objc func textFieldDidChane(_ textField: UITextField) {
         self.updateSearch(text: textField.text!)
     }
     
