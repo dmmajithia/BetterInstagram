@@ -88,13 +88,25 @@ struct Api{
     static func addPost(image: UIImage, caption: String, location: String, completion: @escaping (JSON)->()){
         Api.uploadImage(image: image, completion: {(json) -> () in
             if(json["success"].bool!){
+                var peopleTags = [String]()
+                var hashTags = [String]()
+                caption.enumerateSubstrings(in: caption.startIndex..<caption.endIndex, options: .byWords) {(substring, _, _, _) in
+                    var potentialTag = substring
+                    potentialTag?.removeFirst()
+                    if substring?.first == "@"{
+                        peopleTags.append(potentialTag!)
+                    }
+                    else if substring?.first == "#"{
+                        hashTags.append(potentialTag!)
+                    }
+                }
                 let url = json["file_name"].string!
                 var data = ["caption":caption]
                 data["file_url"] = url
                 data["timestamp"] = String(Date().timeIntervalSince1970)
                 data["location"] = location
-                //data["hashtags"] = ""
-                //data["tags"] = ""
+                data["hashtags"] = hashTags.joined(separator: ",")
+                data["tags"] = peopleTags.joined(separator: ",")
                 data["user_id"] = CurrentUser.shared.user?.userID
                 //data["mood"] = ""
                 Api.makeRequest(endpoint: "post/add_post", data: data, completion: {(json) -> () in

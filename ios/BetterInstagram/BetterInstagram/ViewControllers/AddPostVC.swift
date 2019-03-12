@@ -62,7 +62,8 @@ class AddPostVC: UIViewController, UITextViewDelegate{
         
         //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in
-            textField.text = "enter here"
+            //textField.text = "enter here"
+            textField.placeholder = "enter here"
         }
         
         // 3. Grab the value from the text field, and print it when the user clicks OK.
