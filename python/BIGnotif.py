@@ -1,8 +1,8 @@
 #Notification API Wrapper for Python
 
-from onesignal import OneSignal, SegmentNotification, FilterNotification
+from onesignal import OneSignal, SegmentNotification, FilterNotification, Filter
 
-client = OneSignal("b93dcd48-6999-4353-8c4d-4a81b063f8c4", "RESTAPI KEY HERE")
+client = OneSignal("b93dcd48-6999-4353-8c4d-4a81b063f8c4", "RestAPI Key Here")
 
 def PushToAll(message):
     nf_to_all = SegmentNotification(
@@ -14,6 +14,6 @@ def PushToAll(message):
 def PushToUser(appID, username, message):
     nf_to_some = FilterNotification(
         contents={"en": username + message},
-        Filter.Tag("appID", "=", appID)
+        filters=[Filter.Tag("appID", "=", appID),]
     )
     client.send(nf_to_some)
