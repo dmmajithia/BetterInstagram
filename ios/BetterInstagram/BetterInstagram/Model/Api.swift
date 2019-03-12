@@ -17,6 +17,8 @@ struct Api{
     static let API_ENDPOINT = "http://52.32.0.100/"
     static let appID = UIDevice.current.identifierForVendor!.uuidString
     static let imageCache = NSCache<AnyObject, AnyObject>()
+    static var posts = [String:JSON]() // [postID:postJSON]
+    static var users = [String:JSON]() // [userID:userJSON]
     
     //// Base function for building and sending a request
     static func makeRequest(endpoint: String, data: [String:String], completion: @escaping (JSON) -> ()){
@@ -73,7 +75,14 @@ struct Api{
     }
     
     static func getUserProfileJson(userID: String, completion: @escaping (JSON) -> ()){
-        Api.makeRequest(endpoint: "profile/get_profile_data", data: ["user_id2": userID, "user_id": (CurrentUser.shared.user?.userID)!], completion: completion)
+        if let cachedUserJSON = self.users[userID]{
+            completion(cachedUserJSON)
+            return
+        }
+        Api.makeRequest(endpoint: "profile/get_profile_data", data: ["user_id2": userID, "user_id": (CurrentUser.shared.user?.userID)!], completion: {(json) -> () in
+            self.users[userID] = json
+            completion(json)
+        })
     }
     
     static func addPost(image: UIImage, caption: String, location: String, completion: @escaping (JSON)->()){
@@ -119,7 +128,14 @@ struct Api{
     }
     
     static func getPostData(postID: String, completion: @escaping (JSON) -> ()){
-        Api.makeRequest(endpoint: "post/get_post_data", data: ["post_id": postID], completion: completion)
+        if let cachedPostJSON = self.posts[postID]{
+            completion(cachedPostJSON)
+            return
+        }
+        Api.makeRequest(endpoint: "post/get_post_data", data: ["post_id": postID], completion: {(json) -> () in
+            self.posts[postID] = json
+            completion(json)
+        })
     }
     
     static func getPosts(userID: String, completion: @escaping ([Int]) -> ()){

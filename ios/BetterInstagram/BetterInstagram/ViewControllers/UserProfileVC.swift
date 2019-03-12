@@ -37,6 +37,7 @@ class UserProfileVC: UIViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        CurrentUser.shared.show_user_id = self.show_user_id
         self.updateUser()
         //self.is_editing = false
         if(self.is_editing){

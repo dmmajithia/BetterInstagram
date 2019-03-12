@@ -12,6 +12,7 @@ class ActivityFeedVC: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     var postIDs: [Int]!
     var isPersonalFeed = false
+    var cells: [Int:ActivityFeedPostCell]!
     
     override func viewDidLoad() {
         self.collectionView.register(UINib.init(nibName: "ActivityFeedPostCell", bundle: nil), forCellWithReuseIdentifier: "ActivityFeedPostCell")
@@ -53,10 +54,20 @@ class ActivityFeedVC: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        print("indexpath is ", indexPath.item)
+//        if self.cells == nil{
+//            self.cells = [:]
+//        }
+//        if !self.cells.isEmpty{
+//            if let cell = self.cells[indexPath.item]{
+//                return cell
+//            }
+//        }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActivityFeedPostCell", for: indexPath) as! ActivityFeedPostCell
         cell.initialize(postID: (self.postIDs?[indexPath.item])!, personalize: self.isPersonalFeed)
         cell.needsUpdateConstraints()
         cell.updateConstraints()
+        //self.cells[indexPath.item] = cell
         return cell
     }
     
