@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewPostVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ViewPostVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
     
     @IBOutlet weak var postTableView: UITableView!
     @IBOutlet weak var commentTextField: UITextField!
@@ -21,6 +21,8 @@ class ViewPostVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             self.post.getComments {
                 self.postTableView.delegate = self
                 self.postTableView.dataSource = self
+                self.commentTextField.delegate = self
+                
                 self.postTableView.register(UINib.init(nibName: "PostCommentCell", bundle: nil), forCellReuseIdentifier: "PostCommentCell")
                 self.postTableView.register(UINib.init(nibName: "PostActionCell", bundle: nil), forCellReuseIdentifier: "PostActionCell")
                 self.postTableView.register(UINib.init(nibName: "PostPosterCell", bundle: nil), forCellReuseIdentifier: "PostPosterCell")
@@ -49,9 +51,10 @@ class ViewPostVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             cell.initialize(post: self.post)
             return cell
         case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PostActionCell") as! PostActionCell
-            cell.initialize(post: self.post)
-            return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostLikesCell")
+            //cell.initialize(post: self.post)
+            cell?.detailTextLabel?.text = String(self.post.likes.count)
+            return cell!
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCommentCell") as! PostCommentCell
             cell.initialize(post: self.post, index: indexPath.item-4)
@@ -72,6 +75,16 @@ class ViewPostVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        let commentText = textField.text
+        textField.text = ""
+        self.post.addComment(comment: commentText!, completion: {
+            self.postTableView.reloadData()
+        })
+        return true
     }
     
     @IBAction func TappedBack(_ sender: Any) {
