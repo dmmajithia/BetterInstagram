@@ -139,6 +139,20 @@ struct Api{
         })
     }
     
+    static func searchHashtag(text: String, completion: @escaping ([Int]) -> ()){
+        Api.makeRequest(endpoint: "search/hashtag", data: ["hashtag": text, "last_post_id": "0"], completion: {(json) -> () in
+            let postIDs = json["post_id"].arrayObject as! [Int]
+            completion(postIDs)
+        })
+    }
+    
+    static func getTopHashTags(completion: @escaping ([String]) -> ()){
+        Api.makeRequest(endpoint: "search/tophashtags", data: [:], completion: {(json) -> () in
+            let hashtags = json["hashtags"].arrayObject as! [String]
+            completion(hashtags)
+        })
+    }
+    
     static func getPostData(postID: String, completion: @escaping (JSON) -> ()){
         if let cachedPostJSON = self.posts[postID]{
             completion(cachedPostJSON)

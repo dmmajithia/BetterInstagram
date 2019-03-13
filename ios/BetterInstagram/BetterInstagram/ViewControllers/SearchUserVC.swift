@@ -9,21 +9,34 @@
 import UIKit
 import SwiftyJSON
 
-class SearchUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate{
+class SearchUserVC: UIViewController, UITextFieldDelegate{
     
     var usersArr = [JSON]()
     var show_user_id: String!
     
+    @IBOutlet weak var ButtonLocation: UIButton!
+    @IBOutlet weak var ButtonUser: UIButton!
+    @IBOutlet weak var ButtonHashTag: UIButton!
     @IBOutlet weak var TextFieldSearch: UITextField!
     @IBOutlet weak var TableViewResults: UITableView!
+    @IBOutlet weak var CollectionViewResults: UICollectionView!
+    
+    var selectedSearch = 0 // [user, hashtag, location]
+    var buttons: [UIButton]!
+    var currentSearchResponder: Searchable!
     
     override func viewDidLoad() {
+        self.buttons = [self.ButtonUser, self.ButtonHashTag, self.ButtonLocation]
         self.hideKeyboardWhenTappedAround()
-        self.TableViewResults.register(UINib.init(nibName: "SearchUserCell", bundle: nil), forCellReuseIdentifier: "SearchUserCell")
-        self.TableViewResults.delegate = self
-        self.TableViewResults.dataSource = self
         self.TextFieldSearch.delegate = self
-        self.TextFieldSearch.addTarget(self, action: #selector(self.textFieldDidChane(_:)), for: .editingChanged)
+        self.TextFieldSearch.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        
+        self.TableViewResults.register(UINib.init(nibName: "SearchUserCell", bundle: nil), forCellReuseIdentifier: "SearchUserCell")
+        self.CollectionViewResults.register(UINib.init(nibName: "ActivityFeedPostCell", bundle: nil), forCellWithReuseIdentifier: "ActivityFeedPostCell")
+        
+        self.TableViewResults.tableFooterView = UIView(frame: .zero)
+        
+        self.updateSearchTabButtons(self.ButtonUser)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -31,53 +44,46 @@ class SearchUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         return true
     }
     
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        self.updateSearch(text: textField.text!)
-//    }
-    
-    @objc func textFieldDidChane(_ textField: UITextField) {
+    @objc func textFieldDidChange(_ textField: UITextField) {
         self.updateSearch(text: textField.text!)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.usersArr.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchUserCell") as! SearchUserCell
-        let user = usersArr[indexPath.item]
-        cell.userID = String(user["user_id"].int!)
-        cell.username = user["username"].string!
-        cell.url = user["profile_picture"].string!
-        cell.initialize()
-        return cell
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        self.show_user_id = String((self.usersArr[indexPath.item])["user_id"].int!)
-        self.performSegue(withIdentifier: "user_profile", sender: self)
-    }
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return self.usersArr.count
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchUserCell") as! SearchUserCell
+//        let user = usersArr[indexPath.item]
+//        cell.userID = String(user["user_id"].int!)
+//        cell.username = user["username"].string!
+//        cell.url = user["profile_picture"].string!
+//        cell.initialize()
+//        return cell
+//    }
+//    
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
+//    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: false)
+//    }
     
     func updateSearch(text: String){
         if(text.isEmpty){
             return
         }
-        Api.searchUsername(text: text, completion: {(jsonArr) -> () in
-            self.usersArr = jsonArr
-            self.TableViewResults.reloadData()
+        self.currentSearchResponder.updateSearch(searchText: text, parent: self, completion: {
+            if self.selectedSearch == 0{
+                self.TableViewResults.reloadData()
+            }
+            else{
+                self.TableViewResults.isHidden = true
+                self.CollectionViewResults.isHidden = false
+                self.CollectionViewResults.reloadData()
+            }
         })
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //CurrentUser.shared.isPersonalFeed = true
-        CurrentUser.shared.show_user_id = self.show_user_id
-        let destVC = segue.destination as! UserProfileVC
-        destVC.show_user_id = self.show_user_id
     }
     
 //    func dismissMe(){
@@ -88,5 +94,66 @@ class SearchUserVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     @IBAction func tappedCancel(_ sender: Any) {
         self.dismissMe()
         self.tabBarController?.selectedIndex = 0
+    }
+    
+    @IBAction func updateSearchTabButtons(_ sender: UIButton){
+        self.buttons[self.selectedSearch].backgroundColor = UIColor.clear
+        self.selectedSearch = sender.tag
+        self.buttons[self.selectedSearch].backgroundColor = UIColor.darkGray
+        self.updateCurrentSearchResponder()
+    }
+    
+    func updateCurrentSearchResponder(){
+        self.TableViewResults.isHidden = self.selectedSearch == 2 // hidden if not searching users
+        self.CollectionViewResults.isHidden = self.selectedSearch != 2
+        
+        switch self.selectedSearch {
+        case 0:
+            let userSearchable = SearchUser()
+            self.TableViewResults.delegate = userSearchable
+            self.TableViewResults.dataSource = userSearchable
+            self.currentSearchResponder = userSearchable
+            break
+        case 1:
+            let hashtagSearchable = SearchHashtag()
+            self.CollectionViewResults.delegate = hashtagSearchable
+            self.CollectionViewResults.dataSource = hashtagSearchable
+            self.TableViewResults.delegate = hashtagSearchable
+            self.TableViewResults.dataSource = hashtagSearchable
+            self.currentSearchResponder = hashtagSearchable
+            hashtagSearchable.showTophashtags(parent: self, completion: {
+                self.TableViewResults.reloadData()
+            })
+            break
+        default:
+            let locationSearchable = SearchLocation()
+            self.CollectionViewResults.delegate = locationSearchable
+            self.CollectionViewResults.dataSource = locationSearchable
+            self.currentSearchResponder = locationSearchable
+        }
+    }
+    
+    func showUser(userID: String){
+        self.performSegue(withIdentifier: "user_profile", sender: userID)
+    }
+    
+    func showPost(post: Post){
+        self.performSegue(withIdentifier: "show_post", sender: post)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "user_profile":
+            CurrentUser.shared.show_user_id = sender as! String
+            let destVC = segue.destination as! UserProfileVC
+            destVC.show_user_id = self.show_user_id
+            return
+        case "show_post":
+            let destVC = segue.destination as! ViewPostVC
+            destVC.post = sender as? Post
+            return
+        default:
+            return
+        }
     }
 }

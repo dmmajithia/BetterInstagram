@@ -41,6 +41,10 @@
 		BABF29A5223716F40082368F /* UIStoryboardSegue+DismissMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF29A4223716F40082368F /* UIStoryboardSegue+DismissMe.swift */; };
 		BAC2110621FFEA4D00A32682 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC2110521FFEA4D00A32682 /* CurrentUser.swift */; };
 		BAC2110821FFEBD300A32682 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC2110721FFEBD300A32682 /* SignupViewController.swift */; };
+		BAC8C70B22387C52006E777E /* SearchUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC8C70A22387C52006E777E /* SearchUser.swift */; };
+		BAC8C70D22387C68006E777E /* SearchHashtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC8C70C22387C68006E777E /* SearchHashtag.swift */; };
+		BAC8C70F22387C75006E777E /* SearchLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC8C70E22387C75006E777E /* SearchLocation.swift */; };
+		BAC8C71122387DEF006E777E /* SearchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC8C71022387DEF006E777E /* SearchProtocol.swift */; };
 		BAD745DE222D071F00EB218C /* Posts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD745DD222D071F00EB218C /* Posts.storyboard */; };
 		BAD745E0222D0A4200EB218C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD745DF222D0A4200EB218C /* MainTabBarController.swift */; };
 		BAEBADB1222605F9006F3F70 /* AddPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAEBADB0222605F8006F3F70 /* AddPost.storyboard */; };
@@ -87,6 +91,10 @@
 		BABF29A4223716F40082368F /* UIStoryboardSegue+DismissMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboardSegue+DismissMe.swift"; sourceTree = "<group>"; };
 		BAC2110521FFEA4D00A32682 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		BAC2110721FFEBD300A32682 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		BAC8C70A22387C52006E777E /* SearchUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUser.swift; sourceTree = "<group>"; };
+		BAC8C70C22387C68006E777E /* SearchHashtag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHashtag.swift; sourceTree = "<group>"; };
+		BAC8C70E22387C75006E777E /* SearchLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocation.swift; sourceTree = "<group>"; };
+		BAC8C71022387DEF006E777E /* SearchProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProtocol.swift; sourceTree = "<group>"; };
 		BAD745DD222D071F00EB218C /* Posts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Posts.storyboard; sourceTree = "<group>"; };
 		BAD745DF222D0A4200EB218C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BAEBADB0222605F8006F3F70 /* AddPost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPost.storyboard; sourceTree = "<group>"; };
@@ -187,6 +195,7 @@
 		BA7A1B8721FE40E400D54016 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BAC8C70922387C37006E777E /* Search */,
 				BAC2110721FFEBD300A32682 /* SignupViewController.swift */,
 				BAA86CE62213D047006F907B /* SetProfilePicture.swift */,
 				BA4AA8EE2213E22A00CDC216 /* SetProfileVC.swift */,
@@ -220,6 +229,17 @@
 				BA333C502235AA7900F27B36 /* PostCommentCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		BAC8C70922387C37006E777E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BAC8C70A22387C52006E777E /* SearchUser.swift */,
+				BAC8C70C22387C68006E777E /* SearchHashtag.swift */,
+				BAC8C70E22387C75006E777E /* SearchLocation.swift */,
+				BAC8C71022387DEF006E777E /* SearchProtocol.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,13 +404,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAC2110821FFEBD300A32682 /* SignupViewController.swift in Sources */,
+				BAC8C70F22387C75006E777E /* SearchLocation.swift in Sources */,
 				BAD745E0222D0A4200EB218C /* MainTabBarController.swift in Sources */,
 				BA333C4D2235A5D400F27B36 /* PostActionCell.swift in Sources */,
 				BA3316F721FD019700774952 /* AppDelegate.swift in Sources */,
 				BA4AA8EF2213E22A00CDC216 /* SetProfileVC.swift in Sources */,
 				BA9F33DB222646C900B57659 /* Post.swift in Sources */,
+				BAC8C70D22387C68006E777E /* SearchHashtag.swift in Sources */,
 				BA9F33DF2226558A00B57659 /* ActivityFeedPostCell.swift in Sources */,
 				BABF29A5223716F40082368F /* UIStoryboardSegue+DismissMe.swift in Sources */,
+				BAC8C70B22387C52006E777E /* SearchUser.swift in Sources */,
 				BAA86CE72213D047006F907B /* SetProfilePicture.swift in Sources */,
 				BA9249FB222636E000C49D09 /* SearchUserCell.swift in Sources */,
 				BAAFD8D6223225D400A08248 /* SHowWeb.swift in Sources */,
@@ -403,6 +426,7 @@
 				BA333C512235AA7900F27B36 /* PostCommentCell.swift in Sources */,
 				BA9F33DD222652B200B57659 /* ActivityFeedVC.swift in Sources */,
 				BA4AA8F12213F2FE00CDC216 /* ShowProfileVC.swift in Sources */,
+				BAC8C71122387DEF006E777E /* SearchProtocol.swift in Sources */,
 				BAEBADB3222609C1006F3F70 /* AddPostVC.swift in Sources */,
 				BA498E7922347C6800E3992A /* PostImageCell.swift in Sources */,
 				BAEBADB522260C7D006F3F70 /* MainVC.swift in Sources */,
