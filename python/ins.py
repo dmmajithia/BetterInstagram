@@ -290,17 +290,23 @@ def follow():
     sql2 = "UPDATE user SET num_of_following =  num_of_following + 1 WHERE user_id = %s"
     sql3 = "UPDATE user SET num_of_follower =  num_of_follower + 1 WHERE user_id = %s"
 
-    # push notification to user_id2
-    sql4 = "SELECT appID, username FROM user WHERE user_id = %s"
+    #notification SQL
+    nf_appid = "SELECT appID FROM user WHERE user_id = %s"
+    nf_followinguser = "SELECT username FROM user WHERE user_id = %s"
+
     try:
         cursor.execute(sql1, (user_id2, user_id))
         cursor.execute(sql2, user_id)
         cursor.execute(sql3, user_id2)
-        cursor.execute(sql4, user_id2)
-        result = cursor.fetchall()
+
+        #notification PUSHING
+        cursor.execute(nf_appid, user_id2)
+        app_id = cursor.fetchone()
+        cursor.execute(nf_followinguser, user_id)
+        new_follower = cursor.fetchone()
         db.commit()
         success = True
-        BIGnotif.PushToUser(result[0][0], result[0][1], " started following you!")
+        BIGnotif.PushToUser(app_id, new_follower, " started following you!")
     except:
         db.rollback()
         success = False
@@ -322,17 +328,23 @@ def unfollow():
     sql2 = "UPDATE user SET num_of_following =  num_of_following - 1 WHERE user_id = %s"
     sql3 = "UPDATE user SET num_of_follower =  num_of_follower - 1 WHERE user_id = %s"
 
-    # push notification to user_id2
-    sql4 = "SELECT appID, username from user WHERE user_id = %s"
+    #notification SQL
+    nf_appid = "SELECT appID FROM user WHERE user_id = %s"
+    nf_unfollowinguser = "SELECT username FROM user WHERE user_id = %s"
     try:
         cursor.execute(sql1, (user_id2, user_id))
         cursor.execute(sql2, user_id)
         cursor.execute(sql3, user_id2)
-        cursor.execute(sql4, user_id2)
-        result = cursor.fetchall()
+
+        #notification PUSHING
+        cursor.execute(nf_appid, user_id2)
+        app_id = cursor.fetchone()
+        cursor.execute(nf_unfollowinguser, user_id)
+        lost_follower = cursor.fetchone()
+
         db.commit()
         success = True
-        BIGnotif.PushToUser(result[0][0], result[0][1], " just unfollowed you :(")
+        BIGnotif.PushToUser(app_id, lost_follower, " just unfollowed you :(")
     except:
         db.rollback()
         success = False
@@ -611,6 +623,19 @@ def add_post():
             for i in range(len(people_tag_list)):
                 para_sql4 += (post_id, people_tag_list[i],)
             cursor.execute(sql4, para_sql4)
+
+            #notification SQL
+            sql_tagger = "SELECT username FROM user WHERE user_id = %s"
+            cursor.execute(sql_tagger, user_id)
+            tagger = cursor.fetchone()
+            for people in people_tag_list:
+                sql_tagged = "SELECT appID FROM user WHERE user_id = %s"
+
+                #notification PUSH
+                cursor.execute(sql_tagged, people)
+                tagged = cursor.fetchone()
+                BIGnotif.PushToUser(tagged, tagger, " tagged you in a post!")
+
         cursor.execute(sql5, user_id)
         db.commit()
         success = True
@@ -657,19 +682,22 @@ def add_like():
     cursor = db.cursor()
     sql = "INSERT INTO activity (post_id, activity_user_id, is_like, activity_time) VALUES( %s, %s, %s, %s)"
     sql2 = "UPDATE post SET num_of_like =  num_of_like + 1 WHERE post_id = %s"
+
+    #notification SQL
     sqlnf_tosend = "SELECT U.appID FROM user U WHERE U.user_id IN (SELECT P.user_id FROM post P WHERE P.post_id = %s)"
     sqlnf_bywho = "SELECT username FROM user WHERE user_id = %s"
     try:
         cursor.execute(sql, (post_id, activity_user_id, 1, timestamp))
         cursor.execute(sql2, post_id)
 
-        #for notificatons
+        #notification PUSH
         cursor.execute(sqlnf_tosend, post_id)
         appID = cursor.fetchone()
         cursor.execute(sqlnf_bywho, activity_user_id)
-        usernam =
+        liking_user = cursor.fetchone()
         dic = {"success": True}
         db.commit()
+        BIGnotif.PushToUser(appID, liking_user, " liked your post!")
     except:
         db.rollback()
         dic = {"success": False}
@@ -687,11 +715,24 @@ def add_comment():
     cursor = db.cursor()
     sql = "INSERT INTO activity (post_id, activity_user_id, is_like, text,activity_time) VALUES( %s, %s,%s, %s, %s)"
     sql2 = "UPDATE post SET num_of_comment =  num_of_comment + 1 WHERE post_id = %s"
+
+    #notification SQL
+    sqlnf_tosend = "SELECT U.appID FROM user U WHERE U.user_id IN (SELECT P.user_id FROM post P WHERE P.post_id = %s)"
+    sqlnf_bywho = "SELECT username FROM user WHERE user_id = %s"
     try:
         cursor.execute(sql, (post_id, activity_user_id, 0,text, timestamp))
         cursor.execute(sql2, post_id)
+
+        #notification PUSH
+        cursor.execute(sqlnf_tosend, post_id)
+        appID = cursor.fetchone()
+        cursor.execute(sqlnf_bywho, activity_user_id)
+        commentor = cursor.fetchone()
+
         dic = {"success": True}
         db.commit()
+
+        BIGnotif.PushToUser(appID, commentor, " commented on your post!")
     except:
         db.rollback()
         dic = {"success": False}
