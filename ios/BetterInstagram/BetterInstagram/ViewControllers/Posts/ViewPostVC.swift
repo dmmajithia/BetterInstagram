@@ -35,6 +35,7 @@ class ViewPostVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                 self.postTableView.reloadData()
             }
         }
+        self.commentTextField.placeholder = "comment on " + self.post.user.username + "'s post"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

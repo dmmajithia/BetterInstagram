@@ -41,6 +41,7 @@
 		1795EEB01F550C657E97E5B1B1649C5E /* YPSelectionsGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95AB3A4D4C3AD222B291292A74B97B9 /* YPSelectionsGalleryCell.swift */; };
 		19D8889798E4B6744C9E8E17538DD610 /* LTCharacterDiffResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B179D72BED2C0BA6C3BB086AD0F326 /* LTCharacterDiffResult.swift */; };
 		19E70C5388BC76EDFFBFADA4C26FC11B /* TransformationMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 084001E3930CACAE98BB03D055FFDA2B /* TransformationMatrix.cpp */; };
+		1B0EC08B36DFF0F6527D598D0D6BAB46 /* Pods-OneSignalNotificationServiceExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EC7F769A84B99D9D221E564E04640FF /* Pods-OneSignalNotificationServiceExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C3249034D32E9D46221929AD61B16B5 /* YPCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF32BACAF73DD504A84CA7CA0F01DA4D /* YPCropView.swift */; };
 		1D07B02ECF9FFD67D01B063B84AE7E6B /* YPAssetZoomableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDF8664563784ED5C5BD7F818AE04CE /* YPAssetZoomableView.swift */; };
 		1D85C8F6914A1F709C5DB80930C7FE69 /* PreiOS10PhotoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0159448071EA1C2C096FB50E15CF01 /* PreiOS10PhotoCapture.swift */; };
@@ -118,7 +119,7 @@
 		57BE97F88CA8412EB72C61111C25524D /* Fire.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E47258E513A3168A56386E68266DEA /* Fire.png */; };
 		593939AB4C5A3F1CD67413D3D13A3A3F /* SteviaLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 633BEEA766C5793DF49F85D53BEEBA21 /* SteviaLayout-dummy.m */; };
 		594323E309EFD3D4F2FCFAA28887B13B /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF7BB0B595197608BB2571BACFD027E /* Locator.swift */; };
-		5AFE2F669586774DCEE13AA9459BC268 /* Pods-BetterInstagram-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2D68C7C3F9B84B63795BD1746D3E4 /* Pods-BetterInstagram-dummy.m */; };
+		5AFE2F669586774DCEE13AA9459BC268 /* Pods-BetterInstagram-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C423721B0B272E1EA7BE86218B424A /* Pods-BetterInstagram-dummy.m */; };
 		5B71A6FBD4C40BF5AEF9E32C456363A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC7E1AB55ED09F20469C70BC784F107 /* Foundation.framework */; };
 		5BA673A3CFD334457C7178355B03FE7D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFD3E5C8978A0B3B5E0B2150A0391B8 /* SwiftyJSON.swift */; };
 		5E486D7E960B49A0883AE2CD9B344E1E /* IPLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B764BD38618D7384A4AB1AA9E51225 /* IPLocationRequest.swift */; };
@@ -138,7 +139,7 @@
 		6CE8A96F1285042D336E7042CFFCF0A0 /* YPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC5AA6E22041CBEB7870452AFA9EC02 /* YPHelper.swift */; };
 		6E1E69793174587B43A9F56E6747F7D0 /* YPAssetViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B1C98E6DA718CF9013B47D8033E2A2 /* YPAssetViewContainer.swift */; };
 		6E6D47A0762C9A6B6E2F341748D3DEC5 /* YPLibrary+LibraryChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620A9AB285FFBCA7E653FF188D29EAA7 /* YPLibrary+LibraryChange.swift */; };
-		7284C829EDB423D9F4E1470053185D18 /* Pods-BetterInstagram-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 019FE0739950E09F7081D0155B19DCF5 /* Pods-BetterInstagram-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7284C829EDB423D9F4E1470053185D18 /* Pods-BetterInstagram-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 54537BD5D9915C0E1CFE8BC8FDD8213D /* Pods-BetterInstagram-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		760FCF299A5858ABB5212F90C70B300E /* YPCameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8235E388DBCF575379D1FBD1F0D5F8 /* YPCameraVC.swift */; };
 		77116B8AD32D5C21CA641F110BE2E0E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC7E1AB55ED09F20469C70BC784F107 /* Foundation.framework */; };
 		7727CF14950FF3C560BEFDEEA79FEA71 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E8F18134AB344E74836F8E3C231741 /* Validation.swift */; };
@@ -168,11 +169,13 @@
 		8ADA89B0BFF9DD435DC465BDA1B47879 /* Stevia+Stacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C1D3B281EE3547AA055B9CC0E828F2 /* Stevia+Stacks.swift */; };
 		8D1BFFFA11554ADED671FCB51F876851 /* Stevia+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D62B93BDD6A4C80BA1CE51B394D17D9 /* Stevia+Constraints.swift */; };
 		8DEC764A65C7A189FE0BD03DCEBE67CF /* YPLibrarySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE14D01BDFB7C8D74FECE3CAE49C559 /* YPLibrarySelection.swift */; };
+		8DF9B3BC2B081E2C05FAB2FEA8E20E15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC7E1AB55ED09F20469C70BC784F107 /* Foundation.framework */; };
 		8E3A4EF81F4C48518220A2196D598D06 /* MultipartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCA27845295E407D7D63A5FB0E608B4 /* MultipartUpload.swift */; };
 		8EE54A1EBBF7D8FC0C7D214EF3FEF83A /* YPAlbumsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729D7CE7EDE0099CF51CCDA764394BEB /* YPAlbumsManager.swift */; };
 		9077DABF2A11FEE88F2F0492D5B8FB05 /* Stevia+Baselines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091B6FF75D1B2E72CA95C0D89C23C7DD /* Stevia+Baselines.swift */; };
 		923FCF27B566687A2B486845DEAF9006 /* POPAnimationEventInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 21F21ACC8B71A832CE65558DEC027DF1 /* POPAnimationEventInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		93AF4754F09FE4D58135B663AA167986 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90C433561A241FAD3CF0A63D0C6164B /* HTTPHeaders.swift */; };
+		94A8BA03F3460A03692DABF9E60EC886 /* Pods-OneSignalNotificationServiceExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42745843C7D53F5A66CEC957DDDADEAB /* Pods-OneSignalNotificationServiceExtension-dummy.m */; };
 		94CEE415DFF51E653DBBDC247621DAAD /* YPLoaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = B032F4ECE6A8FF3E151A4F1E734B312B /* YPLoaders.swift */; };
 		950B7CA2FA914AC810E78C4CF9BB50AF /* YPCropVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780A40FA40312E44ECA14DF55B81933F /* YPCropVC.swift */; };
 		960383C7B643FAF73CD5FD4A5A6854BF /* LTMorphingLabel+Sparkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9089C819EFFCB783C32AC139B73E7BD3 /* LTMorphingLabel+Sparkle.swift */; };
@@ -420,7 +423,6 @@
 /* Begin PBXFileReference section */
 		00E2F0E5CE58A8C98B78CA3FDC8F5913 /* YPLibraryViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPLibraryViewCell.swift; path = Source/Pages/Gallery/YPLibraryViewCell.swift; sourceTree = "<group>"; };
 		01278F9B626D4ECF11612E95A96A12FB /* SwiftLocation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLocation.xcconfig; sourceTree = "<group>"; };
-		019FE0739950E09F7081D0155B19DCF5 /* Pods-BetterInstagram-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BetterInstagram-umbrella.h"; sourceTree = "<group>"; };
 		022006AE4D2C84230C99E89D03294F16 /* LTEasing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTEasing.swift; path = LTMorphingLabel/LTEasing.swift; sourceTree = "<group>"; };
 		0230D318CC32B966AE9E911628188225 /* PryntTrimmerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PryntTrimmerView-prefix.pch"; sourceTree = "<group>"; };
 		02C9217C77959A68277E532B26220EE7 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 		0700E5E85B6BC0B413514265EF6BD8B1 /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
 		0735087434912E49F952A2BEA3A850E0 /* AVFoundation+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AVFoundation+Extensions.swift"; path = "Source/Helpers/Extensions/AVFoundation+Extensions.swift"; sourceTree = "<group>"; };
 		0762682ED7744D155F52607748CA69C5 /* POPAnimationPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimationPrivate.h; path = pop/POPAnimationPrivate.h; sourceTree = "<group>"; };
+		07D7181ABDBFFDA0E15B9B2B08E504BB /* LTMorphingLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LTMorphingLabel.framework; path = LTMorphingLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		084001E3930CACAE98BB03D055FFDA2B /* TransformationMatrix.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = TransformationMatrix.cpp; path = pop/WebCore/TransformationMatrix.cpp; sourceTree = "<group>"; };
 		091B6FF75D1B2E72CA95C0D89C23C7DD /* Stevia+Baselines.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Baselines.swift"; path = "Source/Stevia+Baselines.swift"; sourceTree = "<group>"; };
 		09CC492CCAAB8CA9C71171E1C18ADD56 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ja.lproj; path = Resources/ja.lproj; sourceTree = "<group>"; };
@@ -438,11 +441,9 @@
 		0CC6D3BDD9473416CA30F39A5EE9C12A /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		0EEA929009AE895B343A7D535660A3F9 /* POPSpringAnimationInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPSpringAnimationInternal.h; path = pop/POPSpringAnimationInternal.h; sourceTree = "<group>"; };
 		0F1C6EE76D3C5962460D2009BA3A32C8 /* YPBottomPager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPBottomPager.swift; path = Source/Pages/Gallery/BottomPager/YPBottomPager.swift; sourceTree = "<group>"; };
-		0FF2DD05041742663D410F7EE23B1550 /* Pods_BetterInstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BetterInstagram.framework; path = "Pods-BetterInstagram.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		112CA6C7D83E8D06D9AC969D240ECEE6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		118F20E50183871F0DC11597A750CB22 /* Pods-BetterInstagram-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BetterInstagram-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1221FB47926BBE4752F1DDB6DA997EC5 /* tr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = tr.lproj; path = Resources/tr.lproj; sourceTree = "<group>"; };
-		12A166C416966B187DA73B7723DDCE38 /* Pods-BetterInstagram.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BetterInstagram.modulemap"; sourceTree = "<group>"; };
+		1359E412687F04D5968541DA56983C44 /* Pods-OneSignalNotificationServiceExtension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OneSignalNotificationServiceExtension-resources.sh"; sourceTree = "<group>"; };
 		13D64893BD740685DEAA030814F74149 /* FloatConversion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FloatConversion.h; path = pop/WebCore/FloatConversion.h; sourceTree = "<group>"; };
 		1486F14BA20AEA49F0DA1661E41A47AD /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		15424C9ED953BE002DDA40D32193740B /* HeadingRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeadingRequest.swift; path = Sources/HeadingRequest.swift; sourceTree = "<group>"; };
@@ -451,13 +452,12 @@
 		193C211911346DC4BC6749FC4FB955F8 /* YPAlbumCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPAlbumCell.swift; path = Source/Pages/Gallery/YPAlbumCell.swift; sourceTree = "<group>"; };
 		1A10A6DAC1D830931270877023EB02E8 /* AVCaptureSession+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AVCaptureSession+Extensions.swift"; path = "Source/Helpers/Extensions/AVCaptureSession+Extensions.swift"; sourceTree = "<group>"; };
 		1A4E9B2D102330AE4333D3C1A70FD7E9 /* YPLibraryView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = YPLibraryView.xib; path = Source/Pages/Gallery/YPLibraryView.xib; sourceTree = "<group>"; };
+		1A853614D3FF8044C5C6434EDB0D1B73 /* Pods-OneSignalNotificationServiceExtension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OneSignalNotificationServiceExtension-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1BA70CCE43BBC99B5C2EE827F599D905 /* Stevia+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Hierarchy.swift"; path = "Source/Stevia+Hierarchy.swift"; sourceTree = "<group>"; };
 		1C13B722D4BFA534022F057316A71903 /* VBFPopFlatButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VBFPopFlatButton-umbrella.h"; sourceTree = "<group>"; };
-		1C8B2D7B9D88D2F6DB81B61E2D12329F /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D503E2F10F15BD69121B53FA2E291C6 /* VBFPopFlatButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VBFPopFlatButton-prefix.pch"; sourceTree = "<group>"; };
 		1D62B93BDD6A4C80BA1CE51B394D17D9 /* Stevia+Constraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Constraints.swift"; path = "Source/Stevia+Constraints.swift"; sourceTree = "<group>"; };
 		1DA7C88335985D7DBABAEC231B2C5200 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
-		1E24AF177ED4F37D8C707F711EE140AD /* DateToolsSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DateToolsSwift.framework; path = DateToolsSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E571C2B511286A71C5F7D2CB408ADE0 /* bg.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = bg.lproj; path = Resources/bg.lproj; sourceTree = "<group>"; };
 		1EA83496DC25AF63943ACB142A2E9C97 /* YPIcons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPIcons.swift; path = Source/Configuration/YPIcons.swift; sourceTree = "<group>"; };
 		1EB06D568EFD8943FAAD527202864DDA /* POPDecayAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPDecayAnimation.mm; path = pop/POPDecayAnimation.mm; sourceTree = "<group>"; };
@@ -468,21 +468,20 @@
 		211A9DFBE86E15B951490E9D9087B218 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
 		21F21ACC8B71A832CE65558DEC027DF1 /* POPAnimationEventInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimationEventInternal.h; path = pop/POPAnimationEventInternal.h; sourceTree = "<group>"; };
 		22292D07263C199CBAFD26210D3CB7AB /* YPVideoProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPVideoProcessor.swift; path = Source/Helpers/YPVideoProcessor.swift; sourceTree = "<group>"; };
-		22B2D68C7C3F9B84B63795BD1746D3E4 /* Pods-BetterInstagram-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BetterInstagram-dummy.m"; sourceTree = "<group>"; };
 		22D99804FDCA665FA0C253505951BBC0 /* Stevia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stevia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2325DE50D63B86B2D607BB4A17F7410C /* PHFetchResult+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PHFetchResult+Extensions.swift"; path = "Source/Helpers/Extensions/PHFetchResult+Extensions.swift"; sourceTree = "<group>"; };
+		236A3BD26CCA115518EA57E23EFCDE60 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23E070B07651ADA7C6DBA478086ADC21 /* POPMath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPMath.h; path = pop/POPMath.h; sourceTree = "<group>"; };
 		243868D1679763A16CE1297E167436B9 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		255FAD0F20CBF25152A0B2B7A43A687E /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		277B917CB65B571EA6559AE9E9646062 /* pop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = pop.xcconfig; sourceTree = "<group>"; };
 		2978DC89BA13B9E6289A7375101D5B6F /* YPImagePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YPImagePicker-dummy.m"; sourceTree = "<group>"; };
 		2A26D40003F172F0BF74E151715E2941 /* YPImagePickerConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPImagePickerConfiguration.swift; path = Source/Configuration/YPImagePickerConfiguration.swift; sourceTree = "<group>"; };
 		2A622808B47F47E1BF3C2EA90DC4B9E2 /* POPAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimator.h; path = pop/POPAnimator.h; sourceTree = "<group>"; };
-		2AF5C16566818A1BA018CDBF65354954 /* SwiftLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftLocation.framework; path = SwiftLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AFDD20BB4B829F846A56FA5D8319272 /* Date+Format.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Format.swift"; path = "DateToolsSwift/DateTools/Date+Format.swift"; sourceTree = "<group>"; };
 		2B0BFA2DD7730CA9F247A371D6917AEA /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = nl.lproj; path = Resources/nl.lproj; sourceTree = "<group>"; };
 		2BCA27845295E407D7D63A5FB0E608B4 /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
 		2BD08F5068B6691803F6E2BDF6CFF5E0 /* TimePeriodCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimePeriodCollection.swift; path = DateToolsSwift/DateTools/TimePeriodCollection.swift; sourceTree = "<group>"; };
-		2BF3348447B049D6F4723560A2C3960A /* Pods-BetterInstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BetterInstagram.release.xcconfig"; sourceTree = "<group>"; };
 		2CE5530FA1A7C18D3313F25AB08C2BF6 /* LTEmitterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTEmitterView.swift; path = LTMorphingLabel/LTEmitterView.swift; sourceTree = "<group>"; };
 		2EA3C962B323E935B7D8F92B753C7B82 /* YPPickerScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPPickerScreen.swift; path = Source/Configuration/YPPickerScreen.swift; sourceTree = "<group>"; };
 		3058203351777BA9EB0D686A428C11B3 /* VBFPopFlatButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = VBFPopFlatButton.modulemap; sourceTree = "<group>"; };
@@ -505,13 +504,13 @@
 		3CCD86209E127A46BAC7ABE2952A1A72 /* SteviaLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SteviaLayout-umbrella.h"; sourceTree = "<group>"; };
 		3EFE2339C7C2E83AB6C2AE9842D008CB /* PHCachingImageManager+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PHCachingImageManager+Extensions.swift"; path = "Source/Helpers/Extensions/PHCachingImageManager+Extensions.swift"; sourceTree = "<group>"; };
 		3F2FB63B9F6CB73D0242EE9F0D30BC99 /* POPCGUtils.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPCGUtils.mm; path = pop/POPCGUtils.mm; sourceTree = "<group>"; };
+		3FAC4C2210F76E3CD9F27917CBDA1BEE /* AwesomeTextFieldSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AwesomeTextFieldSwift.framework; path = AwesomeTextFieldSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42745843C7D53F5A66CEC957DDDADEAB /* Pods-OneSignalNotificationServiceExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OneSignalNotificationServiceExtension-dummy.m"; sourceTree = "<group>"; };
 		43E078D5AB5664FF23EDF92312521458 /* AVPlayer+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AVPlayer+Extensions.swift"; path = "Source/Helpers/Extensions/AVPlayer+Extensions.swift"; sourceTree = "<group>"; };
 		458E372C548882B179D2F710720C3354 /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		4767660C7561E67033CA3E4B1DF3D7DB /* POPPropertyAnimationInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPPropertyAnimationInternal.h; path = pop/POPPropertyAnimationInternal.h; sourceTree = "<group>"; };
 		48683A005BB082CD34035AF11A97AED8 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
-		4A2CF7E73C503417C3C728E01FF64ABF /* VBFPopFlatButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = VBFPopFlatButton.framework; path = VBFPopFlatButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADFAF9EC6AEED0A8E24ECDDC31533C3 /* YPPhotoCaptureDefaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPPhotoCaptureDefaults.swift; path = Source/Pages/Photo/YPPhotoCaptureDefaults.swift; sourceTree = "<group>"; };
-		4B4F8FF3B4812581C857D058E90E0BA3 /* Pods-BetterInstagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BetterInstagram.debug.xcconfig"; sourceTree = "<group>"; };
 		4B8E78046543AA4DFB1C703D82B6BE64 /* YPImageSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPImageSize.swift; path = Source/Configuration/YPImageSize.swift; sourceTree = "<group>"; };
 		4B912F67F15D68642F6B90CE5AF1DE81 /* PryntTrimmerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PryntTrimmerView.swift; path = PryntTrimmerView/Classes/Trimmer/PryntTrimmerView.swift; sourceTree = "<group>"; };
 		4E2F9357567286DC37D5A9F06F0A7ADA /* HandlerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HandlerView.swift; path = PryntTrimmerView/Classes/Trimmer/HandlerView.swift; sourceTree = "<group>"; };
@@ -522,12 +521,14 @@
 		5278B57A80F4BDBF9BDEFBB85E0D376B /* Stevia+GetConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+GetConstraint.swift"; path = "Source/Stevia+GetConstraint.swift"; sourceTree = "<group>"; };
 		53DDE9D43FD35D0C6635F445BA2756FF /* YPVideoFiltersVC.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = YPVideoFiltersVC.xib; path = Source/Filters/Video/YPVideoFiltersVC.xib; sourceTree = "<group>"; };
 		54234B5E71D2FA0C7EE3CDCEB5B7AE22 /* LTMorphingLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LTMorphingLabel.modulemap; sourceTree = "<group>"; };
+		54537BD5D9915C0E1CFE8BC8FDD8213D /* Pods-BetterInstagram-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BetterInstagram-umbrella.h"; sourceTree = "<group>"; };
 		5481A92030D66ACC2BF9DB5F9178804C /* YPImagePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YPImagePicker-umbrella.h"; sourceTree = "<group>"; };
 		54AB12F44A07B190D174CC07430284C3 /* AwesomeTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AwesomeTextField.swift; path = AwesomeTextField/Classes/AwesomeTextField.swift; sourceTree = "<group>"; };
 		561ADBDD32B6323B1F4092E64CB456C8 /* PryntTrimmerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PryntTrimmerView.modulemap; sourceTree = "<group>"; };
 		5724C8B91810FA5AA8EE709D042FFE1E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		578F7E2DB941F072596D210457936749 /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
 		57957CD44332B5BF0A86D4858DDD6122 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		5A716601D5B63F3E4E728136F0F4E404 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OneSignalNotificationServiceExtension.framework; path = "Pods-OneSignalNotificationServiceExtension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7C1AC77BB52B6B5E58F103D6812E54 /* YPLibraryVC+PanGesture.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "YPLibraryVC+PanGesture.swift"; path = "Source/Pages/Gallery/YPLibraryVC+PanGesture.swift"; sourceTree = "<group>"; };
 		5B1FD53BC8DC9EFDB171AD56242135A3 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
 		5BB39D916D02143BF6688836407990FF /* YPImagePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YPImagePicker.xcconfig; sourceTree = "<group>"; };
@@ -539,6 +540,7 @@
 		5ED335A265E444AC7FFED1DCD845929F /* LibraryMediaManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LibraryMediaManager.swift; path = Source/Pages/Gallery/LibraryMediaManager.swift; sourceTree = "<group>"; };
 		5F061AD46D446139F8B6D5BBC65ADAE7 /* POPBasicAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPBasicAnimation.mm; path = pop/POPBasicAnimation.mm; sourceTree = "<group>"; };
 		5F52BBCF52BCBAE8ADE2D696358B477B /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = fr.lproj; path = Resources/fr.lproj; sourceTree = "<group>"; };
+		5F65EF6F163C15A56E4C8B1C7F1660A2 /* Pods-BetterInstagram-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BetterInstagram-frameworks.sh"; sourceTree = "<group>"; };
 		5FCF5C4F7BB690E3F0E1832B9241353A /* LTMorphingLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LTMorphingLabel-dummy.m"; sourceTree = "<group>"; };
 		5FF8A242C77DCE8C599194F69AEC5675 /* POP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POP.h; path = pop/POP.h; sourceTree = "<group>"; };
 		6154027BCE1A5AFE8910110E5C42283A /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
@@ -554,6 +556,7 @@
 		69BBF3505506FD2F11AAF74C2F095402 /* Stevia+Equation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Equation.swift"; path = "Source/Stevia+Equation.swift"; sourceTree = "<group>"; };
 		6AF8B76ECA9343B4EE79DB9FE06FB02B /* Date+Components.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Components.swift"; path = "DateToolsSwift/DateTools/Date+Components.swift"; sourceTree = "<group>"; };
 		6BA9F20BB8EA2A4647727239D32CB2D0 /* Date+TimeAgo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+TimeAgo.swift"; path = "DateToolsSwift/DateTools/Date+TimeAgo.swift"; sourceTree = "<group>"; };
+		6C3BBE4008F6FA45E42ECF3EA0B984A5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DF97E2DAAF8E88653221C6F3B99951A /* YPMenuItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPMenuItem.swift; path = Source/Pages/Gallery/BottomPager/YPMenuItem.swift; sourceTree = "<group>"; };
 		6EF1D7E3D13DFBDADE936DD6D877309D /* AwesomeTextFieldSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AwesomeTextFieldSwift-dummy.m"; sourceTree = "<group>"; };
 		70B295B898535A75340CFF48BE5D3E1B /* POPAnimationTracer.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPAnimationTracer.mm; path = pop/POPAnimationTracer.mm; sourceTree = "<group>"; };
@@ -563,8 +566,10 @@
 		72F596034629FF1B99B499A1B2C51C66 /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
 		7397232BCD1721D15035AF01CD931B94 /* NSFileManager+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSFileManager+Extensions.swift"; path = "Source/Helpers/Extensions/NSFileManager+Extensions.swift"; sourceTree = "<group>"; };
 		73DC544B525BB5F2A96905E81C65BD7D /* FindPlaceRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FindPlaceRequest.swift; path = Sources/FindPlaceRequest.swift; sourceTree = "<group>"; };
+		77C423721B0B272E1EA7BE86218B424A /* Pods-BetterInstagram-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BetterInstagram-dummy.m"; sourceTree = "<group>"; };
 		780A40FA40312E44ECA14DF55B81933F /* YPCropVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPCropVC.swift; path = Source/Filters/Crop/YPCropVC.swift; sourceTree = "<group>"; };
 		787899901CFAE81C76FEBCEBDEBBAAAE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78D06FB345A2FDABA8F434A08C0676CC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78F33FAC29BF400D82D61D5A1F3E2FDA /* ar.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ar.lproj; path = Resources/ar.lproj; sourceTree = "<group>"; };
 		794FD6DE885756E34A59EE9BADEED6CE /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = DateToolsSwift/DateTools/Constants.swift; sourceTree = "<group>"; };
 		7960A2A3ACBDA5C81BF46E302367918B /* AwesomeTextFieldSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AwesomeTextFieldSwift-umbrella.h"; sourceTree = "<group>"; };
@@ -589,6 +594,7 @@
 		8827778929486D904E0F23AFE014D7D8 /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
 		890E68346E6F2975BE0E119D24E5927D /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "zh-Hans.lproj"; path = "Resources/zh-Hans.lproj"; sourceTree = "<group>"; };
 		8A5ABB30BCF6466727B8847C671DDADE /* Stevia+FlexibleMargin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+FlexibleMargin.swift"; path = "Source/Stevia+FlexibleMargin.swift"; sourceTree = "<group>"; };
+		8A7077FA3FE53FA8B18D5595F6DB79B2 /* Pods-BetterInstagram-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BetterInstagram-acknowledgements.plist"; sourceTree = "<group>"; };
 		8AEB868D9624F04FBC9DFC9EC1CC7204 /* YPAlbum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPAlbum.swift; path = Source/Pages/Gallery/YPAlbum.swift; sourceTree = "<group>"; };
 		8AEE9A703D87B69C54356CB7A43DE5ED /* Sparkle.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Sparkle.png; path = LTMorphingLabel/Particles/Sparkle.png; sourceTree = "<group>"; };
 		8BFFF19FB1F6D09CE6B4419EBA9FDCD6 /* POPBasicAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPBasicAnimation.h; path = pop/POPBasicAnimation.h; sourceTree = "<group>"; };
@@ -596,7 +602,6 @@
 		8CC8EA7F4C8A8544189E24FA5A4DF326 /* POPAnimatableProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimatableProperty.h; path = pop/POPAnimatableProperty.h; sourceTree = "<group>"; };
 		8E4C0141CFE6E8394AD20CDE3C1AE6AE /* Date+Comparators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Comparators.swift"; path = "DateToolsSwift/DateTools/Date+Comparators.swift"; sourceTree = "<group>"; };
 		8E556D0E68F1DFA23709B4051E5B8226 /* YPAlbumVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPAlbumVC.swift; path = Source/Pages/Gallery/YPAlbumVC.swift; sourceTree = "<group>"; };
-		8E5B2B233AA69C0D6002B095BBD4F88E /* Pods-BetterInstagram-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BetterInstagram-acknowledgements.plist"; sourceTree = "<group>"; };
 		8F88C9EB335B6CC7F24B626CA4813F8B /* Stevia+Percentage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Percentage.swift"; path = "Source/Stevia+Percentage.swift"; sourceTree = "<group>"; };
 		8FC7E1AB55ED09F20469C70BC784F107 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		907549D2C2D80DCCAC6BBB36A4A147CF /* DateTools.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = DateTools.bundle; path = DateToolsSwift/DateTools/DateTools.bundle; sourceTree = "<group>"; };
@@ -605,13 +610,11 @@
 		9321F836C55BD8726CAD2DA619292541 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93B764BD38618D7384A4AB1AA9E51225 /* IPLocationRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPLocationRequest.swift; path = Sources/IPLocationRequest.swift; sourceTree = "<group>"; };
-		9450D82CA6FD09F53C918123D64CE77A /* Stevia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Stevia.framework; path = SteviaLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94511F2E913BBC144C22D423106CC0DA /* pop-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "pop-prefix.pch"; sourceTree = "<group>"; };
 		954FDC509D95E2B5B62EB82E01BAF9EB /* CIImage+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CIImage+Extensions.swift"; path = "Source/Helpers/Extensions/CIImage+Extensions.swift"; sourceTree = "<group>"; };
 		9561440004F4B0FC0931E97E160F4EBA /* zh-Hant.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "zh-Hant.lproj"; path = "Resources/zh-Hant.lproj"; sourceTree = "<group>"; };
 		95DB081749424DB15B660BEA5E617173 /* YPImagePicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPImagePicker.swift; path = Source/YPImagePicker.swift; sourceTree = "<group>"; };
 		9614C2F5F1943538AB4BBAA4FA0A771E /* POPLayerExtras.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPLayerExtras.mm; path = pop/POPLayerExtras.mm; sourceTree = "<group>"; };
-		970C3D76DA9E128EBD3DF1133B0FC055 /* LTMorphingLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LTMorphingLabel.framework; path = LTMorphingLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		971BE1E6FD15BDB107C8B93E5F8E9C43 /* pop-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "pop-umbrella.h"; sourceTree = "<group>"; };
 		98874D3DCA8DC11D8538F89935060CF2 /* Smoke.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Smoke.png; path = LTMorphingLabel/Particles/Smoke.png; sourceTree = "<group>"; };
 		994FC6322BCE4CA2A695FCAB252DD7F7 /* pop.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = pop.modulemap; sourceTree = "<group>"; };
@@ -619,15 +622,14 @@
 		99A8CF648D487DECFCE2F118F3C50A3B /* YPImagePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YPImagePicker-prefix.pch"; sourceTree = "<group>"; };
 		9AD14A53941A865D14F21FD1F7CF7C60 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		9B1F6C1C1150F16418B6E57EC762F42A /* IndexSet+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IndexSet+Extensions.swift"; path = "Source/Helpers/Extensions/IndexSet+Extensions.swift"; sourceTree = "<group>"; };
-		9B21006A99601EE1A517E0B15A3B2DC0 /* PryntTrimmerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PryntTrimmerView.framework; path = PryntTrimmerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B648BE0BC3E80E59D75A9A5F0003E82 /* GeocoderRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeocoderRequest.swift; path = Sources/GeocoderRequest.swift; sourceTree = "<group>"; };
 		9B72A99E20C5CAC7286B22097A1772E0 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGFloat+Extensions.swift"; path = "Source/Helpers/Extensions/CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		9BCBFCA6AB5F8527D88F7219A2DD57D1 /* VBFPopFlatButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VBFPopFlatButton.h; path = VBFPopFlatButton/VBFPopFlatButtonClasses/VBFPopFlatButton.h; sourceTree = "<group>"; };
 		9CF7BB0B595197608BB2571BACFD027E /* Locator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Locator.swift; path = Sources/Locator.swift; sourceTree = "<group>"; };
 		9D70C5BE9CF086A1A9CD9B4AE750607C /* UIImage+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Extensions.swift"; path = "Source/Helpers/Extensions/UIImage+Extensions.swift"; sourceTree = "<group>"; };
-		9D7E2ADFEF7AE16F22CDA9D9B2257CA7 /* Pods-BetterInstagram-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BetterInstagram-frameworks.sh"; sourceTree = "<group>"; };
 		9DA33B41508BC4B82A0AEB72E50306DC /* POPAnimatablePropertyTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimatablePropertyTypes.h; path = pop/POPAnimatablePropertyTypes.h; sourceTree = "<group>"; };
 		9E947F91EE8874F5D54839DAF6005002 /* POPPropertyAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPPropertyAnimation.h; path = pop/POPPropertyAnimation.h; sourceTree = "<group>"; };
+		9EC7F769A84B99D9D221E564E04640FF /* Pods-OneSignalNotificationServiceExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OneSignalNotificationServiceExtension-umbrella.h"; sourceTree = "<group>"; };
 		9F387E0818CBCB31C4B3CDA06A58F4B8 /* YPMediaItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPMediaItem.swift; path = Source/Models/YPMediaItem.swift; sourceTree = "<group>"; };
 		A09D1FC6DB89105FC94A5BA8B0D54AFD /* PryntTrimmerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PryntTrimmerView-umbrella.h"; sourceTree = "<group>"; };
 		A0B18105EF3B1617E2536514CF5B0639 /* POPVector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPVector.h; path = pop/POPVector.h; sourceTree = "<group>"; };
@@ -651,8 +653,11 @@
 		A93DE2FA4370DF34D324D0E443BC9409 /* LTMorphingLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTMorphingLabel.swift; path = LTMorphingLabel/LTMorphingLabel.swift; sourceTree = "<group>"; };
 		A95AB3A4D4C3AD222B291292A74B97B9 /* YPSelectionsGalleryCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPSelectionsGalleryCell.swift; path = Source/SelectionsGallery/YPSelectionsGalleryCell.swift; sourceTree = "<group>"; };
 		AA6D4CAC749A274A5637F401C5D32526 /* OneSignal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OneSignal.framework; path = iOS_SDK/OneSignalSDK/Framework/OneSignal.framework; sourceTree = "<group>"; };
+		AA7D72CF3560A0143DADD5A66F755C47 /* SwiftLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftLocation.framework; path = SwiftLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB13BD34EF091EA51F9CED8378975991 /* YPImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YPImagePicker.framework; path = YPImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0C46CF2A1F5B897A96F4FBDB258D55 /* YPPermissionDeniedPopup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPPermissionDeniedPopup.swift; path = Source/Models/YPPermissionDeniedPopup.swift; sourceTree = "<group>"; };
 		AD40179C66D9A2D906DCF5A640C2BAE0 /* CropMaskView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CropMaskView.swift; path = PryntTrimmerView/Classes/Cropper/CropMaskView.swift; sourceTree = "<group>"; };
+		AD947E4D0DEEF37B6FBBB5D3F02A0F08 /* Pods-OneSignalNotificationServiceExtension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OneSignalNotificationServiceExtension-acknowledgements.plist"; sourceTree = "<group>"; };
 		ADE2F79416F119EB718814979E0D9F33 /* YPFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPFilter.swift; path = Source/Filters/YPFilter.swift; sourceTree = "<group>"; };
 		AE340217C09CBBA4C06B66B73B8A80A8 /* RequestInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestInterceptor.swift; path = Source/RequestInterceptor.swift; sourceTree = "<group>"; };
 		AE629C9BA212DE57EC69C79218BCA35D /* VBFDoubleSegment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VBFDoubleSegment.m; path = VBFPopFlatButton/VBFPopFlatButtonClasses/VBFDoubleSegment.m; sourceTree = "<group>"; };
@@ -664,14 +669,17 @@
 		B0CDA1E7129D77B4D1C95DBE32AB9DFD /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
 		B142103C2EFCAD719AEEDA3C9F21DE5D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B37DD86EA40E9B9796FDC31E0E1EEABC /* YPSelectionsGalleryVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPSelectionsGalleryVC.swift; path = Source/SelectionsGallery/YPSelectionsGalleryVC.swift; sourceTree = "<group>"; };
+		B5603A793A714691A16BFE2110F40102 /* Pods-BetterInstagram-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BetterInstagram-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B5D440A86599FDC0DCF2C951E4D37A24 /* POPBasicAnimationInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPBasicAnimationInternal.h; path = pop/POPBasicAnimationInternal.h; sourceTree = "<group>"; };
 		B6456F8B33A167D5C8CE89CFE80F0C25 /* YPSelectionsGalleryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPSelectionsGalleryView.swift; path = Source/SelectionsGallery/YPSelectionsGalleryView.swift; sourceTree = "<group>"; };
 		B6D8E9EDA66D072C5F476ED70DBEDD92 /* YPImagePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = YPImagePicker.modulemap; sourceTree = "<group>"; };
 		B6DD4B1AF558B69CFF673399650AF636 /* TimeChunk.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimeChunk.swift; path = DateToolsSwift/DateTools/TimeChunk.swift; sourceTree = "<group>"; };
+		B734188CF3566B9DC5E99B5055D2F3E6 /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = pop.framework; path = pop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B821650B4E163322B2AE65C8B0DDCAF6 /* Enums.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Enums.swift; path = DateToolsSwift/DateTools/Enums.swift; sourceTree = "<group>"; };
 		B8C87AF796D8618C00DCC94C456AEE81 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		B960E0EC3E82593A9040AEDF49633552 /* SteviaLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SteviaLayout-prefix.pch"; sourceTree = "<group>"; };
 		BA069899A58093FC885E34EE3879B8DE /* Stevia+DoubleDash.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+DoubleDash.swift"; path = "Source/Stevia+DoubleDash.swift"; sourceTree = "<group>"; };
+		BAB497437A2F6F8722C1D329C96742C7 /* PryntTrimmerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PryntTrimmerView.framework; path = PryntTrimmerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB0CA8FB292EA29910716F94DC12288F /* ParameterEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoder.swift; path = Source/ParameterEncoder.swift; sourceTree = "<group>"; };
 		BD3C323A44932EED55F66F61B7CBED25 /* POPMath.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPMath.mm; path = pop/POPMath.mm; sourceTree = "<group>"; };
 		BD3DF8649B64E1524CB8CBE19CC484F3 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
@@ -680,6 +688,7 @@
 		BF3B59B6AAC71BFE12D2A83F0E5843BD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF3E418E40C6EF76824F7EEB4225BD4C /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView+Extensions.swift"; path = "Source/Helpers/Extensions/UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		BF8BB12E8E790F9CA2284F2CEBF7E778 /* LTMorphingLabel+Anvil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LTMorphingLabel+Anvil.swift"; path = "LTMorphingLabel/LTMorphingLabel+Anvil.swift"; sourceTree = "<group>"; };
+		C1B75CCC5E926A4AAF74E92523FA7FDA /* DateToolsSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DateToolsSwift.framework; path = DateToolsSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A3CF1E2322FC22778E189246E9F2A2 /* LTMorphingEffect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTMorphingEffect.swift; path = LTMorphingLabel/LTMorphingEffect.swift; sourceTree = "<group>"; };
 		C31101B4871B2CC57C5FAAA359987245 /* YPPhotoSaver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPPhotoSaver.swift; path = Source/Helpers/YPPhotoSaver.swift; sourceTree = "<group>"; };
 		C34494985E107034CCE1CD7CE343E576 /* TimePeriod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimePeriod.swift; path = DateToolsSwift/DateTools/TimePeriod.swift; sourceTree = "<group>"; };
@@ -687,13 +696,16 @@
 		C44C14523212A7DF9C165501D3647FF5 /* POPDecayAnimationInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPDecayAnimationInternal.h; path = pop/POPDecayAnimationInternal.h; sourceTree = "<group>"; };
 		C52468A2E21FE20221B6A1F3CFB11097 /* Stevia+Fill.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Fill.swift"; path = "Source/Stevia+Fill.swift"; sourceTree = "<group>"; };
 		C7589034D9BBB70FCC5ABC9893692360 /* SessionStateProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionStateProvider.swift; path = Source/SessionStateProvider.swift; sourceTree = "<group>"; };
-		C7B19E0DCCFA1B0E37FDA258D3A52CFD /* Pods-BetterInstagram-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BetterInstagram-resources.sh"; sourceTree = "<group>"; };
 		C7E6E79BA9C2A67BAD64D7E4EADA1577 /* YPPhotoFiltersVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPPhotoFiltersVC.swift; path = Source/Filters/YPPhotoFiltersVC.swift; sourceTree = "<group>"; };
 		C848B3BFA57BAB7D41014FA35178F114 /* YPLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPLoadingView.swift; path = Source/Helpers/YPLoadingView.swift; sourceTree = "<group>"; };
+		C8AB96A350E6A8779DE4BD32D66A3D20 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E8A4A6E7D5316939D01DE5E8F025C9 /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = es.lproj; path = Resources/es.lproj; sourceTree = "<group>"; };
+		C94EE4B2F7681F017735D262BE81B953 /* Pods_BetterInstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BetterInstagram.framework; path = "Pods-BetterInstagram.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C987B45F524BB3C232B0F678EE0B55B8 /* AVAssetTimeSelector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AVAssetTimeSelector.swift; path = PryntTrimmerView/Classes/Parents/AVAssetTimeSelector.swift; sourceTree = "<group>"; };
 		C9E88E3C674E5212E098F06053F795A6 /* Stevia+LayoutAnchors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+LayoutAnchors.swift"; path = "Source/Stevia+LayoutAnchors.swift"; sourceTree = "<group>"; };
+		CB2A02C937DC06C1190A6C9F6C823525 /* Pods-OneSignalNotificationServiceExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OneSignalNotificationServiceExtension.modulemap"; sourceTree = "<group>"; };
 		CCAB58DD20BD0E90FB4028BCA3AFBBAF /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		CD322FDAE1E7A150BC87055805F558BA /* VBFPopFlatButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = VBFPopFlatButton.framework; path = VBFPopFlatButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC56DD107B6A734BFE625B6EE7ADD92 /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLConvertible+URLRequestConvertible.swift"; path = "Source/URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
 		CDD5BFA8B89D012FDCB0BE775FDA2D29 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		CE8442EF1FB709D2382599A09788A2DA /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extensions.swift"; path = "Source/Helpers/Extensions/String+Extensions.swift"; sourceTree = "<group>"; };
@@ -703,13 +715,13 @@
 		D0067E47E70D4C8F04173666DD763AEA /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		D09E483DA043B75E72DDBB24C167E9F0 /* POPLayerExtras.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPLayerExtras.h; path = pop/POPLayerExtras.h; sourceTree = "<group>"; };
 		D1584DBEC8CA0A8CEC5ABC3465BC58AA /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
-		D2346A980666F305A7AEFE56690F668C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2B6F2B2B79F33CD341396B7D587A1E8 /* VBFDoubleSegment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VBFDoubleSegment.h; path = VBFPopFlatButton/VBFPopFlatButtonClasses/VBFDoubleSegment.h; sourceTree = "<group>"; };
 		D2E565C01FFFF82D4B515509F2677FED /* POPAnimationTracerInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimationTracerInternal.h; path = pop/POPAnimationTracerInternal.h; sourceTree = "<group>"; };
 		D46FA46B07791426BF6A519035CCE393 /* RetryPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryPolicy.swift; path = Source/RetryPolicy.swift; sourceTree = "<group>"; };
 		D4E47258E513A3168A56386E68266DEA /* Fire.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Fire.png; path = LTMorphingLabel/Particles/Fire.png; sourceTree = "<group>"; };
 		D50942009D23BE86D6BBC6034A48D359 /* LTMorphingLabel+Fall.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LTMorphingLabel+Fall.swift"; path = "LTMorphingLabel/LTMorphingLabel+Fall.swift"; sourceTree = "<group>"; };
 		D65E151837114E5037FA7AD8861D7A2C /* AwesomeTextFieldSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AwesomeTextFieldSwift.modulemap; sourceTree = "<group>"; };
+		D6F8E7055A280A7B3AD62B5E988FACE4 /* Pods-BetterInstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BetterInstagram.release.xcconfig"; sourceTree = "<group>"; };
 		D7C0F9A8C5ADE92BCAED64843CA611A8 /* LTMorphingLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LTMorphingLabel.h; path = LTMorphingLabel/LTMorphingLabel.h; sourceTree = "<group>"; };
 		D80C3A6F10E5CE159C36820AE2CB22C3 /* LTMorphingLabel+Pixelate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LTMorphingLabel+Pixelate.swift"; path = "LTMorphingLabel/LTMorphingLabel+Pixelate.swift"; sourceTree = "<group>"; };
 		D894849119E7A29AB8CA685FD6A8C4AE /* LTMorphingLabel+Evaporate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LTMorphingLabel+Evaporate.swift"; path = "LTMorphingLabel/LTMorphingLabel+Evaporate.swift"; sourceTree = "<group>"; };
@@ -740,10 +752,12 @@
 		E742F7BB2C3E79CEF7B9F7A5C8941987 /* POPAnimator.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPAnimator.mm; path = pop/POPAnimator.mm; sourceTree = "<group>"; };
 		E7B1C98E6DA718CF9013B47D8033E2A2 /* YPAssetViewContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPAssetViewContainer.swift; path = Source/Pages/Gallery/YPAssetViewContainer.swift; sourceTree = "<group>"; };
 		E819002D75246B4A63BBC7F8A9E029DE /* YPTrimError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPTrimError.swift; path = Source/Models/YPTrimError.swift; sourceTree = "<group>"; };
+		E91AFEFA25524B490622969E093DC48C /* Pods-BetterInstagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BetterInstagram.debug.xcconfig"; sourceTree = "<group>"; };
 		E9A1834D34D4857502C4AE5C5824CE28 /* AssetVideoScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetVideoScrollView.swift; path = PryntTrimmerView/Classes/Parents/AssetVideoScrollView.swift; sourceTree = "<group>"; };
 		EA6B1E43B15D893AAA78B315498229C8 /* DateToolsSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DateToolsSwift-dummy.m"; sourceTree = "<group>"; };
 		EBE653DA09D7D92209475F73FB8DB43F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECDF8664563784ED5C5BD7F818AE04CE /* YPAssetZoomableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPAssetZoomableView.swift; path = Source/Pages/Gallery/YPAssetZoomableView.swift; sourceTree = "<group>"; };
+		ED180F3BD9CDEE4BA2E88ED2711EE6AF /* Stevia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Stevia.framework; path = SteviaLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE3568746839384DA7FCB5A07B096944 /* YPVideoFiltersVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPVideoFiltersVC.swift; path = Source/Filters/Video/YPVideoFiltersVC.swift; sourceTree = "<group>"; };
 		EE737C9269CC021103E621F606AF8D38 /* SwiftLocation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftLocation-dummy.m"; sourceTree = "<group>"; };
 		EFCF6359117BF4FE97A7E1ADCB127C39 /* Stevia+Center.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Center.swift"; path = "Source/Stevia+Center.swift"; sourceTree = "<group>"; };
@@ -756,8 +770,9 @@
 		F30B87D1C79BEA5A4AC2A32D71D6D3D4 /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
 		F3BD300C91B9B2E202CCC5FF7BDF1FC6 /* POPAnimatorPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimatorPrivate.h; path = pop/POPAnimatorPrivate.h; sourceTree = "<group>"; };
 		F4209E3350EA570E0568ECFFAC4ED639 /* YPAlbumView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPAlbumView.swift; path = Source/Pages/Gallery/YPAlbumView.swift; sourceTree = "<group>"; };
-		F4CCBF5B90DDAB82AA9E20A60AB5710E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4A7CB29E59CC03C6EF430B3D8671663 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		F543F539A30AFB3F8C958CC8C3CC3E64 /* POPPropertyAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPPropertyAnimation.mm; path = pop/POPPropertyAnimation.mm; sourceTree = "<group>"; };
+		F614328BE5B1843667F7D2AD85D50549 /* Pods-BetterInstagram.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BetterInstagram.modulemap"; sourceTree = "<group>"; };
 		F62DC9AD138CB5DBED28B4A76F5280B9 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "Source/Helpers/Extensions/UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		F6EF4C22F3049E9932BD767BE8E17BA8 /* EventMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Source/EventMonitor.swift; sourceTree = "<group>"; };
 		F7D0356E3C52944165D267E5BD506224 /* YPLibraryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPLibraryView.swift; path = Source/Pages/Gallery/YPLibraryView.swift; sourceTree = "<group>"; };
@@ -765,14 +780,12 @@
 		F91DB6BEC4340D46FC128AD216294C3B /* YPWordings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YPWordings.swift; path = Source/Configuration/YPWordings.swift; sourceTree = "<group>"; };
 		F9859C307D2411AA9B5C9ACC149F6F76 /* DateToolsSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DateToolsSwift.xcconfig; sourceTree = "<group>"; };
 		F9A7FE019CEF98231C0550E2E2D6BADC /* Stevia+Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Stevia+Operators.swift"; path = "Source/Stevia+Operators.swift"; sourceTree = "<group>"; };
-		FB72EF40EA526CF10EEECA378CFED8B8 /* AwesomeTextFieldSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AwesomeTextFieldSwift.framework; path = AwesomeTextFieldSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB83E18142C0D34C65D96B0512DC5FF8 /* Pods-BetterInstagram-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BetterInstagram-resources.sh"; sourceTree = "<group>"; };
 		FBAA96ADA8790A766B130AE84F49A89F /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		FBF3629F3AEF5ED7CB64C6E829E0DD95 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCCEA2488F4C99D9AB1AF75B96EA385F /* PryntTrimmerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PryntTrimmerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE405EA064533D7534685E94B6625940 /* YPImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YPImagePicker.framework; path = YPImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE5C56C096294053DB421AB49108DC17 /* AVMutableComposition+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AVMutableComposition+Extensions.swift"; path = "Source/Helpers/Extensions/AVMutableComposition+Extensions.swift"; sourceTree = "<group>"; };
 		FE8FD0FB3CC101A7A954F809D575780E /* POPDecayAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPDecayAnimation.h; path = pop/POPDecayAnimation.h; sourceTree = "<group>"; };
-		FFCFC2BE2D4795BD8642E5B26DDD67BB /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = pop.framework; path = pop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -860,6 +873,14 @@
 				A5D60C70BDE389E61D11D05EAF5E3550 /* Foundation.framework in Frameworks */,
 				0AFD99DD91BC58DDC76115F62808C8AF /* MapKit.framework in Frameworks */,
 				421BD3CD5FFF0B3B801F1608AC7D970D /* SwiftyJSON.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA86FFA7D3727DA2F848C945DF5BB898 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DF9B3BC2B081E2C05FAB2FEA8E20E15 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -983,25 +1004,6 @@
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
-		311E6F54B7DF76DDCC46A9DC47862803 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F4CCBF5B90DDAB82AA9E20A60AB5710E /* Alamofire.framework */,
-				FB72EF40EA526CF10EEECA378CFED8B8 /* AwesomeTextFieldSwift.framework */,
-				1E24AF177ED4F37D8C707F711EE140AD /* DateToolsSwift.framework */,
-				970C3D76DA9E128EBD3DF1133B0FC055 /* LTMorphingLabel.framework */,
-				0FF2DD05041742663D410F7EE23B1550 /* Pods_BetterInstagram.framework */,
-				FFCFC2BE2D4795BD8642E5B26DDD67BB /* pop.framework */,
-				9B21006A99601EE1A517E0B15A3B2DC0 /* PryntTrimmerView.framework */,
-				9450D82CA6FD09F53C918123D64CE77A /* Stevia.framework */,
-				2AF5C16566818A1BA018CDBF65354954 /* SwiftLocation.framework */,
-				1C8B2D7B9D88D2F6DB81B61E2D12329F /* SwiftyJSON.framework */,
-				4A2CF7E73C503417C3C728E01FF64ABF /* VBFPopFlatButton.framework */,
-				FE405EA064533D7534685E94B6625940 /* YPImagePicker.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		31BB5823D1912D154FC8DD22BA96126A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1014,6 +1016,26 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/VBFPopFlatButton";
+			sourceTree = "<group>";
+		};
+		3EBE13A1BAFB3859065E11399B22F70B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				236A3BD26CCA115518EA57E23EFCDE60 /* Alamofire.framework */,
+				3FAC4C2210F76E3CD9F27917CBDA1BEE /* AwesomeTextFieldSwift.framework */,
+				C1B75CCC5E926A4AAF74E92523FA7FDA /* DateToolsSwift.framework */,
+				07D7181ABDBFFDA0E15B9B2B08E504BB /* LTMorphingLabel.framework */,
+				C94EE4B2F7681F017735D262BE81B953 /* Pods_BetterInstagram.framework */,
+				5A716601D5B63F3E4E728136F0F4E404 /* Pods_OneSignalNotificationServiceExtension.framework */,
+				B734188CF3566B9DC5E99B5055D2F3E6 /* pop.framework */,
+				BAB497437A2F6F8722C1D329C96742C7 /* PryntTrimmerView.framework */,
+				ED180F3BD9CDEE4BA2E88ED2711EE6AF /* Stevia.framework */,
+				AA7D72CF3560A0143DADD5A66F755C47 /* SwiftLocation.framework */,
+				C8AB96A350E6A8779DE4BD32D66A3D20 /* SwiftyJSON.framework */,
+				CD322FDAE1E7A150BC87055805F558BA /* VBFPopFlatButton.framework */,
+				AB13BD34EF091EA51F9CED8378975991 /* YPImagePicker.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		505E708D2540049AD7D5B5C0EAA90047 /* SwiftLocation */ = {
@@ -1030,6 +1052,23 @@
 			);
 			name = SwiftLocation;
 			path = SwiftLocation;
+			sourceTree = "<group>";
+		};
+		564B70F61954F141579BE678A2B94ACD /* Pods-OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				6C3BBE4008F6FA45E42ECF3EA0B984A5 /* Info.plist */,
+				CB2A02C937DC06C1190A6C9F6C823525 /* Pods-OneSignalNotificationServiceExtension.modulemap */,
+				1A853614D3FF8044C5C6434EDB0D1B73 /* Pods-OneSignalNotificationServiceExtension-acknowledgements.markdown */,
+				AD947E4D0DEEF37B6FBBB5D3F02A0F08 /* Pods-OneSignalNotificationServiceExtension-acknowledgements.plist */,
+				42745843C7D53F5A66CEC957DDDADEAB /* Pods-OneSignalNotificationServiceExtension-dummy.m */,
+				1359E412687F04D5968541DA56983C44 /* Pods-OneSignalNotificationServiceExtension-resources.sh */,
+				9EC7F769A84B99D9D221E564E04640FF /* Pods-OneSignalNotificationServiceExtension-umbrella.h */,
+				255FAD0F20CBF25152A0B2B7A43A687E /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				F4A7CB29E59CC03C6EF430B3D8671663 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
+			);
+			name = "Pods-OneSignalNotificationServiceExtension";
+			path = "Target Support Files/Pods-OneSignalNotificationServiceExtension";
 			sourceTree = "<group>";
 		};
 		616FDE1AA473F3ED9E99FB4DFA387384 /* PryntTrimmerView */ = {
@@ -1059,24 +1098,6 @@
 				ABED9B365455FCF99B3BFB47A4101B75 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6C6321407C5542F3FBAB6F45E5C8D608 /* Pods-BetterInstagram */ = {
-			isa = PBXGroup;
-			children = (
-				D2346A980666F305A7AEFE56690F668C /* Info.plist */,
-				12A166C416966B187DA73B7723DDCE38 /* Pods-BetterInstagram.modulemap */,
-				118F20E50183871F0DC11597A750CB22 /* Pods-BetterInstagram-acknowledgements.markdown */,
-				8E5B2B233AA69C0D6002B095BBD4F88E /* Pods-BetterInstagram-acknowledgements.plist */,
-				22B2D68C7C3F9B84B63795BD1746D3E4 /* Pods-BetterInstagram-dummy.m */,
-				9D7E2ADFEF7AE16F22CDA9D9B2257CA7 /* Pods-BetterInstagram-frameworks.sh */,
-				C7B19E0DCCFA1B0E37FDA258D3A52CFD /* Pods-BetterInstagram-resources.sh */,
-				019FE0739950E09F7081D0155B19DCF5 /* Pods-BetterInstagram-umbrella.h */,
-				4B4F8FF3B4812581C857D058E90E0BA3 /* Pods-BetterInstagram.debug.xcconfig */,
-				2BF3348447B049D6F4723560A2C3960A /* Pods-BetterInstagram.release.xcconfig */,
-			);
-			name = "Pods-BetterInstagram";
-			path = "Target Support Files/Pods-BetterInstagram";
 			sourceTree = "<group>";
 		};
 		7A1AE639F5EDD04558265C62E5380E0B /* Resources */ = {
@@ -1124,8 +1145,8 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				682994F0FCA3E374D036F0D143897C10 /* Frameworks */,
 				001AEA402C95C42D70933202A90FF053 /* Pods */,
-				311E6F54B7DF76DDCC46A9DC47862803 /* Products */,
-				E3A81D412112A6DC54EEFEDA9760D95A /* Targets Support Files */,
+				3EBE13A1BAFB3859065E11399B22F70B /* Products */,
+				AF564236E6388156957E8A4510FF01D9 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1247,6 +1268,15 @@
 				9AD14A53941A865D14F21FD1F7CF7C60 /* UIKit.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		AF564236E6388156957E8A4510FF01D9 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8BD38C61CDA0D9BDC19E29D79BD0FCA /* Pods-BetterInstagram */,
+				564B70F61954F141579BE678A2B94ACD /* Pods-OneSignalNotificationServiceExtension */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		B33833861FCE4CF33417D5472BF07D82 /* Frameworks */ = {
@@ -1497,12 +1527,22 @@
 			path = pop;
 			sourceTree = "<group>";
 		};
-		E3A81D412112A6DC54EEFEDA9760D95A /* Targets Support Files */ = {
+		E8BD38C61CDA0D9BDC19E29D79BD0FCA /* Pods-BetterInstagram */ = {
 			isa = PBXGroup;
 			children = (
-				6C6321407C5542F3FBAB6F45E5C8D608 /* Pods-BetterInstagram */,
+				78D06FB345A2FDABA8F434A08C0676CC /* Info.plist */,
+				F614328BE5B1843667F7D2AD85D50549 /* Pods-BetterInstagram.modulemap */,
+				B5603A793A714691A16BFE2110F40102 /* Pods-BetterInstagram-acknowledgements.markdown */,
+				8A7077FA3FE53FA8B18D5595F6DB79B2 /* Pods-BetterInstagram-acknowledgements.plist */,
+				77C423721B0B272E1EA7BE86218B424A /* Pods-BetterInstagram-dummy.m */,
+				5F65EF6F163C15A56E4C8B1C7F1660A2 /* Pods-BetterInstagram-frameworks.sh */,
+				FB83E18142C0D34C65D96B0512DC5FF8 /* Pods-BetterInstagram-resources.sh */,
+				54537BD5D9915C0E1CFE8BC8FDD8213D /* Pods-BetterInstagram-umbrella.h */,
+				E91AFEFA25524B490622969E093DC48C /* Pods-BetterInstagram.debug.xcconfig */,
+				D6F8E7055A280A7B3AD62B5E988FACE4 /* Pods-BetterInstagram.release.xcconfig */,
 			);
-			name = "Targets Support Files";
+			name = "Pods-BetterInstagram";
+			path = "Target Support Files/Pods-BetterInstagram";
 			sourceTree = "<group>";
 		};
 		F547D91C45C37F06675AA462B3C8F117 /* Support Files */ = {
@@ -1541,6 +1581,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B6D9A36EACFB2E5636DAE6DE3A646ED /* SwiftyJSON-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1205EB828509490182A667AF53713B82 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B0EC08B36DFF0F6527D598D0D6BAB46 /* Pods-OneSignalNotificationServiceExtension-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1687,7 +1735,7 @@
 			);
 			name = SteviaLayout;
 			productName = SteviaLayout;
-			productReference = 9450D82CA6FD09F53C918123D64CE77A /* Stevia.framework */;
+			productReference = ED180F3BD9CDEE4BA2E88ED2711EE6AF /* Stevia.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5B3A7BCCABAE83232F14C87C5CE350FC /* Alamofire */ = {
@@ -1705,7 +1753,7 @@
 			);
 			name = Alamofire;
 			productName = Alamofire;
-			productReference = F4CCBF5B90DDAB82AA9E20A60AB5710E /* Alamofire.framework */;
+			productReference = 236A3BD26CCA115518EA57E23EFCDE60 /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6158415F87CF274EA62B4DDC0B92A211 /* PryntTrimmerView */ = {
@@ -1723,7 +1771,7 @@
 			);
 			name = PryntTrimmerView;
 			productName = PryntTrimmerView;
-			productReference = 9B21006A99601EE1A517E0B15A3B2DC0 /* PryntTrimmerView.framework */;
+			productReference = BAB497437A2F6F8722C1D329C96742C7 /* PryntTrimmerView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6D4E163BA3F2360EA4EA8F64CA0D00F4 /* AwesomeTextFieldSwift */ = {
@@ -1741,7 +1789,25 @@
 			);
 			name = AwesomeTextFieldSwift;
 			productName = AwesomeTextFieldSwift;
-			productReference = FB72EF40EA526CF10EEECA378CFED8B8 /* AwesomeTextFieldSwift.framework */;
+			productReference = 3FAC4C2210F76E3CD9F27917CBDA1BEE /* AwesomeTextFieldSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6FCA1012C6A2587352A8716F72F517FB /* Pods-OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF91BA866FD2B0AFD9635051DCB9E469 /* Build configuration list for PBXNativeTarget "Pods-OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				1205EB828509490182A667AF53713B82 /* Headers */,
+				714D28D357A7E4F02B428CAF61B3669A /* Sources */,
+				BA86FFA7D3727DA2F848C945DF5BB898 /* Frameworks */,
+				1CD4B785758797204AD4351C2AB9EFD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-OneSignalNotificationServiceExtension";
+			productName = "Pods-OneSignalNotificationServiceExtension";
+			productReference = 5A716601D5B63F3E4E728136F0F4E404 /* Pods_OneSignalNotificationServiceExtension.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7220FA4B3186C76CA22504CAA7B32095 /* SwiftyJSON */ = {
@@ -1759,7 +1825,7 @@
 			);
 			name = SwiftyJSON;
 			productName = SwiftyJSON;
-			productReference = 1C8B2D7B9D88D2F6DB81B61E2D12329F /* SwiftyJSON.framework */;
+			productReference = C8AB96A350E6A8779DE4BD32D66A3D20 /* SwiftyJSON.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A1C1CC52B9711FD4F4BE039DB8A56C96 /* DateToolsSwift */ = {
@@ -1777,7 +1843,7 @@
 			);
 			name = DateToolsSwift;
 			productName = DateToolsSwift;
-			productReference = 1E24AF177ED4F37D8C707F711EE140AD /* DateToolsSwift.framework */;
+			productReference = C1B75CCC5E926A4AAF74E92523FA7FDA /* DateToolsSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		ADE6AAEFFB2A42329D635188C5771769 /* YPImagePicker */ = {
@@ -1797,7 +1863,7 @@
 			);
 			name = YPImagePicker;
 			productName = YPImagePicker;
-			productReference = FE405EA064533D7534685E94B6625940 /* YPImagePicker.framework */;
+			productReference = AB13BD34EF091EA51F9CED8378975991 /* YPImagePicker.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B64156584BF017F01B9592BD7C71244A /* Pods-BetterInstagram */ = {
@@ -1826,7 +1892,7 @@
 			);
 			name = "Pods-BetterInstagram";
 			productName = "Pods-BetterInstagram";
-			productReference = 0FF2DD05041742663D410F7EE23B1550 /* Pods_BetterInstagram.framework */;
+			productReference = C94EE4B2F7681F017735D262BE81B953 /* Pods_BetterInstagram.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D1FD9459BA6EC81F237EE1662661F0A2 /* pop */ = {
@@ -1844,7 +1910,7 @@
 			);
 			name = pop;
 			productName = pop;
-			productReference = FFCFC2BE2D4795BD8642E5B26DDD67BB /* pop.framework */;
+			productReference = B734188CF3566B9DC5E99B5055D2F3E6 /* pop.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D5BE0B24DC85B44502F9413ACD93E41F /* SwiftLocation */ = {
@@ -1863,7 +1929,7 @@
 			);
 			name = SwiftLocation;
 			productName = SwiftLocation;
-			productReference = 2AF5C16566818A1BA018CDBF65354954 /* SwiftLocation.framework */;
+			productReference = AA7D72CF3560A0143DADD5A66F755C47 /* SwiftLocation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D76034078AED69B356B746186FA48242 /* VBFPopFlatButton */ = {
@@ -1882,7 +1948,7 @@
 			);
 			name = VBFPopFlatButton;
 			productName = VBFPopFlatButton;
-			productReference = 4A2CF7E73C503417C3C728E01FF64ABF /* VBFPopFlatButton.framework */;
+			productReference = CD322FDAE1E7A150BC87055805F558BA /* VBFPopFlatButton.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DE0F4BA743D14AC6E921A230859EC8F1 /* LTMorphingLabel */ = {
@@ -1900,7 +1966,7 @@
 			);
 			name = LTMorphingLabel;
 			productName = LTMorphingLabel;
-			productReference = 970C3D76DA9E128EBD3DF1133B0FC055 /* LTMorphingLabel.framework */;
+			productReference = 07D7181ABDBFFDA0E15B9B2B08E504BB /* LTMorphingLabel.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1920,7 +1986,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 311E6F54B7DF76DDCC46A9DC47862803 /* Products */;
+			productRefGroup = 3EBE13A1BAFB3859065E11399B22F70B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -1929,6 +1995,7 @@
 				A1C1CC52B9711FD4F4BE039DB8A56C96 /* DateToolsSwift */,
 				DE0F4BA743D14AC6E921A230859EC8F1 /* LTMorphingLabel */,
 				B64156584BF017F01B9592BD7C71244A /* Pods-BetterInstagram */,
+				6FCA1012C6A2587352A8716F72F517FB /* Pods-OneSignalNotificationServiceExtension */,
 				D1FD9459BA6EC81F237EE1662661F0A2 /* pop */,
 				6158415F87CF274EA62B4DDC0B92A211 /* PryntTrimmerView */,
 				3504BBBC7AB780DA8EAA99BA122D78A6 /* SteviaLayout */,
@@ -1960,6 +2027,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		05989C2F3AEB1E5604DA2AC39B25281D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CD4B785758797204AD4351C2AB9EFD6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2169,6 +2243,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AFE2F669586774DCEE13AA9459BC268 /* Pods-BetterInstagram-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		714D28D357A7E4F02B428CAF61B3669A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94A8BA03F3460A03692DABF9E60EC886 /* Pods-OneSignalNotificationServiceExtension-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2511,7 +2593,7 @@
 		};
 		076806442935CD890972BEF09CE0DB34 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2BF3348447B049D6F4723560A2C3960A /* Pods-BetterInstagram.release.xcconfig */;
+			baseConfigurationReference = D6F8E7055A280A7B3AD62B5E988FACE4 /* Pods-BetterInstagram.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2655,6 +2737,46 @@
 			};
 			name = Release;
 		};
+		30B8A86468E39CA8FC6CA636FF94893D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4A7CB29E59CC03C6EF430B3D8671663 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		337702CC8D9EF07F245054B7B7AEF780 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8C9B2C35BBFC16485910F3B11054D119 /* AwesomeTextFieldSwift.xcconfig */;
@@ -2728,7 +2850,7 @@
 		};
 		3C839F7BDCFDA10334453CB753C0F996 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B4F8FF3B4812581C857D058E90E0BA3 /* Pods-BetterInstagram.debug.xcconfig */;
+			baseConfigurationReference = E91AFEFA25524B490622969E093DC48C /* Pods-BetterInstagram.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2871,6 +2993,45 @@
 			};
 			name = Release;
 		};
+		81F5E506B0B923F2F33B45198B1D7A77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 255FAD0F20CBF25152A0B2B7A43A687E /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		87BCDE3148EB6FD1BDD88769DAAA79AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E56485DBE292FFB06BF6B31E683CE891 /* PryntTrimmerView.xcconfig */;
@@ -2907,43 +3068,7 @@
 			};
 			name = Release;
 		};
-		914E738037E48CE013A3B08C4F52433E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9859C307D2411AA9B5C9ACC149F6F76 /* DateToolsSwift.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/DateToolsSwift/DateToolsSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DateToolsSwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/DateToolsSwift/DateToolsSwift.modulemap";
-				PRODUCT_MODULE_NAME = DateToolsSwift;
-				PRODUCT_NAME = DateToolsSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		98E98810EEEB96C99CB95CB91F4ADE0A /* Debug */ = {
+		8DDFA5FA8D4131BFD96E5E26F3672644 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2996,7 +3121,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -3008,6 +3133,42 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
+		};
+		914E738037E48CE013A3B08C4F52433E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9859C307D2411AA9B5C9ACC149F6F76 /* DateToolsSwift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DateToolsSwift/DateToolsSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DateToolsSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DateToolsSwift/DateToolsSwift.modulemap";
+				PRODUCT_MODULE_NAME = DateToolsSwift;
+				PRODUCT_NAME = DateToolsSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		99F92BF93F0672A01D77498AA9CEE58D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3187,7 +3348,42 @@
 			};
 			name = Release;
 		};
-		B97A7F6ACE1216BB5A2307CA83FC93C5 /* Release */ = {
+		C7D10E6CA57A6B42EC346925EBD4211E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B1FD53BC8DC9EFDB171AD56242135A3 /* SwiftyJSON.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyJSON;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D5F759C82752B2EB010DB3CD3D69707C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -3237,7 +3433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3248,41 +3444,6 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
-		};
-		C7D10E6CA57A6B42EC346925EBD4211E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B1FD53BC8DC9EFDB171AD56242135A3 /* SwiftyJSON.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
-				PRODUCT_MODULE_NAME = SwiftyJSON;
-				PRODUCT_NAME = SwiftyJSON;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		DCDB8E4391E1E41D4572848A3AD1E070 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3441,8 +3602,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				98E98810EEEB96C99CB95CB91F4ADE0A /* Debug */,
-				B97A7F6ACE1216BB5A2307CA83FC93C5 /* Release */,
+				8DDFA5FA8D4131BFD96E5E26F3672644 /* Debug */,
+				D5F759C82752B2EB010DB3CD3D69707C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3542,6 +3703,15 @@
 			buildConfigurations = (
 				FB2BD010AF1A1B1B671A66048C7457AC /* Debug */,
 				87BCDE3148EB6FD1BDD88769DAAA79AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF91BA866FD2B0AFD9635051DCB9E469 /* Build configuration list for PBXNativeTarget "Pods-OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81F5E506B0B923F2F33B45198B1D7A77 /* Debug */,
+				30B8A86468E39CA8FC6CA636FF94893D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

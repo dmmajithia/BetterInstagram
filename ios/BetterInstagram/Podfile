@@ -16,3 +16,8 @@ pod 'Alamofire', '~> 5.0.0.beta.1'
 pod 'LTMorphingLabel'
 pod 'AwesomeTextFieldSwift'
 end
+
+target 'OneSignalNotificationServiceExtension' do
+  use_frameworks!
+  pod 'OneSignal', '>= 2.6.2', '< 3.0'
+end

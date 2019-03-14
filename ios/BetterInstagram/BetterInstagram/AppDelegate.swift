@@ -24,10 +24,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(self.setParent(noti:)), name: Notification.Name(rawValue: "SetParent"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.dismissCurrentVC(noti:)), name: Notification.Name(rawValue: "DismissCurrentVC"), object: nil)
         
+        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
+        
+        // Replace 'YOUR_APP_ID' with your OneSignal App ID.
+        OneSignal.initWithLaunchOptions(launchOptions,
+                                        appId: "b93dcd48-6999-4353-8c4d-4a81b063f8c4",
+                                        handleNotificationAction: nil,
+                                        settings: onesignalInitSettings)
+        
+        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+        
+        // Recommend moving the below line to prompt for push after informing the user about
+        //   how your app will use them.
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+            print("User accepted notifications: \(accepted)")
+        })
+        
+        
+        
+        
         // first get appID from CloudKit
         Api.login(completion: {(json) -> () in
             if(json["success"].bool!){
                 CurrentUser.shared.user?.json(json: json)
+                Api.getAppID(completion: {(appID, error) -> () in
+                    print("APP ID ================= " + appID)
+                    OneSignal.sendTag("appID", value: appID)
+                })
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainTab")
                 self.window?.rootViewController = initialViewController

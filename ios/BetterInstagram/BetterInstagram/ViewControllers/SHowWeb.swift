@@ -20,6 +20,6 @@ class ShowWeb: UIViewController{
         }
     }
     @IBAction func canelTapped(_ sender: Any) {
-        
+        self.dismissMe()
     }
 }

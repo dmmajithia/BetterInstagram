@@ -133,6 +133,9 @@ class UserProfileVC: UIViewController{
         if(self.is_editing){
             self.performSegue(withIdentifier: "changeProfileData", sender: self)
         }
+        else{
+            self.performSegue(withIdentifier: "showWeb", sender: self)
+        }
     }
     
     @objc func changeProfilePicture(_ sender: Any){
@@ -173,7 +176,8 @@ class UserProfileVC: UIViewController{
             destVC.updating = true
         }
         else if(segue.identifier == "showWeb"){
-            
+            let destVC = segue.destination as! ShowWeb
+            destVC.url = self.json["website"].string!
         }
     }
     

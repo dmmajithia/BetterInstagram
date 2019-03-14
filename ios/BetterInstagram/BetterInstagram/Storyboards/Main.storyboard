@@ -467,18 +467,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJ5-re-6L5">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJ5-re-6L5">
                                 <rect key="frame" x="0.0" y="20" width="375" height="589"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwQ-z7-Euw">
-                                <rect key="frame" x="163" y="617" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwQ-z7-Euw">
+                                <rect key="frame" x="163" y="617" width="49" height="30"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="canelTapped:" destination="XqZ-4k-HPD" eventType="touchUpInside" id="y6a-kZ-CnW"/>
@@ -486,6 +484,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jJ5-re-6L5" secondAttribute="trailing" id="1rt-8g-b6h"/>
+                            <constraint firstItem="jJ5-re-6L5" firstAttribute="top" secondItem="Oke-eY-abY" secondAttribute="top" id="YlY-hY-BwO"/>
+                            <constraint firstAttribute="bottom" secondItem="dwQ-z7-Euw" secondAttribute="bottom" constant="20" symbolic="YES" id="irJ-hF-Twk"/>
+                            <constraint firstItem="dwQ-z7-Euw" firstAttribute="top" secondItem="jJ5-re-6L5" secondAttribute="bottom" constant="8" symbolic="YES" id="jqR-c2-FzU"/>
+                            <constraint firstItem="jJ5-re-6L5" firstAttribute="centerX" secondItem="dwQ-z7-Euw" secondAttribute="centerX" id="nD5-VE-t8H"/>
+                            <constraint firstItem="dwQ-z7-Euw" firstAttribute="leading" secondItem="Oke-eY-abY" secondAttribute="leading" constant="163" id="uzn-LT-yPR"/>
+                            <constraint firstItem="jJ5-re-6L5" firstAttribute="leading" secondItem="qYB-5N-SbH" secondAttribute="leading" id="y03-Un-Mx3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Oke-eY-abY"/>
                     </view>
                     <connections>

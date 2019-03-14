@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "574224500.168542"
+            timestampString = "574235045.656763"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "574224500.168609"
+            timestampString = "574235045.657365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "574224500.168662"
+            timestampString = "574235045.65762"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "574224500.168715"
+            timestampString = "574235045.657867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "574224500.168766"
+            timestampString = "574235045.658108"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "574224500.168816"
+            timestampString = "574235045.6583509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "574224500.168944"
+            timestampString = "574235045.658699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "addPost(image:caption:location:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "574224500.168997"
+            timestampString = "574235045.658958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "addPost(image:caption:location:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -362,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "574224500.1691"
+            timestampString = "574235045.659265"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "addPost(image:caption:location:completion:)"
             landmarkType = "7">
             <Locations>
@@ -410,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "574224500.169153"
+            timestampString = "574235045.659524"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "addPost(image:caption:location:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -442,7 +442,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "574224500.169224"
+            timestampString = "574235045.659806"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -458,11 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "574224500.169275"
+            timestampString = "574235045.660061"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "addPost(image:caption:location:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -474,7 +474,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "574224500.169325"
+            timestampString = "574235045.660303"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -490,7 +490,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/ViewControllers/UserProfileVC.swift"
-            timestampString = "574224500.1693799"
+            timestampString = "574225670.194856"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
@@ -506,7 +506,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/ViewControllers/UserProfileVC.swift"
-            timestampString = "574224500.169755"
+            timestampString = "574225670.194909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
@@ -570,7 +570,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Cells/ActivityFeedPostCell.swift"
-            timestampString = "574063841.979495"
+            timestampString = "574225670.195024"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -586,7 +586,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Post.swift"
-            timestampString = "574224500.170113"
+            timestampString = "574225670.195376"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -602,7 +602,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Post.swift"
-            timestampString = "574224500.170169"
+            timestampString = "574225670.1954319"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -618,7 +618,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Cells/ActivityFeedPostCell.swift"
-            timestampString = "574063841.979702"
+            timestampString = "574225670.195483"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -634,7 +634,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Post.swift"
-            timestampString = "574224500.170243"
+            timestampString = "574225670.195763"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -650,7 +650,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Cells/ActivityFeedPostCell.swift"
-            timestampString = "574063841.979802"
+            timestampString = "574225670.195815"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -666,7 +666,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Cells/ActivityFeedPostCell.swift"
-            timestampString = "574063841.9798501"
+            timestampString = "574225670.196076"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -714,7 +714,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Post.swift"
-            timestampString = "574224500.170334"
+            timestampString = "574225670.1963151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -730,7 +730,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Post.swift"
-            timestampString = "574224500.170386"
+            timestampString = "574225670.196364"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -746,7 +746,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Cells/PostImageCell.swift"
-            timestampString = "574224500.170446"
+            timestampString = "574225670.196414"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -762,7 +762,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Cells/PostImageCell.swift"
-            timestampString = "574224500.170495"
+            timestampString = "574225670.196463"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -810,11 +810,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/ViewControllers/Posts/ViewPostVC.swift"
-            timestampString = "574224500.170545"
+            timestampString = "574225670.196515"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -826,11 +826,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/ViewControllers/Posts/ViewPostVC.swift"
-            timestampString = "574224500.170599"
+            timestampString = "574225670.196571"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -842,7 +842,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/Model/Api.swift"
-            timestampString = "574224500.170664"
+            timestampString = "574235045.660943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
@@ -858,12 +858,172 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BetterInstagram/ViewControllers/Search/SearchHashtag.swift"
-            timestampString = "574224500.170737"
+            timestampString = "574225670.196677"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
             endingLineNumber = "71"
             landmarkName = "updateSearch(searchText:parent:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterInstagram/Model/Api.swift"
+            timestampString = "574235045.661255"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "addPost(image:caption:location:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static BetterInstagram.Api.addPost(image: __C.UIImage, caption: Swift.String, location: Swift.String, completion: (SwiftyJSON.JSON) -&gt; ()) -&gt; ()"
+                  moduleName = "BetterInstagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhawalmajithia/Desktop/school/winter2019/ECS165/BetterInstagram/ios/BetterInstagram/BetterInstagram/Model/Api.swift"
+                  timestampString = "574233522.975481"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in static BetterInstagram.Api.addPost(image: __C.UIImage, caption: Swift.String, location: Swift.String, completion: (SwiftyJSON.JSON) -&gt; ()) -&gt; ()"
+                  moduleName = "BetterInstagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhawalmajithia/Desktop/school/winter2019/ECS165/BetterInstagram/ios/BetterInstagram/BetterInstagram/Model/Api.swift"
+                  timestampString = "574233522.9773639"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterInstagram/Model/Api.swift"
+            timestampString = "574235045.661517"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "addPost(image:caption:location:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in static BetterInstagram.Api.addPost(image: __C.UIImage, caption: Swift.String, location: Swift.String, completion: (SwiftyJSON.JSON) -&gt; ()) -&gt; ()"
+                  moduleName = "BetterInstagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhawalmajithia/Desktop/school/winter2019/ECS165/BetterInstagram/ios/BetterInstagram/BetterInstagram/Model/Api.swift"
+                  timestampString = "574233523.10121"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "548">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Range&lt;Swift.String.Index&gt;, Swift.Range&lt;Swift.String.Index&gt;, inout Swift.Bool) -&gt; () in closure #1 (SwiftyJSON.JSON) -&gt; () in static BetterInstagram.Api.addPost(image: __C.UIImage, caption: Swift.String, location: Swift.String, completion: (SwiftyJSON.JSON) -&gt; ()) -&gt; ()"
+                  moduleName = "BetterInstagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhawalmajithia/Desktop/school/winter2019/ECS165/BetterInstagram/ios/BetterInstagram/BetterInstagram/Model/Api.swift"
+                  timestampString = "574233523.103218"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterInstagram/Model/Api.swift"
+            timestampString = "574235045.661762"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "addPost(image:caption:location:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterInstagram/Model/Api.swift"
+            timestampString = "574235045.662002"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "addPost(image:caption:location:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterInstagram/ViewControllers/AddPostVC.swift"
+            timestampString = "574233398.229571"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "tappedShare(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterInstagram/Model/Api.swift"
+            timestampString = "574235045.662261"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "addPost(image:caption:location:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
