@@ -48,29 +48,8 @@ class SearchUserVC: UIViewController, UITextFieldDelegate{
         self.updateSearch(text: textField.text!)
     }
     
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.usersArr.count
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchUserCell") as! SearchUserCell
-//        let user = usersArr[indexPath.item]
-//        cell.userID = String(user["user_id"].int!)
-//        cell.username = user["username"].string!
-//        cell.url = user["profile_picture"].string!
-//        cell.initialize()
-//        return cell
-//    }
-//    
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-//    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: false)
-//    }
-    
     func updateSearch(text: String){
+        self.TextFieldSearch.text = text
         if(text.isEmpty){
             return
         }
@@ -146,7 +125,7 @@ class SearchUserVC: UIViewController, UITextFieldDelegate{
         case "user_profile":
             CurrentUser.shared.show_user_id = sender as! String
             let destVC = segue.destination as! UserProfileVC
-            destVC.show_user_id = self.show_user_id
+            destVC.show_user_id = sender as? String
             return
         case "show_post":
             let destVC = segue.destination as! ViewPostVC

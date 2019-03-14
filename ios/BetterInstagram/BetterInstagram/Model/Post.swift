@@ -83,6 +83,9 @@ class Post{
     }
     
     func isLiked() -> Bool{
+        if self.likes == nil{
+            return false
+        }
         for like in self.likes{
             if String(like["user_id"].int!) == CurrentUser.shared.user?.userID{
                 return true

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchHashtag: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, Searchable{
+class SearchHashtag: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, Searchable, UICollectionViewDelegateFlowLayout{
     
     var tophashtags: [String]!
     var postIDs: [Int]!
@@ -27,6 +27,7 @@ class SearchHashtag: NSObject, UICollectionViewDelegate, UICollectionViewDataSou
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // todo: search this specific hashtag
+        tableView.deselectRow(at: indexPath, animated: true)
         self.parent.updateSearch(text: self.tophashtags[indexPath.item])
     }
     
@@ -73,6 +74,7 @@ class SearchHashtag: NSObject, UICollectionViewDelegate, UICollectionViewDataSou
     
     func showTophashtags(parent: SearchUserVC, completion: @escaping () -> ()){
         self.parent = parent
+        self.postIDs = []
         self.tophashtags = []
         Api.getTopHashTags(completion: {(tags) -> () in
             self.tophashtags = tags

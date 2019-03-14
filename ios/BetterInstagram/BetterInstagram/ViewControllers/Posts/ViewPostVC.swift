@@ -17,27 +17,34 @@ class ViewPostVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     
     override func viewDidLoad() {
+        self.postTableView.delegate = self
+        self.postTableView.dataSource = self
+        self.postTableView.register(UINib.init(nibName: "PostCommentCell", bundle: nil), forCellReuseIdentifier: "PostCommentCell")
+        self.postTableView.register(UINib.init(nibName: "PostActionCell", bundle: nil), forCellReuseIdentifier: "PostActionCell")
+        self.postTableView.register(UINib.init(nibName: "PostPosterCell", bundle: nil), forCellReuseIdentifier: "PostPosterCell")
+        self.postTableView.register(UINib.init(nibName: "PostImageCell", bundle: nil), forCellReuseIdentifier: "PostImageCell")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showUser(noti:)), name: Notification.Name(rawValue: "ShowUser"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showLocationForPost(noti:)), name: Notification.Name(rawValue: "ShowLocationForPost"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.LikedPhoto(noti:)), name: Notification.Name(rawValue: "LikedPhoto"), object: nil)
         self.post.getLikes {
             self.post.getComments {
-                self.postTableView.delegate = self
-                self.postTableView.dataSource = self
                 self.commentTextField.delegate = self
-                
-                self.postTableView.register(UINib.init(nibName: "PostCommentCell", bundle: nil), forCellReuseIdentifier: "PostCommentCell")
-                self.postTableView.register(UINib.init(nibName: "PostActionCell", bundle: nil), forCellReuseIdentifier: "PostActionCell")
-                self.postTableView.register(UINib.init(nibName: "PostPosterCell", bundle: nil), forCellReuseIdentifier: "PostPosterCell")
-                self.postTableView.register(UINib.init(nibName: "PostImageCell", bundle: nil), forCellReuseIdentifier: "PostImageCell")
-                
-                NotificationCenter.default.addObserver(self, selector: #selector(self.showUser(noti:)), name: Notification.Name(rawValue: "ShowUser"), object: nil)
-                NotificationCenter.default.addObserver(self, selector: #selector(self.showLocationForPost(noti:)), name: Notification.Name(rawValue: "ShowLocationForPost"), object: nil)
-                NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-                NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+                self.postTableView.reloadData()
             }
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (4 + self.post.comments.count)
+        if self.post != nil{
+            if self.post.comments != nil{
+                return (4 + self.post.comments.count)
+            }
+            return 4
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,7 +60,7 @@ class ViewPostVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostLikesCell")
             //cell.initialize(post: self.post)
-            cell?.detailTextLabel?.text = String(self.post.likes.count)
+            cell?.detailTextLabel?.text = String(self.post.likes == nil ? 0 : self.post.likes.count)
             return cell!
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCommentCell") as! PostCommentCell
@@ -75,6 +82,9 @@ class ViewPostVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        if indexPath.item == 2{
+            self.performSegue(withIdentifier: "ShowLikes", sender: self)
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -116,6 +126,27 @@ class ViewPostVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     @objc func keyboardWillHide(noti: Notification){
         if self.view.frame.origin.y != 0{
             self.view.frame.origin.y = 0
+        }
+    }
+    
+    @objc func LikedPhoto(noti: Notification){
+        self.postTableView.reloadData()
+    }
+    
+    @objc func showLikes(noti: Notification){
+        self.performSegue(withIdentifier: "ShowLikes", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowLikes"{
+            var userIDs = [String]()
+            for user in self.post.likes{
+                userIDs.append(String(user["user_id"].int!))
+            }
+            let destVC = segue.destination as! UserListVC
+            destVC.userIDs = userIDs
+            destVC.mainLabelText = "Likes"
+            return
         }
     }
     

@@ -8,11 +8,10 @@
 
 import UIKit
 
-class SearchLocation: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, Searchable{
+class SearchLocation: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, Searchable, UICollectionViewDelegateFlowLayout{
     
     var postIDs: [Int]!
-    var isPersonalFeed = false
-    var cells: [Int:ActivityFeedPostCell]!
+    var parent: SearchUserVC!
     
     //ignore START
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,17 +23,46 @@ class SearchLocation: NSObject, UICollectionViewDelegate, UICollectionViewDataSo
     }
     //IGNORE END
     
+    //PROTOCOL - CollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        if self.postIDs == nil{
+            return 0
+        }
+        return self.postIDs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActivityFeedPostCell", for: indexPath) as! ActivityFeedPostCell
+        cell.initialize(postID: (self.postIDs?[indexPath.item])!, personalize: false)
+        cell.needsUpdateConstraints()
+        cell.updateConstraints()
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width / 2, height: collectionView.frame.height / 2)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: false)
+        let post = (collectionView.cellForItem(at: indexPath) as! ActivityFeedPostCell).post
+        self.parent.showPost(post: post!)
     }
     
     func updateSearch(searchText: String, parent: SearchUserVC, completion: @escaping () -> ()) {
+        self.parent = parent
         self.postIDs = []
-        self.cells = [:]
-        
+        Api.searchLocation(text: searchText, completion: {(_postIDs) -> () in
+            self.postIDs = _postIDs
+            completion()
+        })
     }
 }

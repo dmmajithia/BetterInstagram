@@ -24,6 +24,8 @@ class UserProfileVC: UIViewController{
     @IBOutlet weak var ImageProfile: UIImageView!
     @IBOutlet weak var ButtonFollow: UIButton!
     @IBOutlet weak var ButtonCancel: UIButton!
+    @IBOutlet weak var ButtonFollower: UIButton!
+    @IBOutlet weak var ButtonFollowing: UIButton!
     
     
     override func viewDidLoad() {

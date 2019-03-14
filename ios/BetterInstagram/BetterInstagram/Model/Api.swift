@@ -124,9 +124,10 @@ struct Api{
         }
         AF.download(imageUrl).responseData { response in
             if let data = response.result.value {
-                let image = UIImage(data: data)
-                imageCache.setObject(image!, forKey: imageUrl as AnyObject)
-                completion(image!)
+                if let image = UIImage(data: data){
+                    imageCache.setObject(image, forKey: imageUrl as AnyObject)
+                    completion(image)
+                }
             }
         }
     }
@@ -139,15 +140,22 @@ struct Api{
         })
     }
     
+    static func searchLocation(text: String, completion: @escaping ([Int]) -> ()){
+        Api.makeRequest(endpoint: "search/search_location", data: ["location": text, "last_post_id": "0"], completion: {(json) -> () in
+            let postIDs = json["post_id"].arrayObject as! [Int]
+            completion(postIDs)
+        })
+    }
+    
     static func searchHashtag(text: String, completion: @escaping ([Int]) -> ()){
-        Api.makeRequest(endpoint: "search/hashtag", data: ["hashtag": text, "last_post_id": "0"], completion: {(json) -> () in
+        Api.makeRequest(endpoint: "search/search_hashtag", data: ["hashtag": text, "last_post_id": "0"], completion: {(json) -> () in
             let postIDs = json["post_id"].arrayObject as! [Int]
             completion(postIDs)
         })
     }
     
     static func getTopHashTags(completion: @escaping ([String]) -> ()){
-        Api.makeRequest(endpoint: "search/tophashtags", data: [:], completion: {(json) -> () in
+        Api.makeRequest(endpoint: "search/search_tophashtag", data: [:], completion: {(json) -> () in
             let hashtags = json["hashtags"].arrayObject as! [String]
             completion(hashtags)
         })

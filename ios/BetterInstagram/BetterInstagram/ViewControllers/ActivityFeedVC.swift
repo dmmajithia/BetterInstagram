@@ -12,7 +12,6 @@ class ActivityFeedVC: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     var postIDs: [Int]!
     var isPersonalFeed = false
-    var cells: [Int:ActivityFeedPostCell]!
     
     override func viewDidLoad() {
         self.collectionView.register(UINib.init(nibName: "ActivityFeedPostCell", bundle: nil), forCellWithReuseIdentifier: "ActivityFeedPostCell")

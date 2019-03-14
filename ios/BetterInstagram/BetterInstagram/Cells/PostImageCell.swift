@@ -32,6 +32,8 @@ class PostImageCell: UITableViewCell{
     }
     
     @objc func doubleTapped(_ sender: Any){
-        self.post.toggleLike(completion: {})
+        self.post.toggleLike(completion: {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "LikedPhoto"), object: nil)
+        })
     }
 }

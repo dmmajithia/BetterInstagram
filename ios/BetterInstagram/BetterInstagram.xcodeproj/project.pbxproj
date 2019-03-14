@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35C030610625D3B341B811BC /* Pods_BetterInstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F1C8516179A6A56837FB74 /* Pods_BetterInstagram.framework */; };
+		BA1E1B552239D54F0011FD06 /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E1B542239D54F0011FD06 /* UserListVC.swift */; };
 		BA3316F721FD019700774952 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3316F621FD019700774952 /* AppDelegate.swift */; };
 		BA3316FC21FD019700774952 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3316FA21FD019700774952 /* Login.storyboard */; };
 		BA3316FE21FD019900774952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3316FD21FD019900774952 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		17F1C8516179A6A56837FB74 /* Pods_BetterInstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetterInstagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5484639A7183E3E349111121 /* Pods-BetterInstagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterInstagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BetterInstagram/Pods-BetterInstagram.debug.xcconfig"; sourceTree = "<group>"; };
+		BA1E1B542239D54F0011FD06 /* UserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
 		BA3316F321FD019700774952 /* BetterInstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterInstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3316F621FD019700774952 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA3316FB21FD019700774952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -134,6 +136,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BA1E1B532239D51B0011FD06 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				BAABD7542235EC1800C0CBF6 /* ViewPostVC.swift */,
+				BA1E1B542239D54F0011FD06 /* UserListVC.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
 		BA3316EA21FD019700774952 = {
 			isa = PBXGroup;
 			children = (
@@ -207,7 +218,7 @@
 				BA9F33DC222652B200B57659 /* ActivityFeedVC.swift */,
 				BAD745DF222D0A4200EB218C /* MainTabBarController.swift */,
 				BAAFD8D5223225D400A08248 /* SHowWeb.swift */,
-				BAABD7542235EC1800C0CBF6 /* ViewPostVC.swift */,
+				BA1E1B532239D51B0011FD06 /* Posts */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -427,6 +438,7 @@
 				BA9F33DD222652B200B57659 /* ActivityFeedVC.swift in Sources */,
 				BA4AA8F12213F2FE00CDC216 /* ShowProfileVC.swift in Sources */,
 				BAC8C71122387DEF006E777E /* SearchProtocol.swift in Sources */,
+				BA1E1B552239D54F0011FD06 /* UserListVC.swift in Sources */,
 				BAEBADB3222609C1006F3F70 /* AddPostVC.swift in Sources */,
 				BA498E7922347C6800E3992A /* PostImageCell.swift in Sources */,
 				BAEBADB522260C7D006F3F70 /* MainVC.swift in Sources */,

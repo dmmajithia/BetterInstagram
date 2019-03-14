@@ -37,7 +37,7 @@ class SearchUser: NSObject, UITableViewDelegate, UITableViewDataSource, Searchab
         let user = self.usersArr[indexPath.item]
         cell.userID = String(user["user_id"].int!)
         cell.username = user["username"].string!
-        cell.url = user["profile_picture"].string!
+        cell.url = user["profile_picture"] == nil ? "2019-02-27_025933.838298_file.jpg" : user["profile_picture"].string!
         cell.initialize()
         return cell
     }

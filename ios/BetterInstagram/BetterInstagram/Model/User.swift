@@ -61,10 +61,10 @@ class User{
             user.userID = userID
             user.username = json["username"].string!
             user.isFollowed = json["is_followed"].bool!
-            user.bio = json["bio"].string!
-            user.website = json["website"].string!
-            user.location = json["location"].string!
-            user.profilePictureUrl = json["profile_picture_url"].string!
+            user.bio = json["bio"] == nil ? "[no bio]" : json["bio"].string!
+            user.website = json["website"] == nil ? "[no website]" : json["website"].string!
+            user.location = json["location"] == nil ? "[no location]" : json["location"].string!
+            user.profilePictureUrl = json["profile_picture_url"] == nil ? "2019-03-11_004012.915999_file.jpg" : json["profile_picture_url"].string!
             completion(user)
         })
     }
