@@ -23,6 +23,9 @@ class SearchUserCell: UITableViewCell{
     
     func initialize(){
         self.LabelUsername.text = self.username
+        if self.url == nil{
+            return
+        }
         Api.getImage(url: self.url, userID: self.userID, completion: {(image) -> () in
             self.ImageProfile.image = image
             self.ImageProfile.layer.cornerRadius = self.ImageProfile.frame.width/2

@@ -11,6 +11,8 @@ import UIKit
 class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var userIDs: [String]!
+    var usernames: [String]!
+    var urls: [String]!
     var mainLabelText: String!
     
     @IBOutlet weak var TableViewUsers: UITableView!
@@ -23,6 +25,7 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         }
         self.TableViewUsers.delegate = self
         self.TableViewUsers.dataSource = self
+        self.TableViewUsers.register(UINib(nibName: "SearchUserCell", bundle: nil), forCellReuseIdentifier: "SearchUserCell")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,15 +36,14 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostLikerCell")
-        User.getUserProfile(userID: self.userIDs[indexPath.item], completion: {(user) -> () in
-            cell?.textLabel?.text = user.username
-            Api.getImage(url: user.profilePictureUrl, userID: self.userIDs[indexPath.item], completion: {(image) -> () in
-            cell?.imageView?.image = image
-            cell?.imageView?.setCornerRadius(radius: (cell?.imageView?.frame.width)!)
-            })
-        })
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchUserCell") as! SearchUserCell
+        cell.userID = self.userIDs[indexPath.item]
+        cell.username = self.usernames[indexPath.item]
+        if self.urls != nil{
+            cell.url = self.urls[indexPath.item]
+        }
+        cell.initialize()
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

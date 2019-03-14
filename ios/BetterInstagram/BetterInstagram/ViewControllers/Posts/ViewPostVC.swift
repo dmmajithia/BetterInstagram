@@ -140,11 +140,14 @@ class ViewPostVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowLikes"{
             var userIDs = [String]()
+            var usernames = [String]()
             for user in self.post.likes{
                 userIDs.append(String(user["user_id"].int!))
+                usernames.append(user["username"].string!)
             }
             let destVC = segue.destination as! UserListVC
             destVC.userIDs = userIDs
+            destVC.usernames = usernames
             destVC.mainLabelText = "Likes"
             return
         }

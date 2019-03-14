@@ -190,6 +190,20 @@ struct Api{
         })
     }
     
+    static func getUserFollowers(userID: String, completion: @escaping ([JSON]) -> ()){
+        Api.makeRequest(endpoint: "relationship/get_user_followers", data: ["user_id": userID], completion: {(json) -> () in
+            let followers = json["followers"].array
+            completion(followers!)
+        })
+    }
+    
+    static func getUserFollowings(userID: String, completion: @escaping ([JSON]) -> ()){
+        Api.makeRequest(endpoint: "relationship/get_user_followings", data: ["user_id": userID], completion: {(json) -> () in
+            let followings = json["followings"].array
+            completion(followings!)
+        })
+    }
+    
     //// Upload given image to webserver. Returns json with 
     static func uploadImage(image: UIImage, completion: @escaping (JSON) -> ()){
         let URL = API_ENDPOINT + "profile/upload_picture?user_id=" + (CurrentUser.shared.user?.userID)!

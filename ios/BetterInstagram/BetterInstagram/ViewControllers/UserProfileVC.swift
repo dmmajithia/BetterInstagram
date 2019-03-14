@@ -72,6 +72,10 @@ class UserProfileVC: UIViewController{
         self.LabelBio.text(json["bio"].string!)
         self.LabelWebsite.text(json["website"].string!)
         self.LabelLocation.text(json["location"].string!)
+        self.ButtonFollower.setTitle(String(json["num_of_following"].int!) + " following", for: UIControl.State.normal)
+        self.ButtonFollowing.setTitle(String(json["num_of_follower"].int!) + " followers", for: UIControl.State.normal)
+        //self.ButtonFollowing.titleLabel?.text =
+        //self.ButtonFollower.titleLabel?.text = String(json["num_of_follower"].int!) + " followers"
         self.ImageProfile.layer.cornerRadius = self.ImageProfile.frame.width/2
         Api.getImage(url: json["profile_picture_url"].string!, userID: self.show_user_id, completion: {(image) -> () in
             self.ImageProfile.image = image
@@ -171,5 +175,35 @@ class UserProfileVC: UIViewController{
         else if(segue.identifier == "showWeb"){
             
         }
+    }
+    
+    @IBAction func showFollowers(_ sender: UIButton){
+        Api.getUserFollowers(userID: self.show_user_id, completion: {(json) -> () in
+            self.showListVC(users: json, followers: true)
+        })
+    }
+    
+    @IBAction func showFollowing(_ sender: UIButton){
+        Api.getUserFollowings(userID: self.show_user_id, completion: {(json) -> () in
+            self.showListVC(users: json, followers: false)
+        })
+    }
+    
+    func showListVC(users: [JSON], followers: Bool){
+        var userIDs = [String]()
+        var usernames = [String]()
+        var urls = [String]()
+        for j in users{
+            userIDs.append(String(j["user_id"].int!))
+            usernames.append(j["username"].string!)
+            urls.append(j["profile_picture"].string!)
+        }
+        let listVC = UIStoryboard(name: "Posts", bundle: nil).instantiateViewController(withIdentifier: "UserListVC") as! UserListVC
+        listVC.userIDs = userIDs
+        listVC.usernames = usernames
+        listVC.urls = urls
+        listVC.mainLabelText = followers ? "Followers" : "Following"
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "SetParent"), object: self)
+        self.show(listVC, sender: self)
     }
 }

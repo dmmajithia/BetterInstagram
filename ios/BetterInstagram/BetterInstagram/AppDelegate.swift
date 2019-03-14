@@ -8,6 +8,7 @@
 
 import UIKit
 import CloudKit
+import OneSignal
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
