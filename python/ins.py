@@ -742,15 +742,94 @@ def add_comment():
 
 @app.route('/search/search_name')
 def search_name():
+    # username = request.args.get("username")
+    # db = pymysql.connect(host="localhost", user="root", password="123456", db="dbbig")
+    # cursor = db.cursor()
+    # sql = "SELECT user_id, username, profile_picture FROM user WHERE username LIKE %s LIMIT 5"
+    # try:
+    #     cursor.execute(sql, username + "%")
+    #     result = cursor.fetchall()
+    #     success = True
+    #     db.commit()
+    # except:
+    #     db.rollback()
+    #     success = False
+    # if success == False:
+    #     dic = {"success": False}
+    # else:
+    #     users_list = []
+    #     for i in range(len(result)):
+    #         users_list.append({"user_id": result[i][0], "username": result[i][1], "profile_picture": result[i][2]})
+    #     dic = {"success": True, "users": users_list}
+    # db.close()
+    # js = json.dumps(dic)
+    # return js
+    user_id = request.args.get("user_id")
     username = request.args.get("username")
+
+
+    # db = pymysql.connect(host="127.0.0.1", port = tunnel.local_bind_port, user="root", password="123456", db="dbbig")
     db = pymysql.connect(host="localhost", user="root", password="123456", db="dbbig")
     cursor = db.cursor()
-    sql = "SELECT user_id, username, profile_picture FROM user WHERE username LIKE %s LIMIT 5"
+
+    #sql = "SELECT user_id, username, profile_picture FROM user WHERE username LIKE %s LIMIT 5"
+    sql = "SELECT user_id, username, profile_picture FROM user WHERE username LIKE %s"
+
     try:
         cursor.execute(sql, username + "%")
         result = cursor.fetchall()
+
+        # extract partial_match_id list
+        list_id = []
+        for row in result:
+            list_id.append(str(row[0]))
+
+        list_id_string = ','.join(list_id)
+        # get following in partial_match_id
+        sql2 = "SELECT R.user_id AS following, U.username, U.profile_picture \
+            FROM relationship R, user U \
+            WHERE U.user_id = R.user_id AND R.follower_id = {0} AND R.user_id in ({1})".format(user_id, list_id_string)
+        cursor.execute(sql2)
+        result2 = cursor.fetchall()
+
+        # delete list if have been used
+        list_following_id = [str(row[0]) for row in result2]
+        for id in list_following_id:
+            list_id.remove(id)
+        rest_id_string = ','.join(list_id)
+
+        # get the following of following
+
+        sql3 = "SELECT R2.user_id AS following_of_following, U.username, U.profile_picture, \
+                        FL.following_id AS followed_by, U2.username AS following_username, U2.profile_picture AS following_picture\
+                FROM relationship R2, user U, user U2,\
+                (SELECT R.user_id AS following_id \
+                FROM relationship R \
+                WHERE R.follower_id = {}) AS FL \
+                WHERE R2.follower_id = FL.following_id \
+                        AND R2.user_id != {} \
+                        AND U.user_id = R2.user_id \
+                        AND U2.user_id = FL.following_id \
+                        AND R2.user_id in ({})\
+                         ORDER BY R2.user_id".format(user_id, user_id, rest_id_string)
+        cursor.execute(sql3)
+        result3 = cursor.fetchall()
+
+        followed_by = {}
+        result3_info = []
+        for r in result3:
+            if r[0] not in followed_by:
+                followed_by[r[0]] = [(r[3], r[4], r[5])]
+                result3_info.append([r[0], r[1], r[2]])
+            else:
+                followed_by[r[0]].append((r[3], r[4], r[5]))
+
+        list_following_of_following_id = [str(row[0]) for row in result3]
+
+        for id in followed_by.keys():
+            list_id.remove(str(id))
         success = True
-        db.commit()
+        # db.commit()
     except:
         db.rollback()
         success = False
@@ -758,10 +837,23 @@ def search_name():
         dic = {"success": False}
     else:
         users_list = []
-        for i in range(len(result)):
-            users_list.append({"user_id": result[i][0], "username": result[i][1], "profile_picture": result[i][2]})
+        # for i in range(len(result)):
+        #     users_list.append({"user_id": result[i][0], "username": result[i][1], "profile_picture": result[i][2]})
+
+        for row in result2:
+            users_list.append({"user_id": row[0], "username": row[1], "profile_picture": row[2], "following" : True, "followed_by" : None})
+
+        for row in result3_info:
+            users_list.append({"user_id": row[0], "username": row[1], "profile_picture": row[2], "following" : False, "followed_by" : followed_by[row[0]]})
+
+        for row in result:
+            if str(row[0]) in list_id:
+                users_list.append({"user_id": row[0], "username": row[1], "profile_picture": row[2], "following" : True, "followed_by" : None})
+
         dic = {"success": True, "users": users_list}
+
     db.close()
+
     js = json.dumps(dic)
     return js
 
