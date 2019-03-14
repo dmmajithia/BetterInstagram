@@ -863,21 +863,23 @@ def search_hashtag():
     last_post_id = request.args.get("last_post_id")
     db = pymysql.connect(host="localhost", user="root", password="123456", db="dbbig")
     cursor = db.cursor()
-    sql = "SELECT H.post_id FROM hashtag H, post P WHERE H.hashtag = %s ORDER BY P.num_of_like DESC LIMIT 4"
-    sql2 = "SELECT post_id FROM hashtag WHERE hashtag = %s ORDER BY post_id DESC LIMIT 20"
-    sql3 = "SELECT post_id FROM hashtag WHERE hashtag = %s AND post_id < %s ORDER BY post_id DESC LIMIT 24"
+    sql = "SELECT H.post_id FROM hashtag H, post P WHERE H.hashtag = %s AND H.post_id = P.post_id \
+           ORDER BY P.num_of_like DESC LIMIT 4"
+    sql2 = "SELECT post_id FROM hashtag WHERE hashtag = %s AND post_id NOT IN (%s) ORDER BY post_id DESC LIMIT 20"
+    sql3 = "SELECT post_id FROM hashtag WHERE hashtag = %s AND post_id < %s AND post_id NOT IN (%s) ORDER BY post_id DESC LIMIT 24"
     try:
+        cursor.execute(sql, hashtag)
+        result = cursor.fetchall()
+        string = ",".join(str(i) for i in [result[i][0] for i in range(len(result))])
         if last_post_id == "0":
-            cursor.execute(sql, hashtag)
-            result = cursor.fetchall()
-            cursor.execute(sql2, hashtag)
+            cursor.execute(sql2, (hashtag, string))
             result2 = cursor.fetchall()
             post_list = [result[i][0] for i in range(len(result))]
             post_list = post_list + [result2[i][0] for i in range(len(result2))]
         else:
-            cursor.execute(sql3, (hashtag, last_post_id))
-            result = cursor.fetchall()
-            post_list = [result[i][0] for i in range(len(result))]
+            cursor.execute(sql3, (hashtag, last_post_id, string))
+            result3 = cursor.fetchall()
+            post_list = [result3[i][0] for i in range(len(result3))]
         success = True
         db.commit()
     except:
