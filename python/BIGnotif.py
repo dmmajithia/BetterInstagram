@@ -18,5 +18,6 @@ def PushToUser(appID, username, message):
             filters=[Filter.Tag("appID", "=", appID),]
         )
         client.send(nf_to_some)
+        return True
     except:
         return False
