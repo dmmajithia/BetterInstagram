@@ -306,12 +306,12 @@ def follow():
         new_follower = cursor.fetchone()
         db.commit()
         success = True
-        BIGnotif.PushToUser(app_id, new_follower, " started following you!")
+        nf_success = BIGnotif.PushToUser(app_id, new_follower, " started following you!")
     except:
         db.rollback()
         success = False
     db.close()
-    dic = {"success": success}
+    dic = {"success": success, "nf_success": nf_success}
     js = json.dumps(dic)
     return js
 
@@ -344,12 +344,12 @@ def unfollow():
 
         db.commit()
         success = True
-        BIGnotif.PushToUser(app_id, lost_follower, " just unfollowed you :(")
+        nf_success = BIGnotif.PushToUser(app_id, lost_follower, " just unfollowed you :(")
     except:
         db.rollback()
         success = False
     db.close()
-    dic = {"success": success}
+    dic = {"success": success, "nf_success": nf_success}
     js = json.dumps(dic)
     return js
 
@@ -606,6 +606,9 @@ def add_post():
             sql4 = sql4 + ", (%s, %s) "
 
     sql5 = "UPDATE user SET num_of_post =  num_of_post + 1 WHERE user_id = %s"
+
+    dic = {}
+
     try:
         cursor.execute(sql, (user_id, file_url, caption, timestamp, location, mood))
         cursor.execute(sql2)
@@ -634,18 +637,17 @@ def add_post():
                 #notification PUSH
                 cursor.execute(sql_tagged, people)
                 tagged = cursor.fetchone()
-                BIGnotif.PushToUser(tagged, tagger, " tagged you in a post!")
+                dic["nf_success " + people] = BIGnotif.PushToUser(tagged, tagger, " tagged you in a post!")
+
 
         cursor.execute(sql5, user_id)
         db.commit()
-        success = True
+        dic["success"] = True
     except:
         db.rollback()
-        success = False
+        dic["success"] = False
 
     db.close()
-
-    dic = {"success": success}
     js = json.dumps(dic)
     return js
     

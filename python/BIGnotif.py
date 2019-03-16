@@ -19,4 +19,4 @@ def PushToUser(appID, username, message):
         )
         client.send(nf_to_some)
     except:
-        return false
+        return False
