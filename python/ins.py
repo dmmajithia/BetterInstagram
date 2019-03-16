@@ -301,9 +301,9 @@ def follow():
 
         #notification PUSHING
         cursor.execute(nf_appid, user_id2)
-        app_id = cursor.fetchone()
+        app_id = cursor.fetchone()[0]
         cursor.execute(nf_followinguser, user_id)
-        new_follower = cursor.fetchone()
+        new_follower = cursor.fetchone()[0]
         db.commit()
         success = True
         nf_success = BIGnotif.PushToUser(app_id, new_follower, " started following you!")
@@ -338,9 +338,9 @@ def unfollow():
 
         #notification PUSHING
         cursor.execute(nf_appid, user_id2)
-        app_id = cursor.fetchone()
+        app_id = cursor.fetchone()[0]
         cursor.execute(nf_unfollowinguser, user_id)
-        lost_follower = cursor.fetchone()
+        lost_follower = cursor.fetchone()[0]
 
         db.commit()
         success = True
@@ -630,13 +630,13 @@ def add_post():
             #notification SQL
             sql_tagger = "SELECT username FROM user WHERE user_id = %s"
             cursor.execute(sql_tagger, user_id)
-            tagger = cursor.fetchone()
+            tagger = cursor.fetchone()[0]
             for people in people_tag_list:
                 sql_tagged = "SELECT appID FROM user WHERE user_id = %s"
 
                 #notification PUSH
                 cursor.execute(sql_tagged, people)
-                tagged = cursor.fetchone()
+                tagged = cursor.fetchone()[0]
                 dic["nf_success " + people] = BIGnotif.PushToUser(tagged, tagger, " tagged you in a post!")
 
 
@@ -694,9 +694,9 @@ def add_like():
 
         #notification PUSH
         cursor.execute(sqlnf_tosend, post_id)
-        appID = cursor.fetchone()
+        appID = cursor.fetchone()[0]
         cursor.execute(sqlnf_bywho, activity_user_id)
-        liking_user = cursor.fetchone()
+        liking_user = cursor.fetchone()[0]
         dic = {"success": True}
         db.commit()
         BIGnotif.PushToUser(appID, liking_user, " liked your post!")
@@ -727,9 +727,9 @@ def add_comment():
 
         #notification PUSH
         cursor.execute(sqlnf_tosend, post_id)
-        appID = cursor.fetchone()
+        appID = cursor.fetchone()[0]
         cursor.execute(sqlnf_bywho, activity_user_id)
-        commentor = cursor.fetchone()
+        commentor = cursor.fetchone()[0]
 
         dic = {"success": True}
         db.commit()
